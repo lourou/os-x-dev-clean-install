@@ -1,1 +1,1 @@
-git config --global core.editor "mate -w"
+git config --global core.editor "subl -w"
