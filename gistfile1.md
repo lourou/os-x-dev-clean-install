@@ -12,7 +12,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 install webkit
 --------------
-[http://webkit.org](http://webkit.org)
+* [http://webkit.org](http://webkit.org)
 
 disable webkit homepage
 -----------------------
@@ -22,7 +22,7 @@ defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 
 install chrome
 --------------
-[http://google.com/chrome](http://google.com/chrome)
+* [http://google.com/chrome](http://google.com/chrome)
 
 install iterm 2
 ----------------
