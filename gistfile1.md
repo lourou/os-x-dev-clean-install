@@ -67,7 +67,7 @@ open http://wbond.net/sublime_packages/package_control/installation
 
 install tomorrow theme
 ----------------------
-```
+```bash
 git clone git://github.com/ChrisKempson/TextMate-Tomorrow-Theme.git /Users/Joel/Library/Application\ Support/Sublime\ Text\ 2/Packages/Color\ Scheme\ -\ Tomorrow
 ```
 
