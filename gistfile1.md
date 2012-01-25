@@ -97,6 +97,18 @@ echo "address=/stage/192.168.10.200" >> /usr/local/etc/dnsmasq.conf &&
 echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
 ```
 
+Setup local dns, and google servers
+-----------------------------------
+ → System Preferences… → Advanced… → DNS
+
+```
+127.0.0.1
+8.8.4.4
+8.8.8.8
+```
+
+
+
 Enable daemon
 -------------
 ```bash
