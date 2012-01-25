@@ -111,17 +111,16 @@ subl /etc/apache2/users/$USER.conf
 ```
 
 ```bash
+DocumentRoot "/Users/Joel/Sites/"
 NameVirtualHost *:80
-
 <Directory "/Users/Joel/Sites/">
     Options Indexes MultiViews FollowSymLinks Includes
     AllowOverride All
     Order allow,deny
     Allow from all
 </Directory>
-
 <VirtualHost *:80>
     UseCanonicalName off
-    VirtualDocumentRoot /Users/Joel/Sites/%0/httpdocs
+    VirtualDocumentRoot /Users/Joel/Sites/%-2+/httpdocs
 </VirtualHost>
 ```
