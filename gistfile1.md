@@ -24,6 +24,7 @@ Apps
 * [Coda](http://panic.com/coda)
 * [Sublime Text](http://www.sublimetext.com/dev)
 * [Sequel Pro](http://nightly.sequelpro.com)
+* [1Password](https://agilebits.com/onepassword/mac)
 
 Disable webkit homepage
 -----------------------
