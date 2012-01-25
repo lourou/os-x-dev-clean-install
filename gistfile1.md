@@ -146,11 +146,7 @@ brew install xdebug
 brew install https://raw.github.com/saetia/homebrew/php/Library/Formula/php.rb --with-apache --with-mysql --with-pgsql
 ```
 
-Restart apache
---------------
-```bash
-sudo apachectl graceful
-```
+
 
 
 ```bash
@@ -421,4 +417,11 @@ xdebug.profiler_enable=1
 xdebug.profiler_enable_trigger=1 
 xdebug.profiler_output_name = cachegrind.out.%s 
 xdebug.profiler_output_dir=/tmp/
+```
+
+
+Restart apache
+--------------
+```bash
+sudo apachectl graceful
 ```
