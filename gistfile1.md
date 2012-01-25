@@ -108,7 +108,7 @@ echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
 Enable dnsmasq daemon
 -------------
 ```bash
-sudo cp "/usr/local/Cellar/dnsmasq/2.57/uk.org.thekelleys.dnsmasq.plist" "/Library/LaunchDaemons"
+sudo cp "/usr/local/Cellar/dnsmasq/2.57/uk.org.thekelleys.dnsmasq.plist" "/Library/LaunchDaemons" &&
 sudo launchctl load -w "/Library/LaunchDaemons/uk.org.thekelleys.dnsmasq.plist"
 ```
 
