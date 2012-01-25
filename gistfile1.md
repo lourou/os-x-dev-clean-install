@@ -12,9 +12,9 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 Browsers
 --------
-* [Install Webkit](http://webkit.org)
-* [Install Chrome](http://google.com/chrome)
-* [Install Firefox](http://firefox.com)
+* [Webkit](http://webkit.org)
+* [Chrome](http://google.com/chrome)
+* [Firefox](http://firefox.com)
 
 
 disable webkit homepage
