@@ -98,10 +98,17 @@ brew install dnsmasq
 Add DNS Domains
 -----------------
 ```bash
-echo "address=/dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf && 
+echo "address=/dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf; 
 echo "address=/build/127.0.0.1" >> /usr/local/etc/dnsmasq.conf && 
 echo "address=/stage/192.168.10.200" >> /usr/local/etc/dnsmasq.conf && 
 echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
+```
+
+Enable dnsmasq daemon
+-------------
+```bash
+sudo cp "/usr/local/Cellar/dnsmasq/2.57/uk.org.thekelleys.dnsmasq.plist" "/Library/LaunchDaemons"
+sudo launchctl load -w "/Library/LaunchDaemons/uk.org.thekelleys.dnsmasq.plist"
 ```
 
 Add Local DNS, and Google Servers
@@ -116,12 +123,7 @@ Add Local DNS, and Google Servers
 
 
 
-Enable daemon
--------------
-```bash
-sudo cp "/usr/local/Cellar/dnsmasq/2.57/uk.org.thekelleys.dnsmasq.plist" "/Library/LaunchDaemons"
-sudo launchctl load -w "/Library/LaunchDaemons/uk.org.thekelleys.dnsmasq.plist"
-```
+
 
 Enable virtual hosts
 --------------------
