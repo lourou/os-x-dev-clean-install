@@ -106,7 +106,7 @@ echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
 
 Add Local DNS, and Google Servers
 -----------------------------------
- → System Preferences… → Advanced… → DNS
+ ➡ System Preferences… ➡ Advanced… ➡ DNS
 
 ```
 127.0.0.1
