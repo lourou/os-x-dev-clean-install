@@ -124,3 +124,9 @@ NameVirtualHost *:80
     VirtualDocumentRoot /Users/Joel/Sites/%-2+/httpdocs
 </VirtualHost>
 ```
+
+```bash
+subl /etc/apache2/httpd.conf
+```
+
+*search for **#LoadModule php5_module libexec/apache2/libphp5.so***
