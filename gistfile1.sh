@@ -21,3 +21,6 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 
 #set default git editor
 git config --global core.editor "subl -w"
+
+#install package control
+open http://wbond.net/sublime_packages/package_control/installation
