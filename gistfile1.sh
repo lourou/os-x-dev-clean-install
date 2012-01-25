@@ -4,8 +4,9 @@ open http://google.com/chrome
 #install iterm 2 
 open http://iterm2.com
 
-#install transmit
+#install transmit & coda
 open http://panic.com/transmit
+open http://panic.com/coda
 
 #set hostname
 sudo scutil --set HostName Joel
