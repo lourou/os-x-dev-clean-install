@@ -23,20 +23,13 @@ disable webkit homepage
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 ```
 
+Apps
+----
+[iTerm](http://iterm2.com)
+[Transmit](http://panic.com/transmit)
+[Coda](http://panic.com/coda)
+[Sublime Text](http://www.sublimetext.com/dev)
 
-
-
-install iterm 2
-----------------
-`open http://iterm2.com`
-
-install transmit
-----------------
-`open http://panic.com/transmit`
-
-install coda
-------------
-`open http://panic.com/coda`
 
 set hostname
 ------------
@@ -64,10 +57,6 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 
 
 #Sublime Text
-
-install sublime text dev build
-------------------------------
-`open http://www.sublimetext.com/dev`
 
 install package control
 -----------------------
