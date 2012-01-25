@@ -148,9 +148,9 @@ NameVirtualHost *:80
 subl /etc/apache2/httpd.conf
 ```
 
-Replace `#LoadModule php5_module libexec/apache2/libphp5.so` with `LoadModule php5_module /usr/local/Cellar/php/5.3.8/libexec/apache2/libphp5.so`
+`#LoadModule php5_module libexec/apache2/libphp5.so` ➔ `LoadModule php5_module /usr/local/Cellar/php/5.3.8/libexec/apache2/libphp5.so`
 
-Replace `DirectoryIndex index.html` with `DirectoryIndex index.html index.php`
+`DirectoryIndex index.html` ➔ `DirectoryIndex index.html index.php`
 
 XDebug
 ------
