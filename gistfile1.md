@@ -1,12 +1,14 @@
 disable window animations
 -------------------------
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+`defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false`
 
-#enable key repeat
-defaults write -g ApplePressAndHoldEnabled -bool false
+enable key repeat
+-----------------
+`defaults write -g ApplePressAndHoldEnabled -bool false`
 
-#install webkit
-open http://webkit.org
+install webkit
+--------------
+`open http://webkit.org`
 
 #disable webkit homepage
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool YES
@@ -56,5 +58,4 @@ echo "address=/dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf &&
 echo "address=/build/127.0.0.1" >> /usr/local/etc/dnsmasq.conf && 
 echo "address=/stage/192.168.10.200" >> /usr/local/etc/dnsmasq.conf && 
 echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
-
 
