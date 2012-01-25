@@ -1,3 +1,15 @@
+#disable window animations
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool NO
+
+#enable key repeat
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+#install webkit
+open http://webkit.org
+
+#disable webkit homepage
+defaults write org.webkit.nightly.WebKit StartPageDisabled -bool YES
+
 #install chrome 
 open http://google.com/chrome
 
