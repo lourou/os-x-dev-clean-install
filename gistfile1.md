@@ -144,6 +144,9 @@ NameVirtualHost *:80
 </VirtualHost>
 ```
 
+
+Open apache config and replace lines
+
 ```bash
 subl /etc/apache2/httpd.conf
 ```
