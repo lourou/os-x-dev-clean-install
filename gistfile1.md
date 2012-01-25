@@ -80,14 +80,19 @@ git clone git://github.com/ChrisKempson/TextMate-Tomorrow-Theme.git /Users/Joel/
 ```
 
 
-#mimic server
-=============
+#Server
 
-#install dnsmasq
+Install dnsmasq
+---------------
+```bash
 brew install dnsmasq
+```
 
-#save dns settings
+save dns settings
+-----------------
+```bash
 echo "address=/dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf && 
 echo "address=/build/127.0.0.1" >> /usr/local/etc/dnsmasq.conf && 
 echo "address=/stage/192.168.10.200" >> /usr/local/etc/dnsmasq.conf && 
 echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
+```
