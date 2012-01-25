@@ -10,9 +10,11 @@ enable key repeat
 defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
-install webkit
---------------
-* [http://webkit.org](install webkit)
+
+[Install Webkit](http://webkit.org)
+[Install Chrome](http://google.com/chrome)
+[Install Firefox](http://firefox.com)
+
 
 disable webkit homepage
 -----------------------
@@ -20,9 +22,8 @@ disable webkit homepage
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 ```
 
-install chrome
---------------
-* [http://google.com/chrome](http://google.com/chrome)
+
+
 
 install iterm 2
 ----------------
