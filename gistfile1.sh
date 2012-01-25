@@ -27,3 +27,6 @@ open http://wbond.net/sublime_packages/package_control/installation
 
 #install mensch font
 open http://robey.lag.net/2010/06/21/mensch-font.html
+
+#install tomorrow theme
+git clone git://github.com/ChrisKempson/TextMate-Tomorrow-Theme.git /Users/Joel/Library/Application\ Support/Sublime\ Text\ 2/Packages/Color\ Scheme\ -\ Tomorrow
