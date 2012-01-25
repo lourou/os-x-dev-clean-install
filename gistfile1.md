@@ -88,11 +88,40 @@ Install dnsmasq
 brew install dnsmasq
 ```
 
-save dns settings
+Set dns domains
 -----------------
 ```bash
 echo "address=/dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf && 
 echo "address=/build/127.0.0.1" >> /usr/local/etc/dnsmasq.conf && 
 echo "address=/stage/192.168.10.200" >> /usr/local/etc/dnsmasq.conf && 
 echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
+```
+
+Enable daemon
+-------------
+```bash
+sudo cp /usr/local/Cellar/dnsmasq/2.57/uk.org.thekelleys.dnsmasq.plist /Library/LaunchDaemons
+sudo launchctl load -w /Library/LaunchDaemons/uk.org.thekelleys.dnsmasq.plist
+```
+
+Enable virtual hosts
+--------------------
+```bash
+subl /etc/apache2/users/$USER.conf
+```
+
+```bash
+NameVirtualHost *:80
+
+<Directory "/Users/Joel/Sites/">
+    Options Indexes MultiViews FollowSymLinks Includes
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+</Directory>
+
+<VirtualHost *:80>
+    UseCanonicalName off
+    VirtualDocumentRoot /Users/Joel/Sites/%0/httpdocs
+</VirtualHost>
 ```
