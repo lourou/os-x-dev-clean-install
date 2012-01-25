@@ -22,7 +22,6 @@ defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 
 install chrome
 --------------
-`open http://google.com/chrome
 [http://google.com/chrome](http://google.com/chrome)
 
 install iterm 2
