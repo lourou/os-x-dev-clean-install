@@ -119,8 +119,8 @@ Add Local DNS, and Google Servers
 Enable daemon
 -------------
 ```bash
-sudo cp /usr/local/Cellar/dnsmasq/2.57/uk.org.thekelleys.dnsmasq.plist /Library/LaunchDaemons
-sudo launchctl load -w /Library/LaunchDaemons/uk.org.thekelleys.dnsmasq.plist
+sudo cp "/usr/local/Cellar/dnsmasq/2.57/uk.org.thekelleys.dnsmasq.plist" "/Library/LaunchDaemons"
+sudo launchctl load -w "/Library/LaunchDaemons/uk.org.thekelleys.dnsmasq.plist"
 ```
 
 Enable virtual hosts
@@ -148,7 +148,7 @@ NameVirtualHost *:80
 subl /etc/apache2/httpd.conf
 ```
 
-Uncomment `#LoadModule php5_module libexec/apache2/libphp5.so`
+Replace `#LoadModule php5_module libexec/apache2/libphp5.so` with `LoadModule php5_module libexec/apache2/libphp5.so`
 
 Replace `DirectoryIndex index.html` with `DirectoryIndex index.html index.php`
 
