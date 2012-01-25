@@ -1,4 +1,5 @@
-#disable window animations
+disable window animations
+-------------------------
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
 #enable key repeat
