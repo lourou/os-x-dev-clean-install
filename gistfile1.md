@@ -73,7 +73,7 @@ Install package control
 import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
 ```
 
-Install Tomorrow theme
+Install Tomorrow Theme
 ----------------------
 ```bash
 git clone git://github.com/ChrisKempson/TextMate-Tomorrow-Theme.git /Users/Joel/Library/Application\ Support/Sublime\ Text\ 2/Packages/Color\ Scheme\ -\ Tomorrow
@@ -88,7 +88,7 @@ Install dnsmasq
 brew install dnsmasq
 ```
 
-Set dns domains
+Add DNS Domains
 -----------------
 ```bash
 echo "address=/dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf && 
@@ -97,7 +97,7 @@ echo "address=/stage/192.168.10.200" >> /usr/local/etc/dnsmasq.conf &&
 echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
 ```
 
-Setup local dns, and google servers
+Add Local DNS, and Google Servers
 -----------------------------------
  → System Preferences… → Advanced… → DNS
 
