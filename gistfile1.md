@@ -137,10 +137,15 @@ Replace `#LoadModule php5_module libexec/apache2/libphp5.so`
 with `LoadModule php5_module /usr/local/Cellar/php/5.3.8/libexec/apache2/libphp5.so`
 
 
+XDebug
+------
 
 ```bash
 brew install xdebug
 ```
+
+MySQL
+-----
 
 ```bash
 brew install https://raw.github.com/saetia/homebrew/php/Library/Formula/php.rb --with-apache --with-mysql --with-pgsql
