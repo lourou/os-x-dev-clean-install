@@ -98,7 +98,8 @@ brew install dnsmasq
 Add DNS Domains
 -----------------
 ```bash
-echo "address=/dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf; 
+mkdir -p /usr/local/etc/ &&
+echo "address=/dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf &&
 echo "address=/build/127.0.0.1" >> /usr/local/etc/dnsmasq.conf && 
 echo "address=/stage/192.168.10.200" >> /usr/local/etc/dnsmasq.conf && 
 echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
