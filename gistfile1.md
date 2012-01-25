@@ -153,7 +153,7 @@ brew install https://raw.github.com/saetia/homebrew/php/Library/Formula/php.rb -
 
 
 
-Set php.ini settings
+Configure php.ini
 ---------------------
 
 ```bash
