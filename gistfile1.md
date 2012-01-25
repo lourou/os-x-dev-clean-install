@@ -1,14 +1,18 @@
 disable window animations
 -------------------------
-`defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false`
+```bash
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+```
 
 enable key repeat
 -----------------
-`defaults write -g ApplePressAndHoldEnabled -bool false`
+```bash
+defaults write -g ApplePressAndHoldEnabled -bool false
+```
 
 install webkit
 --------------
-`open http://webkit.org`
+[http://webkit.org](http://webkit.org)
 
 disable webkit homepage
 -----------------------
