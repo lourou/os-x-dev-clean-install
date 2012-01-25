@@ -12,7 +12,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 
 install webkit
 --------------
-* [http://webkit.org](http://webkit.org)
+* [http://webkit.org](install webkit)
 
 disable webkit homepage
 -----------------------
