@@ -1,5 +1,5 @@
 #disable window animations
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool NO
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
 #enable key repeat
 defaults write -g ApplePressAndHoldEnabled -bool false
