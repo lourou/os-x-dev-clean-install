@@ -129,4 +129,12 @@ NameVirtualHost *:80
 subl /etc/apache2/httpd.conf
 ```
 
-*search for **#LoadModule php5_module libexec/apache2/libphp5.so***
+Uncomment `#LoadModule php5_module libexec/apache2/libphp5.so`
+
+Replace `DirectoryIndex index.html` with `DirectoryIndex index.html index.php`
+
+Restart apache
+--------------
+```bash
+sudo apachectl graceful
+```
