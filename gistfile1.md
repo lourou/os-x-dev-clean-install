@@ -10,26 +10,38 @@ install webkit
 --------------
 `open http://webkit.org`
 
-#disable webkit homepage
-defaults write org.webkit.nightly.WebKit StartPageDisabled -bool YES
+disable webkit homepage
+-----------------------
+`defaults write org.webkit.nightly.WebKit StartPageDisabled -bool YES`
 
-#install chrome 
-open http://google.com/chrome
+install chrome
+--------------
+`open http://google.com/chrome`
 
-#install iterm 2 
-open http://iterm2.com
+install iterm 2
+----------------
+`open http://iterm2.com`
 
-#install transmit & coda
-open http://panic.com/transmit
-open http://panic.com/coda
+install transmit
+----------------
+`open http://panic.com/transmit`
 
-#set hostname
-sudo scutil --set HostName Joel
+install coda
+------------
+`open http://panic.com/coda`
 
-#install git
+set hostname
+------------
+`sudo scutil --set HostName Joel`
+
+#git
+
+install git
+-----------
 open http://code.google.com/p/git-osx-installer/downloads/list?can=3
 
-#setup github
+setup github
+------------
 open http://help.github.com/mac-set-up-git
 
 #install zsh
