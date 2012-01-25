@@ -23,7 +23,7 @@ Apps
 * [Transmit](http://panic.com/transmit)
 * [Coda](http://panic.com/coda)
 * [Sublime Text](http://www.sublimetext.com/dev)
-
+* [Sequel Pro](http://nightly.sequelpro.com)
 
 Disable webkit homepage
 -----------------------
