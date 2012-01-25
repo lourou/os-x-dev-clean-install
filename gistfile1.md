@@ -45,7 +45,7 @@ Setup Github
 ssh-keygen -t rsa -C "saetia@gmail.com"
 
 #copy ssh key to github.com
-subl ~/.ssh/id_rsa.pub
+subl "~/.ssh/id_rsa.pub"
 
 #test connection
 ssh -T git@github.com
@@ -71,7 +71,7 @@ Add Sublime Text CLI
 --------------------
 
 ```bash
-ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"
 ```
 
 Install Package Control
@@ -129,7 +129,7 @@ Add Local DNS, and Google Servers
 Enable virtual hosts
 --------------------
 ```bash
-subl /etc/apache2/users/$USER.conf
+subl "/etc/apache2/users/$USER.conf"
 ```
 
 ```bash
@@ -151,7 +151,7 @@ NameVirtualHost *:80
 Open apache config and replace lines
 
 ```bash
-subl /etc/apache2/httpd.conf
+subl "/etc/apache2/httpd.conf"
 ```
 
 `#LoadModule php5_module libexec/apache2/libphp5.so` ➔ `LoadModule php5_module /usr/local/Cellar/php/5.3.8/libexec/apache2/libphp5.so`
@@ -178,7 +178,7 @@ Configure php.ini
 ---------------------
 
 ```bash
-subl /usr/local/Cellar/php/5.3.8/etc/php.ini
+subl "/usr/local/Cellar/php/5.3.8/etc/php.ini"
 ```
 
 ```ini
