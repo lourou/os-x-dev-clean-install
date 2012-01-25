@@ -1,12 +1,14 @@
 #Mac OS X
 
-disable window animations
+[Mensch coding font](http://robey.lag.net/2010/06/21/mensch-font.html)
+
+Disable window animations
 -------------------------
 ```bash
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 ```
 
-enable key repeat
+Enable key repeat
 -----------------
 ```bash
 defaults write -g ApplePressAndHoldEnabled -bool false
@@ -23,13 +25,13 @@ Apps
 * [Sublime Text](http://www.sublimetext.com/dev)
 
 
-disable webkit homepage
+Disable webkit homepage
 -----------------------
 ```bash
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 ```
 
-set hostname
+Set hostname
 ------------
 `sudo scutil --set HostName Joel`
 
@@ -37,7 +39,7 @@ set hostname
 
 [Git Installer](http://code.google.com/p/git-osx-installer/downloads/list?can=3)
 
-setup github
+Setup Github
 ------------
 ```bash
 ssh-keygen -t rsa -C "saetia@gmail.com"
@@ -53,41 +55,33 @@ git config --global user.name "Joel Glovacki"
 git config --global user.email "saetia@gmail.com"
 git config --global github.user saetia
 git config --global github.token your_token_here
+git config --global core.editor "subl -w"
 ```
 
+#Shell
 
-set default git editor
-----------------------
-git config --global core.editor "subl -w"
-
-
-install z-shell
+Install z-shell
 ---------------
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 
-
 #Sublime Text
 
-install package control
+Install package control
 -----------------------
-open http://wbond.net/sublime_packages/package_control/installation
+```python
+import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
+```
 
-install tomorrow theme
+Install Tomorrow theme
 ----------------------
 ```bash
 git clone git://github.com/ChrisKempson/TextMate-Tomorrow-Theme.git /Users/Joel/Library/Application\ Support/Sublime\ Text\ 2/Packages/Color\ Scheme\ -\ Tomorrow
 ```
 
 
-install mensch font
--------------------
-open http://robey.lag.net/2010/06/21/mensch-font.html
-
-
-
-
 #mimic server
+=============
 
 #install dnsmasq
 brew install dnsmasq
