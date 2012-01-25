@@ -26,6 +26,7 @@ Apps
 * [Sequel Pro](http://nightly.sequelpro.com)
 * [1Password](https://agilebits.com/onepassword/mac)
 * [LiveReload](http://livereload.com)
+* [LiveReload Extensions](http://help.livereload.com/kb/general-use/browser-extensions)
 
 Disable webkit homepage
 -----------------------
