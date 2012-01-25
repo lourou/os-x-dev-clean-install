@@ -1,3 +1,5 @@
+#Mac OS X
+
 disable window animations
 -------------------------
 ```bash
@@ -10,11 +12,15 @@ enable key repeat
 defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
-Browsers
---------
+Apps
+----
 * [Webkit](http://webkit.org)
 * [Chrome](http://google.com/chrome)
 * [Firefox](http://firefox.com)
+* [iTerm](http://iterm2.com)
+* [Transmit](http://panic.com/transmit)
+* [Coda](http://panic.com/coda)
+* [Sublime Text](http://www.sublimetext.com/dev)
 
 
 disable webkit homepage
@@ -23,27 +29,32 @@ disable webkit homepage
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 ```
 
-Apps
-----
-[iTerm](http://iterm2.com)
-[Transmit](http://panic.com/transmit)
-[Coda](http://panic.com/coda)
-[Sublime Text](http://www.sublimetext.com/dev)
-
-
 set hostname
 ------------
 `sudo scutil --set HostName Joel`
 
-#git
+#Git
 
-install git
------------
-open http://code.google.com/p/git-osx-installer/downloads/list?can=3
+[Git Installer](http://code.google.com/p/git-osx-installer/downloads/list?can=3)
 
 setup github
 ------------
-open http://help.github.com/mac-set-up-git
+```bash
+ssh-keygen -t rsa -C "saetia@gmail.com"
+
+#copy ssh key to github.com
+subl ~/.ssh/id_rsa.pub
+
+#test connection
+ssh -T git@github.com
+
+#set git config values
+git config --global user.name "Joel Glovacki"
+git config --global user.email "saetia@gmail.com"
+git config --global github.user saetia
+git config --global github.token your_token_here
+```
+
 
 set default git editor
 ----------------------
