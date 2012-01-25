@@ -24,3 +24,6 @@ git config --global core.editor "subl -w"
 
 #install package control
 open http://wbond.net/sublime_packages/package_control/installation
+
+#install mensch font
+open http://robey.lag.net/2010/06/21/mensch-font.html
