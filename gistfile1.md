@@ -44,20 +44,39 @@ setup github
 ------------
 open http://help.github.com/mac-set-up-git
 
-#install zsh
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-
-#set default git editor
+set default git editor
+----------------------
 git config --global core.editor "subl -w"
 
-#install package control
+
+install z-shell
+---------------
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+
+
+#Sublime Text
+
+install sublime text dev build
+------------------------------
+`open http://www.sublimetext.com/dev`
+
+install package control
+-----------------------
 open http://wbond.net/sublime_packages/package_control/installation
 
-#install mensch font
+install tomorrow theme
+----------------------
+```
+git clone git://github.com/ChrisKempson/TextMate-Tomorrow-Theme.git /Users/Joel/Library/Application\ Support/Sublime\ Text\ 2/Packages/Color\ Scheme\ -\ Tomorrow
+```
+
+
+install mensch font
+-------------------
 open http://robey.lag.net/2010/06/21/mensch-font.html
 
-#install tomorrow theme
-git clone git://github.com/ChrisKempson/TextMate-Tomorrow-Theme.git /Users/Joel/Library/Application\ Support/Sublime\ Text\ 2/Packages/Color\ Scheme\ -\ Tomorrow
+
 
 
 #mimic server
@@ -70,4 +89,3 @@ echo "address=/dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf &&
 echo "address=/build/127.0.0.1" >> /usr/local/etc/dnsmasq.conf && 
 echo "address=/stage/192.168.10.200" >> /usr/local/etc/dnsmasq.conf && 
 echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
-
