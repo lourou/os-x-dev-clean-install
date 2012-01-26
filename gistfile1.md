@@ -82,6 +82,13 @@ Global Settings
 }
 ```
 
+Keymap Settings
+
+```json
+[
+	{ "keys": ["super+b"], "command": "expand_selection", "args": {"to": "brackets"} }
+]
+```
 
 
 
