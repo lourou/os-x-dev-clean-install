@@ -2,18 +2,6 @@
 
 [Mensch coding font](http://robey.lag.net/2010/06/21/mensch-font.html)
 
-Disable window animations
--------------------------
-```bash
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
-```
-
-Enable key repeat
------------------
-```bash
-defaults write -g ApplePressAndHoldEnabled -bool false
-```
-
 Apps
 ----
 * [Webkit](http://webkit.org)
@@ -28,15 +16,23 @@ Apps
 * [LiveReload](http://livereload.com)
 * [LiveReload Extensions](http://help.livereload.com/kb/general-use/browser-extensions)
 
-Disable webkit homepage
------------------------
 ```bash
+#Disable window animations
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+#Enable key repeat
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+#Disable webkit homepage
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 ```
 
 Set hostname
 ------------
-`sudo scutil --set HostName Joel`
+`sudo scutil --set HostName Work`
+
+
+
 
 
 
@@ -55,6 +51,16 @@ Install z-shell
 ```bash
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 ```
+
+Update .zshrc
+-------------
+```bash
+subl ~/.zshrc
+```
+`ZSH_THEME="robbyrussell"` ➔ `ZSH_THEME="kphoen"`
+
+`plugins=(git)` ➔
+`plugins=(git osx rails ruby github node npm brew)`
 
 
 
@@ -78,6 +84,12 @@ git config --global github.user saetia
 git config --global github.token your_token_here
 git config --global core.editor "subl -w"
 ```
+
+
+
+
+
+
 
 
 
@@ -129,6 +141,13 @@ Global Settings
 ```
 
 
+
+
+
+
+
+
+
 #Server
 
 Install dnsmasq
@@ -163,8 +182,6 @@ Add Local DNS, and Google Servers
 8.8.4.4
 8.8.8.8
 ```
-
-
 
 
 
