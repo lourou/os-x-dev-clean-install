@@ -210,6 +210,26 @@ MySQL
 brew install https://raw.github.com/saetia/homebrew/php/Library/Formula/php.rb --with-apache --with-mysql --with-pgsql
 ```
 
+MySQL Settings
+--------------
+
+```bash
+#Set up databases to run as your user account
+unset TMPDIR &&
+mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp &&
+cp $(brew --prefix mysql)/support-files/my-small.cnf /usr/local/var/mysql/my.cnf &&
+sed -i "" 's/max_allowed_packet = 1.*M/max_allowed_packet = 2G/g' /usr/local/var/mysql/my.cnf &&
+mkdir -p ~/Library/LaunchAgents &&
+cp /usr/local/Cellar/mysql/5.5.20/com.mysql.mysqld.plist ~/Library/LaunchAgents/ &&
+launchctl load -w ~/Library/LaunchAgents/com.mysql.mysqld.plist
+
+#start mysql
+mysql.server start
+
+#change password
+/usr/local/Cellar/mysql/5.5.20/bin/mysqladmin -u root password 'new-password'
+```
+
 
 
 Configure php.ini
