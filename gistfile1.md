@@ -89,6 +89,32 @@ Install Tomorrow Theme
 git clone git://github.com/ChrisKempson/TextMate-Tomorrow-Theme.git "~/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Tomorrow"
 ```
 
+File Settings
+-------------
+
+```json
+{
+	"color_scheme": "Packages/Color Scheme - Tomorrow/Tomorrow-Night-Eighties.tmTheme",
+	"draw_indent_guides": false,
+	"font_face": "Mensch",
+	"font_size": 16,
+	"spell_check": false,
+	"word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?"
+}
+```
+
+Global Settings
+-------------
+
+```json
+{
+	"theme": "Soda Light.sublime-theme",
+	"show_tab_close_buttons": false,
+	"highlight_modified_tabs": true,
+	"close_windows_when_empty": true
+}
+```
+
 
 #Server
 
