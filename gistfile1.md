@@ -48,7 +48,7 @@ Setup Github
 ssh-keygen -t rsa -C "saetia@gmail.com"
 
 #copy ssh key to github.com
-subl "~/.ssh/id_rsa.pub"
+subl ~/.ssh/id_rsa.pub
 
 #test connection
 ssh -T git@github.com
@@ -186,6 +186,15 @@ subl "/etc/apache2/httpd.conf"
 `#LoadModule php5_module libexec/apache2/libphp5.so` ➔ `LoadModule php5_module /usr/local/Cellar/php/5.3.8/libexec/apache2/libphp5.so`
 
 `DirectoryIndex index.html` ➔ `DirectoryIndex index.html index.php`
+
+Enable centOS style /var/www/vhosts
+-----------------------------------
+
+```bash
+sudo mkdir -p /var/www/ &&
+sudo ln -s ~/Sites /var/www/vhosts
+```
+
 
 XDebug
 ------
