@@ -35,6 +35,58 @@ Set hostname
 
 
 
+#Sublime Text
+
+Add Sublime Text CLI
+--------------------
+
+```bash
+ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"
+```
+
+Install Package Control
+-----------------------
+```python
+import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
+```
+
+Install Tomorrow Theme
+----------------------
+```bash
+git clone git://github.com/ChrisKempson/TextMate-Tomorrow-Theme.git "~/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Tomorrow"
+```
+
+File Settings
+-------------
+
+```json
+{
+	"color_scheme": "Packages/Color Scheme - Tomorrow/Tomorrow-Night-Eighties.tmTheme",
+	"draw_indent_guides": false,
+	"font_face": "Mensch",
+	"font_size": 16,
+	"spell_check": false,
+	"word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?"
+}
+```
+
+Global Settings
+-------------
+
+```json
+{
+	"theme": "Soda Light.sublime-theme",
+	"show_tab_close_buttons": false,
+	"highlight_modified_tabs": true,
+	"close_windows_when_empty": true
+}
+```
+
+
+
+
+
+
 
 #Homebrew
 
@@ -92,53 +144,6 @@ git config --global core.editor "subl -w"
 
 
 
-
-#Sublime Text
-
-Add Sublime Text CLI
---------------------
-
-```bash
-ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"
-```
-
-Install Package Control
------------------------
-```python
-import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
-```
-
-Install Tomorrow Theme
-----------------------
-```bash
-git clone git://github.com/ChrisKempson/TextMate-Tomorrow-Theme.git "~/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Tomorrow"
-```
-
-File Settings
--------------
-
-```json
-{
-	"color_scheme": "Packages/Color Scheme - Tomorrow/Tomorrow-Night-Eighties.tmTheme",
-	"draw_indent_guides": false,
-	"font_face": "Mensch",
-	"font_size": 16,
-	"spell_check": false,
-	"word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?"
-}
-```
-
-Global Settings
--------------
-
-```json
-{
-	"theme": "Soda Light.sublime-theme",
-	"show_tab_close_buttons": false,
-	"highlight_modified_tabs": true,
-	"close_windows_when_empty": true
-}
-```
 
 
 
