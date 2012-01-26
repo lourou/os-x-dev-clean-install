@@ -50,8 +50,6 @@ brew install git ack wget curl redis memcached libmemcached colordiff imagemagic
 
 #Git
 
-[Git Installer](http://code.google.com/p/git-osx-installer/downloads/list?can=3)
-
 Setup Github
 ------------
 ```bash
