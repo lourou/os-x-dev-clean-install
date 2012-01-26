@@ -48,6 +48,14 @@ brew install git ack wget curl redis memcached libmemcached colordiff imagemagic
 
 
 
+#Shell
+
+Install z-shell
+---------------
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+
+
 #Git
 
 Setup Github
@@ -69,11 +77,6 @@ git config --global github.token your_token_here
 git config --global core.editor "subl -w"
 ```
 
-#Shell
-
-Install z-shell
----------------
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 
 #Sublime Text
