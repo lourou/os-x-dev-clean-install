@@ -38,6 +38,16 @@ Set hostname
 ------------
 `sudo scutil --set HostName Joel`
 
+
+
+#Homebrew
+
+```bash
+brew install git ack wget curl redis memcached libmemcached colordiff imagemagick
+```
+
+
+
 #Git
 
 [Git Installer](http://code.google.com/p/git-osx-installer/downloads/list?can=3)
