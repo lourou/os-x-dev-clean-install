@@ -52,7 +52,9 @@ brew install git ack wget curl redis memcached libmemcached colordiff imagemagic
 
 Install z-shell
 ---------------
+```bash
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+```
 
 
 
