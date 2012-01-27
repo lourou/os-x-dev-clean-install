@@ -91,6 +91,11 @@ Keymap Settings
 ```
 
 
+Snippets
+--------
+```bash
+git clone git@github.com:bytestudios/sublime-snippets.git "/Users/Joel/Library/Application Support/Sublime Text 2/Packages/Byte"
+```
 
 
 
