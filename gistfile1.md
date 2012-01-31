@@ -193,7 +193,7 @@ Add Localhost to /etc/resolver
 -----------------------------------
 ```bash
 sudo mkdir -p /etc/resolver/ &&
-sudo echo 'nameserver 1' > /etc/resolver/build
+sudo echo 'nameserver 127.0.0.1' > /etc/resolver/build
 
 #ensure it works
 scutil --dns
