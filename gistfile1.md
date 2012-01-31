@@ -196,6 +196,9 @@ sudo -s &&
 mkdir -p /etc/resolver/ &&
 echo 'nameserver 127.0.0.1' > /etc/resolver/build
 
+#flush cache
+dscacheutil -flushcache
+
 #ensure it works
 scutil --dns
 ```
