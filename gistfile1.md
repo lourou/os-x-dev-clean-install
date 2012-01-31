@@ -177,7 +177,6 @@ Add DNS Domains
 -----------------
 ```bash
 mkdir -p /usr/local/etc/ &&
-echo "address=/dev/127.0.0.1" > /usr/local/etc/dnsmasq.conf &&
 echo "address=/build/127.0.0.1" >> /usr/local/etc/dnsmasq.conf && 
 echo "address=/stage/192.168.10.200" >> /usr/local/etc/dnsmasq.conf && 
 echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
@@ -190,16 +189,15 @@ sudo cp "/usr/local/Cellar/dnsmasq/2.57/uk.org.thekelleys.dnsmasq.plist" "/Libra
 sudo launchctl load -w "/Library/LaunchDaemons/uk.org.thekelleys.dnsmasq.plist"
 ```
 
-Add Local DNS, and Google Servers
+Add Localhost to /etc/resolver
 -----------------------------------
- ❯ System Preferences… ❯ Advanced… ❯ DNS
+```bash
+sudo mkdir -p /etc/resolver/ &&
+sudo echo 'nameserver 1' > /etc/resolver/build
 
+#ensure it works
+scutil --dns
 ```
-127.0.0.1
-8.8.4.4
-8.8.8.8
-```
-
 
 
 Enable virtual hosts
