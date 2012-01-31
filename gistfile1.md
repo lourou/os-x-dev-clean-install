@@ -192,8 +192,9 @@ sudo launchctl load -w "/Library/LaunchDaemons/uk.org.thekelleys.dnsmasq.plist"
 Add Localhost to /etc/resolver
 -----------------------------------
 ```bash
-sudo mkdir -p /etc/resolver/ &&
-sudo echo 'nameserver 127.0.0.1' > /etc/resolver/build
+sudo -s &&
+mkdir -p /etc/resolver/ &&
+echo 'nameserver 127.0.0.1' > /etc/resolver/build
 
 #ensure it works
 scutil --dns
