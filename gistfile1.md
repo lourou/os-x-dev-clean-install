@@ -94,7 +94,7 @@ git clone git@github.com:bytestudios/sublime-snippets.git "/Users/Joel/Library/A
 
 
 
-#Homebrew
+#Homebrews
 
 ```bash
 brew install git ack wget curl redis memcached libmemcached colordiff imagemagick
