@@ -546,7 +546,7 @@ max_file_uploads = 20
 allow_url_fopen = On
 allow_url_include = Off
 default_socket_timeout = 60
-zend_extension="/usr/local/Cellar/xdebug/2.1.2/xdebug.so"
+zend_extension="/usr/local/Cellar/xdebug/2.1.3/xdebug.so"
 
 [Date]
 
