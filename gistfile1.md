@@ -437,7 +437,9 @@ XDebug
 ------
 
 
-
+```bash
+brew install https://raw.github.com/gist/1010716/4802f6a498168ffd45aeb8b94632c8e58069407d/autoconf.rb
+```
 
 
 ```bash
