@@ -229,7 +229,7 @@ subl "/etc/apache2/httpd.conf"
 Configure httpd.conf
 ---------------------
 
-```ini
+```bash
 ServerRoot "/usr"
 
 Listen 80
