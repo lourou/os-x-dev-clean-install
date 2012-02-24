@@ -50,6 +50,12 @@ Install Package Control
 import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
 ```
 
+Install Soda Theme
+----------------------
+```bash
+git clone git://github.com/buymeasoda/soda-theme.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Theme\ -\ Soda
+```
+
 Install Tomorrow Theme
 ----------------------
 ```bash
@@ -65,7 +71,7 @@ Settings
 	"color_scheme": "Packages/Color Scheme - Tomorrow/Tomorrow-Night-Eighties.tmTheme",
 	"draw_indent_guides": false,
 	"font_face": "Mensch",
-	"font_size": 16,
+	"font_size": 18,
 	"highlight_modified_tabs": true,
 	"show_tab_close_buttons": false,
 	"spell_check": false,
