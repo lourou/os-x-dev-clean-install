@@ -53,7 +53,7 @@ import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_p
 Install Tomorrow Theme
 ----------------------
 ```bash
-git clone git://github.com/ChrisKempson/TextMate-Tomorrow-Theme.git "~/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Tomorrow"
+git clone git://github.com/chriskempson/TextMate-Tomorrow-Theme.git "~/Library/Application Support/Sublime Text 2/Packages/Color Scheme - Tomorrow"
 ```
 
 Settings
