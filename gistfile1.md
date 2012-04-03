@@ -252,7 +252,7 @@ NameVirtualHost *:80
 ```
 
 
-Open apache config and replace lines
+Open apache config
 
 ```bash
 subl "/etc/apache2/httpd.conf"
