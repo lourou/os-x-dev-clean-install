@@ -33,6 +33,17 @@ Set hostname
 
 
 
+#Homebrews
+
+```bash
+/usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
+```
+
+```bash
+brew install git ack wget curl redis memcached libmemcached colordiff imagemagick
+```
+
+
 
 
 #Sublime Text
@@ -41,7 +52,7 @@ Add Sublime Text CLI
 --------------------
 
 ```bash
-ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"
+sudo mkdir -p "/usr/local/bin/ && ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"
 ```
 
 Install Package Control
@@ -95,15 +106,6 @@ Snippets
 --------
 ```bash
 git clone git@github.com:bytestudios/sublime-snippets.git "/Users/Joel/Library/Application Support/Sublime Text 2/Packages/Byte"
-```
-
-
-
-
-#Homebrews
-
-```bash
-brew install git ack wget curl redis memcached libmemcached colordiff imagemagick
 ```
 
 
