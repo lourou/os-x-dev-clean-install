@@ -133,7 +133,7 @@ git clone git://github.com/buymeasoda/soda-theme.git ~/Library/Application\ Supp
 Install Tomorrow Theme
 ----------------------
 ```bash
-git clone git://github.com/chriskempson/TextMate-Tomorrow-Theme.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Color\ Scheme\ -\ Tomorrow
+git clone git://github.com/chriskempson/textmate-tomorrow-theme.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Color\ Scheme\ -\ Tomorrow
 ```
 
 Settings
