@@ -16,6 +16,42 @@ Apps
 * [LiveReload](http://livereload.com)
 * [LiveReload Extensions](http://help.livereload.com/kb/general-use/browser-extensions)
 
+
+#Xcode Command Line Tools
+
+Xcode > Preferences > Downloads > Command Line Tools
+
+
+
+#Shell
+
+Install z-shell
+---------------
+```bash
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+```
+
+Update .zshrc
+-------------
+```bash
+subl ~/.zshrc
+```
+
+
+```bash
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="kphoen"
+plugins=(git osx rails ruby github node npm brew)
+source $ZSH/oh-my-zsh.sh
+export PHP_AUTOCONF=/usr/local/Cellar/autoconf/2.13/bin/autoconf213
+export PHP_AUTOHEADER=/usr/local/Cellar/autoconf/2.13/bin/autoheader213
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/X11/bin
+```
+
+
+
+
+
 ```bash
 #Disable window animations
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
@@ -30,6 +66,7 @@ defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 Set hostname
 ------------
 `sudo scutil --set HostName Work`
+
 
 
 
@@ -110,30 +147,6 @@ git clone git@github.com:bytestudios/sublime-snippets.git "/Users/Joel/Library/A
 
 
 
-#Shell
-
-Install z-shell
----------------
-```bash
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-```
-
-Update .zshrc
--------------
-```bash
-subl ~/.zshrc
-```
-
-
-```bash
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="kphoen"
-plugins=(git osx rails ruby github node npm brew)
-source $ZSH/oh-my-zsh.sh
-export PHP_AUTOCONF=/usr/local/Cellar/autoconf/2.13/bin/autoconf213
-export PHP_AUTOHEADER=/usr/local/Cellar/autoconf/2.13/bin/autoheader213
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/X11/bin
-```
 
 
 
