@@ -82,6 +82,32 @@ brew install git ack wget curl redis memcached libmemcached colordiff imagemagic
 
 
 
+#Git
+
+Setup Github
+------------
+```bash
+ssh-keygen -t rsa -C "saetia@gmail.com"
+
+#copy ssh key to github.com
+subl ~/.ssh/id_rsa.pub
+
+#test connection
+ssh -T git@github.com
+
+#set git config values
+git config --global user.name "Joel Glovacki"
+git config --global user.email "saetia@gmail.com"
+git config --global github.user saetia
+git config --global github.token your_token_here
+git config --global core.editor "subl -w"
+```
+
+
+
+
+
+
 
 #Sublime Text
 
@@ -148,28 +174,6 @@ git clone git@github.com:bytestudios/sublime-snippets.git "/Users/Joel/Library/A
 
 
 
-
-
-#Git
-
-Setup Github
-------------
-```bash
-ssh-keygen -t rsa -C "saetia@gmail.com"
-
-#copy ssh key to github.com
-subl ~/.ssh/id_rsa.pub
-
-#test connection
-ssh -T git@github.com
-
-#set git config values
-git config --global user.name "Joel Glovacki"
-git config --global user.email "saetia@gmail.com"
-git config --global github.user saetia
-git config --global github.token your_token_here
-git config --global core.editor "subl -w"
-```
 
 
 
