@@ -19,7 +19,7 @@ Apps
 
 #Xcode Command Line Tools
 
-Xcode > Preferences > Downloads > Command Line Tools
+`Xcode > Preferences > Downloads > Command Line Tools`
 
 
 
