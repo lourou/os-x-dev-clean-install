@@ -25,7 +25,7 @@ Apps
 
 #Shell
 
-Install z-shell
+Switch to z-shell
 ---------------
 ```bash
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
