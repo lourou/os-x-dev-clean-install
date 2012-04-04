@@ -43,8 +43,6 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="kphoen"
 plugins=(git osx rails ruby github node npm brew)
 source $ZSH/oh-my-zsh.sh
-export PHP_AUTOCONF=/usr/local/Cellar/autoconf/2.13/bin/autoconf213
-export PHP_AUTOHEADER=/usr/local/Cellar/autoconf/2.13/bin/autoheader213
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/X11/bin
 ```
 
@@ -467,11 +465,11 @@ XDebug
 brew install https://github.com/josegonzalez/homebrew-php/raw/master/Formula/xdebug-php.rb
 ```
 
-MySQL, PostgreSQL & PHP
+MySQL
 -----
 
 ```bash
-brew install https://github.com/josegonzalez/homebrew-php/raw/master/Formula/php.rb --with-apache --with-mysql --with-pgsql
+brew install mysql
 ```
 
 MySQL Settings
@@ -502,7 +500,6 @@ Configure php.ini
 ---------------------
 
 ```bash
-
 #create php.ini
 sudo touch /etc/php.ini && subl /etc/php.ini
 ```
