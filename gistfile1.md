@@ -328,7 +328,7 @@ LoadModule speling_module libexec/apache2/mod_speling.so
 LoadModule userdir_module libexec/apache2/mod_userdir.so
 LoadModule alias_module libexec/apache2/mod_alias.so
 LoadModule rewrite_module libexec/apache2/mod_rewrite.so
-LoadModule php5_module /usr/local/Cellar/php/5.3.8/libexec/apache2/libphp5.so
+LoadModule php5_module libexec/apache2/libphp5.so
 
 <IfModule !mpm_netware_module>
 <IfModule !mpm_winnt_module>
@@ -503,7 +503,9 @@ Configure php.ini
 ---------------------
 
 ```bash
-subl "/usr/local/Cellar/php/5.3.8/etc/php.ini"
+
+#create php.ini
+sudo touch /etc/php.ini && subl /etc/php.ini
 ```
 
 ```ini
