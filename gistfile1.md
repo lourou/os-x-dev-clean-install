@@ -50,11 +50,13 @@ export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/lo
 
 
 
+# OS X Preferences
+
 ```bash
 #Disable window animations
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
-#Enable key repeat
+#Enable repeat on keydown
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 #Disable webkit homepage
@@ -68,7 +70,8 @@ Set hostname
 
 
 
-#Homebrews
+#Homebrew
+
 
 ```bash
 /usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
