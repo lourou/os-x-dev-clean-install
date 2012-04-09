@@ -514,7 +514,7 @@ sudo touch /etc/php.ini && subl /etc/php.ini
 
 engine = On
 short_open_tag = On
-asp_tags = On
+asp_tags = Off
 precision = 14
 y2k_compliance = On
 output_buffering = 4096
