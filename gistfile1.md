@@ -104,6 +104,9 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 #Show the ~/Library folder
 chflags nohidden ~/Library
 
+#Disable ping dropdowns
+defaults write com.apple.iTunes hide-ping-dropdown true
+
 ```
 
 Set hostname
