@@ -349,6 +349,7 @@ LoadModule expires_module libexec/apache2/mod_expires.so
 LoadModule headers_module libexec/apache2/mod_headers.so
 LoadModule ident_module libexec/apache2/mod_ident.so
 LoadModule usertrack_module libexec/apache2/mod_usertrack.so
+#LoadModule unique_id_module libexec/apache2/mod_unique_id.so
 LoadModule setenvif_module libexec/apache2/mod_setenvif.so
 LoadModule version_module libexec/apache2/mod_version.so
 LoadModule proxy_module libexec/apache2/mod_proxy.so
@@ -376,7 +377,9 @@ LoadModule speling_module libexec/apache2/mod_speling.so
 LoadModule userdir_module libexec/apache2/mod_userdir.so
 LoadModule alias_module libexec/apache2/mod_alias.so
 LoadModule rewrite_module libexec/apache2/mod_rewrite.so
+#LoadModule perl_module libexec/apache2/mod_perl.so
 LoadModule php5_module libexec/apache2/libphp5.so
+#LoadModule hfs_apple_module libexec/apache2/mod_hfs_apple.so
 
 <IfModule !mpm_netware_module>
 <IfModule !mpm_winnt_module>
