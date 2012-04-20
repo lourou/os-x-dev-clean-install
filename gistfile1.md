@@ -196,6 +196,7 @@ Settings
 	"font_size": 18,
 	"highlight_modified_tabs": true,
 	"show_tab_close_buttons": false,
+	"tab_size": 2,
 	"spell_check": false,
 	"theme": "Soda Light.sublime-theme",
 	"word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?"
