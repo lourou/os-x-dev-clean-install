@@ -209,7 +209,9 @@ Key Bindings
 
 ```json
 [
-	{ "keys": ["super+b"], "command": "expand_selection", "args": {"to": "brackets"} }
+	{ "keys": ["super+b"], "command": "expand_selection", "args": {"to": "brackets"} },
+	{ "keys": ["super+f"], "command": "show_panel", "args": {"panel": "replace"} },
+	{ "keys": ["super+alt+f"], "command": "show_panel", "args": {"panel": "find"} }
 ]
 ```
 
