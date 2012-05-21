@@ -34,33 +34,7 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 Update .zshrc
 -------------
 ```bash
-subl ~/.zshrc
-```
-
-
-```bash
-ZSH=$HOME/.oh-my-zsh
-
-export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
-export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
-export LESS_TERMCAP_me=$'\E[0m'           # end mode
-export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
-export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
-export LESS_TERMCAP_ue=$'\E[0m'           # end underline
-export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
-
-ZSH_THEME="kphoen"
-
-alias zshconfig="subl ~/.zshrc"
-alias ohmyzsh="subl ~/.oh-my-zsh"
-
-COMPLETION_WAITING_DOTS="true"
-
-plugins=(git osx rails ruby github node rbenv npm brew byte)
-
-source $ZSH/oh-my-zsh.sh
-
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11/bin
+wget https://raw.github.com/gist/2764210/94ad3b85c8f9d61ed08d6e7f7b65e98277a07c1a/.zshrc -O ~/.zshrc
 ```
 
 
