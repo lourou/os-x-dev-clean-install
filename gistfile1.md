@@ -4,7 +4,7 @@
 
 Apps
 ----
-[Webkit](http://webkit.org)
+`[Webkit](http://webkit.org)`
 [Chrome](http://google.com/chrome)
 [Firefox](http://firefox.com)
 [iTerm](http://iterm2.com)
