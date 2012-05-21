@@ -4,17 +4,17 @@
 
 Apps
 ----
-* [Webkit](http://webkit.org)
-* [Chrome](http://google.com/chrome)
-* [Firefox](http://firefox.com)
-* [iTerm](http://iterm2.com)
-* [Transmit](http://panic.com/transmit)
-* [Coda](http://panic.com/coda)
-* [Sublime Text](http://www.sublimetext.com/dev)
-* [Sequel Pro](http://nightly.sequelpro.com)
-* [1Password](https://agilebits.com/onepassword/mac)
-* [LiveReload](http://livereload.com)
-* [LiveReload Extensions](http://help.livereload.com/kb/general-use/browser-extensions)
+[Webkit](http://webkit.org)
+[Chrome](http://google.com/chrome)
+[Firefox](http://firefox.com)
+[iTerm](http://iterm2.com)
+[Transmit](http://panic.com/transmit)
+[Coda](http://panic.com/coda)
+[Sublime Text](http://www.sublimetext.com/dev)
+[Sequel Pro](http://nightly.sequelpro.com)
+[1Password](https://agilebits.com/onepassword/mac)
+[LiveReload](http://livereload.com) 
+[LiveReload Extensions](http://help.livereload.com/kb/general-use/browser-extensions)
 
 
 #Xcode Command Line Tools
