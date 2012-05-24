@@ -114,7 +114,7 @@ Set hostname
 ```
 
 ```bash
-brew install git ack wget curl redis memcached libmemcached colordiff imagemagick
+brew install git ack wget curl redis memcached libmemcached colordiff imagemagick icoutils
 ```
 
 
