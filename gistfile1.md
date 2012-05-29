@@ -146,6 +146,13 @@ git config --global color.ui true
 
 
 
+#Coda
+
+Install markdown support
+-------------------------
+```bash
+git clone https://github.com/bobthecow/Markdown.mode.git ~/Library/Application\ Support/Coda\ 2/modes/Markdown.mode
+```
 
 
 #Sublime Text
