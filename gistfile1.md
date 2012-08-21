@@ -832,4 +832,32 @@ sudo apachectl graceful
 ```
 
 
+
+PHPUnit
+-------
+
+```bash
+cd /usr/lib/php &&
+sudo php install-pear-nozlib.phar &&
+sudo pear channel-update pear.php.net &&
+sudo pecl channel-update pecl.php.net &&
+sudo pear upgrade-all &&
+sudo pear channel-discover pear.phpunit.de  &&
+sudo pear channel-discover components.ez.no &&
+sudo pear channel-discover pear.symfony-project.com &&
+sudo pear install phpunit/PHPUnit &&
+sudo pear install phpunit/phpcpd &&
+sudo pear install PHP_CodeSniffer
+```
+
+Guard
+-----
+
+```bash
+gem install growl guard guard-phpunit
+```
+
+
+
+
 ![aww yeah](http://i.imgur.com/AmFax.gif)
