@@ -31,6 +31,19 @@ Switch to z-shell
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 ```
 
+
+#Homebrew
+
+
+```bash
+ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+```
+
+```bash
+brew install git ack wget curl redis memcached libmemcached colordiff imagemagick icoutils
+```
+
+
 Update .zshrc
 -------------
 ```bash
@@ -106,16 +119,6 @@ Set hostname
 
 
 
-#Homebrew
-
-
-```bash
-/usr/bin/ruby -e "$(/usr/bin/curl -fksSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"
-```
-
-```bash
-brew install git ack wget curl redis memcached libmemcached colordiff imagemagick icoutils
-```
 
 
 
