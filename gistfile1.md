@@ -22,38 +22,6 @@ Apps
 `Xcode > Preferences > Downloads > Command Line Tools`
 
 
-
-#Shell
-
-Switch to z-shell
----------------
-```bash
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-```
-
-
-#Homebrew
-
-
-```bash
-ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
-```
-
-```bash
-brew install git ack wget curl redis memcached libmemcached colordiff imagemagick icoutils
-```
-
-
-Update .zshrc
--------------
-```bash
-wget https://raw.github.com/gist/2764210/94ad3b85c8f9d61ed08d6e7f7b65e98277a07c1a/.zshrc -O ~/.zshrc
-```
-
-
-
-
-
 # OS X Preferences
 
 ```bash
@@ -111,6 +79,41 @@ chflags nohidden ~/Library
 defaults write com.apple.iTunes hide-ping-dropdown true
 
 ```
+
+
+
+#Shell
+
+Switch to z-shell
+---------------
+```bash
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+```
+
+
+#Homebrew
+
+
+```bash
+ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
+```
+
+```bash
+brew install git ack wget curl redis memcached libmemcached colordiff imagemagick icoutils
+```
+
+
+Update .zshrc
+-------------
+```bash
+wget https://raw.github.com/gist/2764210/94ad3b85c8f9d61ed08d6e7f7b65e98277a07c1a/.zshrc -O ~/.zshrc
+```
+
+
+
+
+
+
 
 Set hostname
 ------------
