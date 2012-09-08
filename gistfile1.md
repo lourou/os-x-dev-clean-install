@@ -15,7 +15,7 @@ Apps
 [1Password](https://agilebits.com/onepassword/mac),
 [LiveReload](http://livereload.com),
 [LiveReload Extensions](http://help.livereload.com/kb/general-use/browser-extensions)
-
+[XQuartz](http://xquartz.macosforge.org/trac/wiki)
 
 #Xcode Command Line Tools
 
