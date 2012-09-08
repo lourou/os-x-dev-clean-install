@@ -36,7 +36,7 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 
 
 ```bash
-ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
 ```
 
 ```bash
