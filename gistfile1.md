@@ -1,9 +1,4 @@
-#Mac OS X
-
 [Mensch coding font](http://robey.lag.net/2010/06/21/mensch-font.html)
-
-Apps
-----
 [Webkit](http://webkit.org),
 [Chrome](http://google.com/chrome),
 [Firefox](http://firefox.com),
