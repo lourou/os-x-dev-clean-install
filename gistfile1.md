@@ -79,6 +79,9 @@ chflags nohidden ~/Library
 #Disable ping dropdowns
 defaults write com.apple.iTunes hide-ping-dropdown true
 
+#Show absolute path in finder's title bar. 
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+
 ```
 
 
