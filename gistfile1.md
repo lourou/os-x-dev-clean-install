@@ -1,4 +1,4 @@
-[Mensch coding font](http://robey.lag.net/2010/06/21/mensch-font.html)
+[Mensch font](http://robey.lag.net/2010/06/21/mensch-font.html), 
 [Webkit](http://webkit.org),
 [Chrome](http://google.com/chrome),
 [Firefox](http://firefox.com),
