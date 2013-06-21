@@ -850,9 +850,8 @@ sudo pear upgrade-all &&
 sudo pear channel-discover pear.phpunit.de  &&
 sudo pear channel-discover components.ez.no &&
 sudo pear channel-discover pear.symfony-project.com &&
-sudo pear install phpunit/PHPUnit &&
-sudo pear install phpunit/phpcpd &&
-sudo pear install PHP_CodeSniffer
+sudo pear channel-discover pear.symfony.com &&
+sudo pear install --alldeps phpunit/PHPUnit
 ```
 
 Guard
