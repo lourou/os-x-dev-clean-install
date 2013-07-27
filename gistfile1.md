@@ -106,6 +106,9 @@ Update .zshrc
 -------------
 ```bash
 wget https://raw.github.com/gist/2764210/94ad3b85c8f9d61ed08d6e7f7b65e98277a07c1a/.zshrc -O ~/.zshrc
+
+#syntax highlighting
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins
 ```
 
 
