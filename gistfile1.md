@@ -1,4 +1,5 @@
 [Mensch font](http://robey.lag.net/2010/06/21/mensch-font.html), 
+[Source Code Pro](http://sourceforge.net/projects/sourcecodepro.adobe/files/),
 [Webkit](http://webkit.org),
 [Chrome](http://google.com/chrome),
 [Firefox](http://firefox.com),
@@ -145,13 +146,9 @@ git config --global user.name "Joel Glovacki"
 git config --global user.email "saetia@gmail.com"
 git config --global github.user saetia
 git config --global github.token your_token_here
-
 git config --global core.editor "subl -w"
 git config --global color.ui true
 ```
-
-
-
 
 
 #Coda
@@ -167,27 +164,21 @@ git clone https://github.com/bobthecow/Markdown.mode.git ~/Library/Application\ 
 
 Add Sublime Text CLI
 --------------------
-
 ```bash
 sudo mkdir -p "/usr/local/bin/" && ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"
 ```
 
-Install Package Control
------------------------
-```python
-import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'
-```
 
 Install Soda Theme
 ----------------------
 ```bash
-git clone git://github.com/buymeasoda/soda-theme.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Theme\ -\ Soda
+git clone git://github.com/buymeasoda/soda-theme.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Theme\ -\ Soda
 ```
 
 Install Tomorrow Theme
 ----------------------
 ```bash
-git clone git://github.com/chriskempson/textmate-tomorrow-theme.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Color\ Scheme\ -\ Tomorrow
+git clone git://github.com/chriskempson/textmate-tomorrow-theme.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Color\ Scheme\ -\ Tomorrow
 ```
 
 Settings
@@ -198,12 +189,17 @@ Settings
 	"close_windows_when_empty": true,
 	"color_scheme": "Packages/Color Scheme - Tomorrow/Tomorrow-Night-Eighties.tmTheme",
 	"draw_indent_guides": false,
-	"font_face": "Mensch",
-	"font_size": 18,
+	"font_face": "Source Code Pro",
+	"font_size": 22.0,
 	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"show_full_path": true,
 	"show_tab_close_buttons": false,
-	"tab_size": 2,
 	"spell_check": false,
+	"tab_size": 2,
 	"theme": "Soda Light.sublime-theme",
 	"word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?"
 }
@@ -225,23 +221,8 @@ Key Bindings
 Snippets
 --------
 ```bash
-git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Byte
+git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Byte
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
