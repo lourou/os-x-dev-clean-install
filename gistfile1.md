@@ -35,8 +35,6 @@ defaults write com.apple.finder ShowPathbar -bool true
 #Show Status bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
-#Show indicator lights for open applications in the Dock
-defaults write com.apple.dock show-process-indicators -bool true
 
 #Enable AirDrop over Ethernet and on unsupported Macs running Lion
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
