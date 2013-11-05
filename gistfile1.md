@@ -72,17 +72,6 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
 ```
 
-###Xcode Developer Tools
-
----
-
-```bash
-xcode-select --install
-```
-
-
-
-
 ###Shell
 
 ---
