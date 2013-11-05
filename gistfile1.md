@@ -76,9 +76,11 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 ```
 
 
----
+
 
 ###Shell
+
+---
 
 ####Switch to z-shell
 
