@@ -14,11 +14,6 @@
 [LiveReload Extensions](http://help.livereload.com/kb/general-use/browser-extensions),
 [XQuartz](http://xquartz.macosforge.org/trac/wiki)
 
-#Xcode Command Line Tools
-
-`Xcode > Preferences > Downloads > Command Line Tools`
-
-
 # OS X Preferences
 
 ```bash
