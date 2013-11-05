@@ -35,8 +35,7 @@ defaults write com.apple.finder ShowPathbar -bool true
 #Show Status bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
-
-#Enable AirDrop over Ethernet and on unsupported Macs running Lion
+#Enable AirDrop over Ethernet and on unsupported Macs
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 #Set a blazingly fast keyboard repeat rate
