@@ -115,9 +115,11 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/cu
 `sudo scutil --set HostName Work`
 
 
----
+
 
 ###Git
+
+---
 
 ####Setup Github
 
@@ -139,9 +141,9 @@ git config --global core.editor "subl -w"
 git config --global color.ui true
 ```
 
----
-
 ###Coda
+
+---
 
 ####Install markdown support
 
@@ -149,9 +151,9 @@ git config --global color.ui true
 git clone https://github.com/bobthecow/Markdown.mode.git ~/Library/Application\ Support/Coda\ 2/modes/Markdown.mode
 ```
 
----
-
 ###Sublime Text
+
+---
 
 ####Add Sublime Text CLI
 
@@ -221,6 +223,8 @@ git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\
 
 
 ###Server
+
+---
 
 ####Install dnsmasq
 
