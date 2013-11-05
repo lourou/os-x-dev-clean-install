@@ -14,7 +14,7 @@
 [LiveReload Extensions](http://help.livereload.com/kb/general-use/browser-extensions),
 [XQuartz](http://xquartz.macosforge.org/trac/wiki)
 
-# OS X Preferences
+### OS X Preferences
 
 ```bash
 #Disable window animations
@@ -77,16 +77,16 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
 
 
-#Shell
+###Shell
 
-Switch to z-shell
----------------
+####Switch to z-shell
+
 ```bash
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 ```
 
 
-#Homebrew
+####Homebrew
 
 
 ```bash
@@ -98,8 +98,8 @@ brew install ack wget redis memcached libmemcached colordiff imagemagick icoutil
 ```
 
 
-Update .zshrc
--------------
+####Update .zshrc
+
 ```bash
 wget https://gist.github.com/saetia/2764210/raw/ef18e4013ed7d11e400527268bfaff0b7b0e4a70/.zshrc -O ~/.zshrc
 
@@ -107,26 +107,16 @@ wget https://gist.github.com/saetia/2764210/raw/ef18e4013ed7d11e400527268bfaff0b
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins
 ```
 
+####Set hostname
 
-
-
-
-
-
-Set hostname
-------------
 `sudo scutil --set HostName Work`
 
 
 
+###Git
 
+####Setup Github
 
-
-
-#Git
-
-Setup Github
-------------
 ```bash
 ssh-keygen -t rsa -C "saetia@gmail.com"
 
@@ -146,38 +136,38 @@ git config --global color.ui true
 ```
 
 
-#Coda
+###Coda
 
-Install markdown support
--------------------------
+####Install markdown support
+
 ```bash
 git clone https://github.com/bobthecow/Markdown.mode.git ~/Library/Application\ Support/Coda\ 2/modes/Markdown.mode
 ```
 
 
-#Sublime Text
+###Sublime Text
 
-Add Sublime Text CLI
---------------------
+####Add Sublime Text CLI
+
 ```bash
 sudo mkdir -p "/usr/local/bin/" && ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"
 ```
 
 
-Install Soda Theme
-----------------------
+####Install Soda Theme
+
 ```bash
 git clone git://github.com/buymeasoda/soda-theme.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Theme\ -\ Soda
 ```
 
-Install Tomorrow Theme
-----------------------
+####Install Tomorrow Theme
+
 ```bash
 git clone git://github.com/chriskempson/textmate-tomorrow-theme.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Color\ Scheme\ -\ Tomorrow
 ```
 
-Settings
---------
+####Settings
+
 
 ```json
 {
@@ -201,8 +191,8 @@ Settings
 
 ```
 
-Key Bindings
-------------
+####Key Bindings
+
 
 ```json
 [
@@ -213,8 +203,8 @@ Key Bindings
 ```
 
 
-Snippets
---------
+####Snippets
+
 ```bash
 git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Byte
 ```
@@ -224,16 +214,16 @@ git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\
 
 
 
-#Server
+###Server
 
-Install dnsmasq
----------------
+####Install dnsmasq
+
 ```bash
 brew install dnsmasq
 ```
 
-Add DNS Domains
------------------
+####Add DNS Domains
+
 ```bash
 mkdir -p /usr/local/etc/ &&
 echo "address=/build/127.0.0.1" >> /usr/local/etc/dnsmasq.conf && 
@@ -241,15 +231,15 @@ echo "address=/stage/192.168.10.200" >> /usr/local/etc/dnsmasq.conf &&
 echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
 ```
 
-Enable dnsmasq daemon
--------------
+####Enable dnsmasq daemon
+
 ```bash
 sudo cp "/usr/local/Cellar/dnsmasq/2.63/homebrew.mxcl.dnsmasq.plist" "/Library/LaunchDaemons" &&
 sudo launchctl load -w "/Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist"
 ```
 
-Add Localhost to /etc/resolver
------------------------------------
+####Add Localhost to /etc/resolver
+
 ```bash
 sudo -s
 sudo mkdir -p /etc/resolver
@@ -263,8 +253,8 @@ scutil --dns
 ```
 
 
-Enable virtual hosts
---------------------
+####Enable virtual hosts
+
 ```bash
 subl "/etc/apache2/users/$USER.conf"
 ```
@@ -286,15 +276,15 @@ NameVirtualHost *:80
 
 
 
-Apache Config
----------------------
+####Apache Config
+
 
 ```bash
 wget https://gist.github.com/saetia/6096745/raw/8a4b8a752f26e3841fa2d91586e70723006e2f12/httpd.conf -O /etc/apache2/httpd.conf
 ```
 
-Enable centOS style /var/www/vhosts
------------------------------------
+####Enable centOS style /var/www/vhosts for local dev
+
 
 ```bash
 sudo mkdir -p /var/www/ &&
@@ -305,25 +295,22 @@ sudo ln -s ~/Sites /var/www/vhosts
 
 
 
-XDebug
-------
+####XDebug
+
 
 
 ```bash
 brew install https://github.com/josegonzalez/homebrew-php/raw/master/Formula/xdebug-php.rb
 ```
 
-MySQL
------
+####MySQL
+
 
 ```bash
 brew install mysql
 ```
 
-MySQL Settings
---------------
-
-
+####MySQL Settings
 
 
 ```bash
@@ -344,24 +331,23 @@ mysql.server start
 
 
 
-Configure php.ini
----------------------
+####Configure php.ini
+
 
 ```bash
 wget https://gist.github.com/saetia/6096739/raw/837b02be80f31edf73767e9b3d0ba2f765ee4be4/php.ini -O /etc/php.ini
 ```
 
 
-Restart apache
---------------
+####Restart apache
+
 ```bash
 sudo apachectl graceful
 ```
 
 
 
-PHPUnit
--------
+####PHPUnit
 
 ```bash
 cd /usr/lib/php &&
@@ -377,8 +363,8 @@ sudo pear install --alldeps phpunit/PHPUnit &&
 pear install phpunit/phpunit_selenium
 ```
 
-Guard
------
+####Guard
+
 
 ```bash
 gem install growl guard guard-phpunit
