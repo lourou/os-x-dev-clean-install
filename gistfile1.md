@@ -16,6 +16,8 @@
 
 ### OS X Preferences
 
+---
+
 ```bash
 #Disable window animations
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
