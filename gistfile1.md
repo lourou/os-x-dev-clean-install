@@ -101,7 +101,7 @@ brew install ack wget redis memcached libmemcached colordiff imagemagick icoutil
 Update .zshrc
 -------------
 ```bash
-wget https://raw.github.com/gist/2764210/94ad3b85c8f9d61ed08d6e7f7b65e98277a07c1a/.zshrc -O ~/.zshrc
+wget https://gist.github.com/saetia/2764210/raw/ef18e4013ed7d11e400527268bfaff0b7b0e4a70/.zshrc -O ~/.zshrc
 
 #syntax highlighting
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins
