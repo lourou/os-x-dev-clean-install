@@ -228,6 +228,16 @@ git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\
 ```
 
 
+###Ruby Gems
+```
+gem install pygmentize
+
+```
+
+###Node Packages
+```
+npm install -g coffeescript
+```
 
 
 
