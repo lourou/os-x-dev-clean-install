@@ -258,10 +258,10 @@ sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist &&
 sudo mkdir -v /etc/resolver &&
 sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/build'
 
-//flush cache
+#flush cache
 dscacheutil -flushcache
 
-//ensure it works
+#ensure it works
 scutil --dns
 ```
 
