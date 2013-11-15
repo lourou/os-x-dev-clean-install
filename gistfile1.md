@@ -247,32 +247,18 @@ npm install -g coffeescript
 
 ---
 
-####Install dnsmasq
+####Install dnsmasq, Add DNS Domains, Enable dnsmasq daemon
 
 ```bash
-brew install dnsmasq
+brew install dnsmasq && 
+mkdir -pv $(brew --prefix)/etc/ &&
+echo 'address=/.build/127.0.0.1' > $(brew --prefix)/etc/dnsmasq.conf &&
+sudo cp -v $(brew --prefix dnsmasq)/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons &&
+sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist &&
+sudo mkdir -v /etc/resolver &&
+sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/build'
 ```
 
-####Add DNS Domains
-
-```bash
-mkdir -p /usr/local/etc/ &&
-echo "address=/build/127.0.0.1" >> /usr/local/etc/dnsmasq.conf && 
-echo "address=/stage/192.168.10.200" >> /usr/local/etc/dnsmasq.conf && 
-echo "listen-address=127.0.0.1" >> /usr/local/etc/dnsmasq.conf
-```
-
-####Enable dnsmasq daemon
-
-```bash
-sudo cp "/usr/local/Cellar/dnsmasq/2.63/homebrew.mxcl.dnsmasq.plist" "/Library/LaunchDaemons" &&
-sudo launchctl load -w "/Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist"
-```
-
-####Add Localhost to /etc/resolver
-
-```bash
-echo 'nameserver 127.0.0.1' | sudo tee -a /etc/resolver/build
 
 #flush cache
 dscacheutil -flushcache
