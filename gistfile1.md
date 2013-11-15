@@ -256,7 +256,7 @@ echo 'address=/.build/127.0.0.1' > $(brew --prefix)/etc/dnsmasq.conf &&
 sudo cp -v $(brew --prefix dnsmasq)/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons &&
 sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist &&
 sudo mkdir -v /etc/resolver &&
-sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/build'
+sudo zsh -c 'echo "nameserver 127.0.0.1" > /etc/resolver/build'
 
 #flush cache
 dscacheutil -flushcache
