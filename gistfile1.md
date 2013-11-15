@@ -257,15 +257,15 @@ sudo cp -v $(brew --prefix dnsmasq)/homebrew.mxcl.dnsmasq.plist /Library/LaunchD
 sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist &&
 sudo mkdir -v /etc/resolver &&
 sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/build'
-```
 
-
-#flush cache
+//flush cache
 dscacheutil -flushcache
 
-#ensure it works
+//ensure it works
 scutil --dns
 ```
+
+
 
 
 ####Enable virtual hosts
