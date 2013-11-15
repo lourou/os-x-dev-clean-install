@@ -272,9 +272,7 @@ sudo launchctl load -w "/Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist"
 ####Add Localhost to /etc/resolver
 
 ```bash
-sudo -s
-sudo mkdir -p /etc/resolver
-sudo echo 'nameserver 127.0.0.1' > /etc/resolver/build
+echo 'nameserver 127.0.0.1' | sudo tee -a /etc/resolver/build
 
 #flush cache
 dscacheutil -flushcache
