@@ -96,7 +96,7 @@ ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
 ```
 
 ```bash
-brew install ack wget redis memcached libmemcached colordiff imagemagick icoutils
+brew install jpegoptim pngcrush ack wget redis memcached libmemcached colordiff imagemagick icoutils
 ```
 
 
