@@ -271,7 +271,7 @@ scutil --dns
 ####Enable virtual hosts
 
 ```bash
-subl "/etc/apache2/users/$USER.conf"
+sudo touch "/etc/apache2/users/$USER.conf" && subl "/etc/apache2/users/$USER.conf"
 ```
 
 ```bash
