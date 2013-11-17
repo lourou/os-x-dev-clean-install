@@ -272,7 +272,7 @@ scutil --dns
 
 This will allow you to serve folders under ~/Sites/ as websites. 
 
-* Sites
+* ~/Sites
   * hello.com
     * httpdocs
       * index.html
