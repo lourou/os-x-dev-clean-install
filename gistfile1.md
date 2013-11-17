@@ -249,6 +249,8 @@ npm install -g coffeescript
 
 ####Install dnsmasq, Add DNS Domains, Enable dnsmasq daemon
 
+This will route requests to any url ending in **.build** back to your own computer. The goal is to use urls like http://example.com.build for development while you work on http://example.com
+
 ```bash
 brew install dnsmasq && 
 mkdir -pv $(brew --prefix)/etc/ &&
@@ -273,11 +275,11 @@ scutil --dns
 This will allow you to serve folders under ~/Sites/ as websites. 
 
 * ~/Sites
-  * hello.com
+  * example.com
     * httpdocs
       * index.html
 
-to access this site, visit http://hello.com.build
+to access this site, visit http://example.com.build
 
 ```bash
 sudo touch "/etc/apache2/users/$USER.conf" && subl "/etc/apache2/users/$USER.conf"
