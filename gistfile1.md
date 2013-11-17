@@ -270,6 +270,15 @@ scutil --dns
 
 ####Enable virtual hosts
 
+This will allow you to serve folders under ~/Sites/ as websites. 
+
+* Sites
+** hello.com
+*** httpdocs
+**** index.html
+
+to access this site, visit http://hello.com.build
+
 ```bash
 sudo touch "/etc/apache2/users/$USER.conf" && subl "/etc/apache2/users/$USER.conf"
 ```
