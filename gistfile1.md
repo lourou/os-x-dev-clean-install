@@ -270,7 +270,7 @@ npm install -g coffeescript
 
 
 
-###Server
+###Local Webserver
 
 ---
 
