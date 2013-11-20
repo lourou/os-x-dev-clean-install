@@ -153,7 +153,7 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/cu
 ssh-keygen -t rsa -C "saetia@gmail.com"
 
 #copy ssh key to github.com
-subl ~/.ssh/id_rsa.pub
+cat ~/.ssh/id_rsa.pub
 
 #test connection
 ssh -T git@github.com
