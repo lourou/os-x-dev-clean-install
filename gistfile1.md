@@ -250,7 +250,7 @@ git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\
 
 ---
 
-#### RVM
+#### Ruby version manager
 
 ```bash
 curl -L https://get.rvm.io | bash -s stable --rails
