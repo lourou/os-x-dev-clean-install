@@ -259,7 +259,7 @@ curl -L https://get.rvm.io | bash -s stable --rails
 
 #### Gems
 ```
-gem install pygmentize
+gem install pygmentize growl guard guard-phpunit
 ```
 
 
@@ -423,12 +423,6 @@ sudo pear install --alldeps phpunit/PHPUnit &&
 pear install phpunit/phpunit_selenium
 ```
 
-####Guard
-
-
-```bash
-gem install growl guard guard-phpunit
-```
 
 
 
