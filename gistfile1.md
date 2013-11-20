@@ -246,34 +246,41 @@ git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\
 
 
 
+### Ruby
 
+---
 
-###RVM
+#### RVM
 
 ```bash
 curl -L https://get.rvm.io | bash -s stable --rails
 ```
 
 
-###Ruby Gems
+#### Gems
 ```
 gem install pygmentize
 ```
 
-###Node Packages
+
+
+### Node
+
+---
+
+#### Packages
+
 ```
 npm install -g coffeescript
 ```
 
 
 
-
-
-###Local Webserver
+### Local Webserver
 
 ---
 
-####Install dnsmasq, Add DNS Domains, Enable dnsmasq daemon
+#### Install dnsmasq, Add DNS Domains, Enable dnsmasq daemon
 
 This will route requests to any url ending in **.build** back to your own computer. The goal is to use urls like http://example.com.build for development while you work on http://example.com
 
