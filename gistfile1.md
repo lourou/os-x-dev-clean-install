@@ -159,7 +159,8 @@ git config --global user.name "Joel Glovacki" &&
 git config --global user.email "saetia@gmail.com" &&
 git config --global github.user saetia && 
 git config --global core.editor "subl -w" &&
-git config --global color.ui true
+git config --global color.ui true &&
+git config --global push.default simple
 
 #token
 git config --global github.token your_token_here
