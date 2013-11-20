@@ -159,12 +159,14 @@ cat ~/.ssh/id_rsa.pub
 ssh -T git@github.com
 
 #set git config values
-git config --global user.name "Joel Glovacki"
-git config --global user.email "saetia@gmail.com"
-git config --global github.user saetia
-git config --global github.token your_token_here
-git config --global core.editor "subl -w"
+git config --global user.name "Joel Glovacki" && 
+git config --global user.email "saetia@gmail.com" &&
+git config --global github.user saetia && 
+git config --global core.editor "subl -w" &&
 git config --global color.ui true
+
+#token
+git config --global github.token your_token_here
 ```
 
 ###Coda
