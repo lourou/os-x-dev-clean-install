@@ -258,7 +258,6 @@ curl -L https://get.rvm.io | bash -s stable --rails
 ###Ruby Gems
 ```
 gem install pygmentize
-
 ```
 
 ###Node Packages
