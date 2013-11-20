@@ -25,6 +25,9 @@ defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 #Enable repeat on keydown
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+#Disable ext change warning
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
 #Disable webkit homepage
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 
