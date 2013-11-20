@@ -311,7 +311,8 @@ This will allow you to serve folders under ~/Sites/ as websites.
 to access this site, visit http://example.com.build
 
 ```bash
-sudo touch "/etc/apache2/users/$USER.conf" && subl "/etc/apache2/users/$USER.conf"
+sudo touch "/etc/apache2/users/$USER.conf"
+sudo subl "/etc/apache2/users/$USER.conf"
 ```
 
 ```bash
@@ -335,7 +336,7 @@ NameVirtualHost *:80
 
 
 ```bash
-wget https://gist.github.com/saetia/6096745/raw/8a4b8a752f26e3841fa2d91586e70723006e2f12/httpd.conf -O /etc/apache2/httpd.conf
+sudo wget https://gist.github.com/saetia/6096745/raw/8a4b8a752f26e3841fa2d91586e70723006e2f12/httpd.conf -O /etc/apache2/httpd.conf
 ```
 
 ####Enable centOS style /var/www/vhosts for local dev
