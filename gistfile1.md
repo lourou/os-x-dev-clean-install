@@ -25,6 +25,9 @@ defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 #Enable repeat on keydown
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
 #Disable ext change warning
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
