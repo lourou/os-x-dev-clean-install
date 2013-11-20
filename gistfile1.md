@@ -8,6 +8,7 @@
 [Sublime Text](http://www.sublimetext.com/dev),
 [Sequel Pro](http://nightly.sequelpro.com),
 [Codekit](http://incident57.com/codekit/),
+[ImageOptim](http://imageoptim.com),
 [XQuartz](http://xquartz.macosforge.org/trac/wiki)
 
 ### OS X Preferences
