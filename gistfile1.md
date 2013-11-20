@@ -7,7 +7,6 @@
 [iTerm](http://iterm2.com),
 [Sublime Text](http://www.sublimetext.com/dev),
 [Sequel Pro](http://nightly.sequelpro.com),
-[1Password](https://agilebits.com/onepassword/mac),
 [Codekit](http://incident57.com/codekit/),
 [XQuartz](http://xquartz.macosforge.org/trac/wiki)
 
