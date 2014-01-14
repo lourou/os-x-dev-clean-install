@@ -308,7 +308,7 @@ This will allow you to serve folders under ~/Sites/ as websites.
 
 * ~/Sites
   * example.com
-    * httpdocs
+    * htdocs
       * index.html
 
 to access this site, visit http://example.com.build
