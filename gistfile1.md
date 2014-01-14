@@ -149,8 +149,8 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/cu
 ```bash
 ssh-keygen -t rsa -C "saetia@gmail.com"
 
-#copy ssh key to github.com
-cat ~/.ssh/id_rsa.pub
+#copy ssh key to clipboard for adding to github.com
+pbcopy < ~/.ssh/id_rsa.pub
 
 #test connection
 ssh -T git@github.com
