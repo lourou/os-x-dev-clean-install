@@ -259,7 +259,7 @@ curl -L https://get.rvm.io | bash -s stable --rails
 
 #### Gems
 ```
-gem install pygmentize growl guard guard-phpunit
+gem install pygmentize growl guard guard-phpunit bropages
 ```
 
 
