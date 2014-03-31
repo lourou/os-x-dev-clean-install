@@ -120,7 +120,7 @@ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 ```
 
 ```bash
-brew install jpegoptim pngcrush ack wget redis memcached libmemcached colordiff imagemagick icoutils
+brew install wget node jpegoptim pngcrush redis memcached libmemcached colordiff imagemagick icoutils ack
 ```
 
 
