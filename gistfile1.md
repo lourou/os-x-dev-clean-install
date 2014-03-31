@@ -271,7 +271,7 @@ gem install pygmentize growl guard guard-phpunit bropages
 #### Packages
 
 ```
-npm install -g coffeescript
+npm install -g coffee-script
 ```
 
 
