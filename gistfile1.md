@@ -377,10 +377,6 @@ brew install mysql
 #setup daemon
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 
-
-#Set up databases to run as your user account
-unset TMPDIR && mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
-
 #start mysql
 mysql.server start
 
