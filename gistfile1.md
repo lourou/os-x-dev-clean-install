@@ -394,7 +394,7 @@ mysql.server start
 
 
 ```bash
-wget https://gist.github.com/saetia/6096739/raw/837b02be80f31edf73767e9b3d0ba2f765ee4be4/php.ini -O /etc/php.ini
+sudo wget https://gist.github.com/saetia/6096739/raw/837b02be80f31edf73767e9b3d0ba2f765ee4be4/php.ini -O /etc/php.ini
 ```
 
 
