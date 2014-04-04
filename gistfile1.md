@@ -329,7 +329,7 @@ NameVirtualHost *:80
 </Directory>
 <VirtualHost *:80>
     UseCanonicalName off
-    VirtualDocumentRoot /Users/Joel/Sites/%-2+/httpdocs
+    VirtualDocumentRoot /Users/Joel/Sites/%-2+/htdocs
 </VirtualHost>
 ```
 
