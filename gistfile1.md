@@ -294,6 +294,9 @@ sudo mkdir -v /etc/resolver &&
 sudo zsh -c 'echo "nameserver 127.0.0.1" > /etc/resolver/build'
 
 #flush cache
+#Yosemite
+sudo discoveryutil mdnsflushcache
+#Mavericks
 sudo killall -HUP mDNSResponder
 #ensure it works
 scutil --dns
