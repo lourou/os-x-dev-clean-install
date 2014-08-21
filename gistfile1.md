@@ -384,7 +384,7 @@ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents && launchctl load ~/
 mysql.server start
 
 #secure mysql
-/usr/local/Cellar/mysql/5.6.17/bin/mysql_secure_installation
+/usr/local/opt/mysql/bin/mysql_secure_installation
 ```
 
 
