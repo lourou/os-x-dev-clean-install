@@ -378,7 +378,7 @@ brew install mysql
 ```bash
 
 #setup daemon
-ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents && launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 
 #start mysql
 mysql.server start
