@@ -248,7 +248,7 @@ git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\
 ### iOS
 ```bash
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes && 
-wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%204/Tomorrow%20Night%20Eighties.dvtcolortheme -O ~/Library/Developer/Xcode/UserData/FontAndColorThemes
+wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%204/Tomorrow%20Night%20Eighties.dvtcolortheme -O "~/Library/Developer/Xcode/UserData/FontAndColorThemes/Tomorrow Night Eighties.dvtcolortheme"
 ```
 
 
