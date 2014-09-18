@@ -112,6 +112,7 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 ```
 
 
+
 ####Homebrew
 
 
@@ -138,6 +139,8 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/cu
 `sudo scutil --set HostName Work`
 
 
+####Font
+wget http://downloads.sourceforge.net/project/sourcecodepro.adobe/SourceCodePro_FontsOnly-1.017.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fsourcecodepro.adobe%2Ffiles%2F&ts=1411016892&use_mirror=colocrossing
 
 
 ###Git
