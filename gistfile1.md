@@ -201,13 +201,22 @@ git clone git://github.com/buymeasoda/soda-theme.git ~/Library/Application\ Supp
 
 ####Install Tomorrow Theme
 
+#####Sublime Text
 ```bash
 git clone git://github.com/chriskempson/textmate-tomorrow-theme.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Color\ Scheme\ -\ Tomorrow
 ```
 
+#####iTerm2
 ```bash
 wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Tomorrow%20Night%20Eighties.itermcolors -O ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors && open ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors
 ```
+
+#####Xcode
+```bash
+mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes && 
+wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%204/Tomorrow%20Night%20Eighties.dvtcolortheme -O ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Tomorrow\ Night\ Eighties.dvtcolortheme
+```
+
 
 ####Settings
 
