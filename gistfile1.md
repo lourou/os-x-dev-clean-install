@@ -271,7 +271,6 @@ git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\
 
 
 ### Ruby
-
 ---
 
 #### Ruby version manager
@@ -281,6 +280,7 @@ curl -L https://get.rvm.io | bash -s stable --rails
 ```
 
 ### PHP
+---
 
 ```bash
 sudo pear install --alldeps channel://pear.php.net/php_beautifier-0.1.15
