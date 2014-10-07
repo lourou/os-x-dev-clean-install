@@ -280,7 +280,13 @@ git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\
 curl -L https://get.rvm.io | bash -s stable --rails
 ```
 
-
 #### Gems
 ```
 gem install pygmen
+
+
+### PHP
+
+```bash
+sudo pear install --alldeps channel://pear.php.net/php_beautifier-0.1.15
+```
