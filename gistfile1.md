@@ -280,11 +280,6 @@ git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\
 curl -L https://get.rvm.io | bash -s stable --rails
 ```
 
-#### Gems
-```
-gem install pygmen
-
-
 ### PHP
 
 ```bash
