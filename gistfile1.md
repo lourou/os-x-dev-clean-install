@@ -264,14 +264,12 @@ git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\
 
 
 ### iOS
-
-
-
-
+---
 
 
 ### Ruby
 ---
+
 
 #### Ruby version manager
 
