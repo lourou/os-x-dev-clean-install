@@ -100,6 +100,9 @@ chflags nohidden ~/Library
 #Show absolute path in finder's title bar. 
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
+#Enable text copying from Quick Look
+com.apple.finder QLEnableTextSelection -bool YES
+
 ```
 
 ###Shell
