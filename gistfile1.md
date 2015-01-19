@@ -113,7 +113,7 @@ brew install tree node dnsmasq nginx ssh-copy-id wget node jpegoptim pngcrush re
 ####Homebrew Cask Apps
 
 ```bash
-brew cask install coda sublime-text coderunner google-chrome firefox codekit iterm2 sequel-pro querious imageoptim imagealpha xquartz simpholders handbrake vagrant
+brew cask install coda sublime-text coderunner google-chrome firefox codekit iterm2 sequel-pro querious imageoptim imagealpha xquartz simpholders handbrake vagrant ksdiff
 ```
 
 
@@ -130,11 +130,6 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/cu
 
 ```bash
 sudo scutil --set HostName Work
-```
-
-####ksdiff for Kaleidoscope
-```bash
-wget https://updates.blackpixel.com/latest?app=ksdiff`
 ```
 
 ####Source Code Pro
