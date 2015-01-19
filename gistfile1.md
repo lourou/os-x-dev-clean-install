@@ -326,7 +326,6 @@ mysql_secure_installation
 ####NGINX
 
 ```bash
-brew install nginx
 sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/ && sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 ```
