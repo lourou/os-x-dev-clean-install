@@ -131,6 +131,7 @@ caskroom/cask/brew-cask
 ####Homebrew Cask Apps
 
 ```bash
+#install mac apps
 brew cask install \
 coda \
 sublime-text \
