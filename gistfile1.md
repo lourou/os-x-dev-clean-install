@@ -1,17 +1,3 @@
-[Mensch font](http://robey.lag.net/2010/06/21/mensch-font.html), 
-[Source Code Pro](http://sourceforge.net/projects/sourcecodepro.adobe/files/),
-[Webkit](http://webkit.org),
-[Chrome](http://google.com/chrome),
-[Firefox](http://firefox.com),
-[Kaleidoscope](http://www.kaleidoscopeapp.com),
-[iTerm](http://iterm2.com),
-[Sublime Text](http://www.sublimetext.com/dev),
-[Sequel Pro](http://nightly.sequelpro.com),
-[Codekit](http://incident57.com/codekit/),
-[ImageOptim](http://imageoptim.com),
-[XQuartz](http://xquartz.macosforge.org/trac/wiki),
-[SimPholders](http://simpholders.com)
-
 ### OS X Preferences
 
 ---
@@ -62,7 +48,6 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-
 #Set a shorter Delay until key repeat
 defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
@@ -77,10 +62,8 @@ defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 #Enable Safari’s debug menu
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
-
 # Disable smart quotes as it’s annoying for messages that contain code
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
-
 
 # Trackpad: map bottom right corner to right-click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2 &&
@@ -116,7 +99,6 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 ```
 
 
-
 ####Homebrew
 
 
@@ -125,7 +107,13 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ```
 
 ```bash
-brew install ssh-copy-id wget node jpegoptim pngcrush redis memcached libmemcached colordiff imagemagick icoutils ack
+brew install tree dnsmasq nginx ssh-copy-id wget node jpegoptim pngcrush redis memcached libmemcached colordiff imagemagick icoutils ack mariadb caskroom/cask/brew-cask
+```
+
+####Homebrew Cask Apps
+
+```bash
+brew cask install coda sublime-text coderunner google-chrome firefox codekit iterm2 sequel-pro querious imageoptim imagealpha xquartz simpholders handbrake vagrant
 ```
 
 
@@ -140,13 +128,19 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/cu
 
 ####Set hostname
 
-`sudo scutil --set HostName Work`
+```bash
+sudo scutil --set HostName Work
+```
 
-####ksdiff
-wget https://updates.blackpixel.com/latest?app=ksdiff
+####ksdiff for Kaleidoscope
+```bash
+wget https://updates.blackpixel.com/latest?app=ksdiff`
+```
 
-####Font
+####Source Code Pro
+```bash
 wget http://downloads.sourceforge.net/project/sourcecodepro.adobe/SourceCodePro_FontsOnly-1.017.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fsourcecodepro.adobe%2Ffiles%2F&ts=1411016892&use_mirror=colocrossing
+```
 
 
 ###Git
@@ -203,27 +197,21 @@ sudo mkdir -p "/usr/local/bin/" && ln -s "/Applications/Sublime Text.app/Content
 git clone git://github.com/buymeasoda/soda-theme.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Theme\ -\ Soda
 ```
 
-####Install Tomorrow Theme
+####Install Tomorrow Night Eighties Themes
 
-#####Sublime Text
 ```bash
+#Sublime Text
 git clone git://github.com/chriskempson/textmate-tomorrow-theme.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Color\ Scheme\ -\ Tomorrow
-```
 
-#####iTerm2
-```bash
+#iTerm2
 wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Tomorrow%20Night%20Eighties.itermcolors -O ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors && open ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors
-```
 
-#####Xcode
-```bash
+#Xcode
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes && 
 wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%204/Tomorrow%20Night%20Eighties.dvtcolortheme -O ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Tomorrow\ Night\ Eighties.dvtcolortheme
 ```
 
-
 ####Settings
-
 
 ```json
 {
@@ -274,16 +262,113 @@ git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\
 ### Ruby
 ---
 
-
 #### Ruby version manager
 
 ```bash
 curl -L https://get.rvm.io | bash -s stable --rails
 ```
 
+#### Gems
+```bash
+gem install pygmentize growl guard guard-phpunit bropages
+```
+
+
+
+### Node
+---
+
+#### Packages
+
+```bash
+npm install -g coffee-script bower
+```
+
+
+
+
+### Vagrant
+---
+
+```bash
+vagrant plugin install vagrant-hostsupdater
+```
+
+
 ### PHP
 ---
 
 ```bash
-sudo pear install --alldeps channel://pear.php.net/php_beautifier-0.1.15
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/dupes
+brew install php56 --with-fpm --without-apache --with-mysql
+ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
 ```
+
+
+####MariaDB
+
+```bash
+
+#setup daemon
+ln -sfv /usr/local/opt/mariadb/*.plist ~/Library/LaunchAgents && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
+
+#initial setup
+mysql_install_db
+
+#secure mariadb
+mysql_secure_installation
+```
+
+
+####NGINX
+
+```bash
+brew install nginx
+sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/ && sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+```
+
+
+
+### Local Web Server
+---
+
+#### Add DNS Domains, Enable dnsmasq daemon
+
+This will route requests to any url ending in **.build** back to your own computer. The goal is to use urls like http://example.com.build for development while you work on http://example.com
+
+```bash
+mkdir -pv $(brew --prefix)/etc/ &&
+echo 'address=/.build/127.0.0.1' > $(brew --prefix)/etc/dnsmasq.conf &&
+sudo cp -v $(brew --prefix dnsmasq)/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons &&
+sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist &&
+sudo mkdir -v /etc/resolver &&
+sudo zsh -c 'echo "nameserver 127.0.0.1" > /etc/resolver/build'
+
+#flush cache
+sudo discoveryutil mdnsflushcache && scutil --dns
+```
+
+####Enable virtual hosts
+
+This will allow you to serve folders under ~/Sites/ as websites. 
+
+* ~/Sites
+  * example.com
+    * htdocs
+      * index.html
+  
+to access this site, visit http://example.com.build
+
+
+####Match production server paths
+```bash
+sudo mkdir -p /var/ && sudo ln -s ~/Sites /var/www
+```
+
+
+
+![aww yeah](http://i.imgur.com/AmFax.gif)
