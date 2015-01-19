@@ -154,10 +154,12 @@ ksdiff
 ####Update .zshrc
 
 ```bash
-wget https://gist.github.com/saetia/2764210/raw/ef18e4013ed7d11e400527268bfaff0b7b0e4a70/.zshrc -O ~/.zshrc
+wget https://gist.github.com/saetia/2764210/raw/ef18e4013ed7d11e400527268bfaff0b7b0e4a70/.zshrc -O \
+~/.zshrc
 
 #syntax highlighting
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
+~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```
 
 ####Set hostname
