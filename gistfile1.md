@@ -98,7 +98,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 chflags nohidden ~/Library
 
 #Show absolute path in finder's title bar. 
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+defaults write com.apple.finder _FXShowPosixPathInTitle -boolean YES
 
 ```
 
