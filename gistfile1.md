@@ -291,7 +291,7 @@ wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%
 ####Snippets
 
 ```bash
-git clone git@github.com:bytestudios/sublime-snippets.git \
+git clone git@github.com:co-b/sublime-snippets.git \
 ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Byte
 ```
 
