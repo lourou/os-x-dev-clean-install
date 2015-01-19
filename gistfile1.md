@@ -174,7 +174,8 @@ git config --global github.token your_token_here
 ####Install markdown support
 
 ```bash
-git clone https://github.com/bobthecow/Markdown.mode.git ~/Library/Application\ Support/Coda\ 2/modes/Markdown.mode
+git clone https://github.com/bobthecow/Markdown.mode.git \
+~/Library/Application\ Support/Coda\ 2/modes/Markdown.mode
 ```
 
 ###Sublime Text
@@ -184,28 +185,34 @@ git clone https://github.com/bobthecow/Markdown.mode.git ~/Library/Application\ 
 ####Add Sublime Text CLI
 
 ```bash
-sudo mkdir -p "/usr/local/bin/" && ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "/usr/local/bin/subl"
+sudo mkdir -p "/usr/local/bin/" && \
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" \
+"/usr/local/bin/subl"
 ```
 
 
 ####Install Soda Theme
 
 ```bash
-git clone git://github.com/buymeasoda/soda-theme.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Theme\ -\ Soda
+git clone git://github.com/buymeasoda/soda-theme.git \
+~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Theme\ -\ Soda
 ```
 
 ####Install Tomorrow Night Eighties Themes
 
 ```bash
 #Sublime Text
-git clone git://github.com/chriskempson/textmate-tomorrow-theme.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Color\ Scheme\ -\ Tomorrow
+git clone git://github.com/chriskempson/textmate-tomorrow-theme.git \
+~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Color\ Scheme\ -\ Tomorrow
 
 #iTerm2
-wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Tomorrow%20Night%20Eighties.itermcolors -O ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors && open ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors
+wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Tomorrow%20Night%20Eighties.itermcolors \
+-O ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors && open ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors
 
 #Xcode
-mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes && 
-wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%204/Tomorrow%20Night%20Eighties.dvtcolortheme -O ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Tomorrow\ Night\ Eighties.dvtcolortheme
+mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes && \
+wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%204/Tomorrow%20Night%20Eighties.dvtcolortheme -O \
+~/Library/Developer/Xcode/UserData/FontAndColorThemes/Tomorrow\ Night\ Eighties.dvtcolortheme
 ```
 
 ####Settings
@@ -247,14 +254,12 @@ wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%
 ####Snippets
 
 ```bash
-git clone git@github.com:bytestudios/sublime-snippets.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Byte
+git clone git@github.com:bytestudios/sublime-snippets.git \
+~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Byte
 ```
-
-
 
 ### iOS
 ---
-
 
 ### Ruby
 ---
@@ -296,11 +301,17 @@ vagrant plugin install vagrant-hostsupdater
 ---
 
 ```bash
-brew tap homebrew/dupes
-brew tap homebrew/versions
-brew tap homebrew/dupes
-brew install php56 --with-fpm --without-apache --with-mysql
-ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents
+#install php-fpm
+brew tap homebrew/dupes && \
+brew tap homebrew/versions && \
+brew tap homebrew/dupes && \
+brew install php56 \
+--with-fpm \
+--without-apache \
+--with-mysql
+
+#setup daemon
+ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents && \
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
 ```
 
@@ -310,7 +321,8 @@ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
 ```bash
 
 #setup daemon
-ln -sfv /usr/local/opt/mariadb/*.plist ~/Library/LaunchAgents && launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
+ln -sfv /usr/local/opt/mariadb/*.plist ~/Library/LaunchAgents && \
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
 
 #initial setup
 mysql_install_db
@@ -318,7 +330,6 @@ mysql_install_db
 #secure mariadb
 mysql_secure_installation
 ```
-
 
 ####NGINX
 
@@ -328,8 +339,6 @@ sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist &&
 sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 ```
 
-
-
 ### Local Web Server
 ---
 
@@ -338,11 +347,11 @@ sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 This will route requests to any url ending in **.build** back to your own computer. The goal is to use urls like http://example.com.build for development while you work on http://example.com
 
 ```bash
-mkdir -pv $(brew --prefix)/etc/ &&
-echo 'address=/.build/127.0.0.1' > $(brew --prefix)/etc/dnsmasq.conf &&
-sudo cp -v $(brew --prefix dnsmasq)/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons &&
-sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist &&
-sudo mkdir -v /etc/resolver &&
+mkdir -pv $(brew --prefix)/etc/ && \
+echo 'address=/.build/127.0.0.1' > $(brew --prefix)/etc/dnsmasq.conf && \
+sudo cp -v $(brew --prefix dnsmasq)/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons && \
+sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist && \
+sudo mkdir -v /etc/resolver && \
 sudo zsh -c 'echo "nameserver 127.0.0.1" > /etc/resolver/build'
 
 #flush cache
