@@ -103,18 +103,18 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 
 
 ```bash
+#install package manager
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
 
-```bash
+#install homebrew packages
 brew install \
 tree \
 node \
 dnsmasq \
 nginx \
+mariadb \
 ssh-copy-id \
 wget \
-node \
 jpegoptim \
 pngcrush \
 redis \
@@ -124,7 +124,6 @@ colordiff \
 imagemagick \
 icoutils \
 ack \
-mariadb \
 caskroom/cask/brew-cask
 ```
 
