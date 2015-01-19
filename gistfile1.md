@@ -40,9 +40,9 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 defaults write NSGlobalDomain KeyRepeat -int 0
 
 # Show icons for hard drives, servers, and removable media on the desktop
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true &&
-defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true &&
-defaults write com.apple.finder ShowMountedServersOnDesktop -bool true &&
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true && \
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true && \
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool true && \
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Avoid creating .DS_Store files on network volumes
@@ -52,8 +52,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 #Disable disk image verification
-defaults write com.apple.frameworks.diskimages skip-verify -bool true &&
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true &&
+defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
+defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true && \
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 #Disable Safari’s thumbnail cache for History and Top Sites
@@ -63,18 +63,19 @@ defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 # Disable smart quotes as it’s annoying for messages that contain code
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
+defaults write com.apple.messageshelper.MessageController \
+SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
 
 # Trackpad: map bottom right corner to right-click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2 &&
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true &&
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1 &&
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2 && \
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true && \
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1 && \
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 # Enable the Develop menu and the Web Inspector in Safari
-defaults write com.apple.Safari IncludeDevelopMenu -bool true &&
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true &&
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true &&
+defaults write com.apple.Safari IncludeDevelopMenu -bool true && \
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true && \
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true && \
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 #Show the ~/Library folder
@@ -169,8 +170,8 @@ sudo scutil --set HostName Work
 
 ####Source Code Pro
 ```bash
-curl https://codeload.github.com/adobe-fonts/source-code-pro/tar.gz/1.017R | tar -xz && 
-cp ~/source-code-pro-1.017R/OTF/*.otf ~/Library/Fonts &&
+curl https://codeload.github.com/adobe-fonts/source-code-pro/tar.gz/1.017R | tar -xz && \
+cp ~/source-code-pro-1.017R/OTF/*.otf ~/Library/Fonts && \
 rm -rf ~/source-code-pro-1.017R
 ```
 
