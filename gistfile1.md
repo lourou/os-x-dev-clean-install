@@ -134,7 +134,8 @@ sudo scutil --set HostName Work
 
 ####Source Code Pro
 ```bash
-curl https://codeload.github.com/adobe-fonts/source-code-pro/tar.gz/1.017R | tar -xz && cp ~/source-code-pro-1.017R/OTF/*.otf ~/Library/Fonts
+curl https://codeload.github.com/adobe-fonts/source-code-pro/tar.gz/1.017R | tar -xz && 
+cp ~/source-code-pro-1.017R/OTF/*.otf ~/Library/Fonts
 ```
 
 
@@ -321,7 +322,8 @@ mysql_secure_installation
 ####NGINX
 
 ```bash
-sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/ && sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/ && 
+sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist &&
 sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 ```
 
