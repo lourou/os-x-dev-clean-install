@@ -139,7 +139,7 @@ wget https://updates.blackpixel.com/latest?app=ksdiff`
 
 ####Source Code Pro
 ```bash
-wget http://downloads.sourceforge.net/project/sourcecodepro.adobe/SourceCodePro_FontsOnly-1.017.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fsourcecodepro.adobe%2Ffiles%2F&ts=1411016892&use_mirror=colocrossing
+curl https://codeload.github.com/adobe-fonts/source-code-pro/tar.gz/1.017R | tar -xz && cp ~/source-code-pro-1.017R/OTF/*.otf ~/Library/Fonts
 ```
 
 
