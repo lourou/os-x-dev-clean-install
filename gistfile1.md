@@ -107,7 +107,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ```
 
 ```bash
-brew install tree dnsmasq nginx ssh-copy-id wget node jpegoptim pngcrush redis memcached libmemcached colordiff imagemagick icoutils ack mariadb caskroom/cask/brew-cask
+brew install tree node dnsmasq nginx ssh-copy-id wget node jpegoptim pngcrush redis memcached libmemcached colordiff imagemagick icoutils ack mariadb caskroom/cask/brew-cask
 ```
 
 ####Homebrew Cask Apps
