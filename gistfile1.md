@@ -107,13 +107,47 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ```
 
 ```bash
-brew install tree node dnsmasq nginx ssh-copy-id wget node jpegoptim pngcrush redis memcached libmemcached colordiff imagemagick icoutils ack mariadb caskroom/cask/brew-cask
+brew install \
+tree \
+node \
+dnsmasq \
+nginx \
+ssh-copy-id \
+wget \
+node \
+jpegoptim \
+pngcrush \
+redis \
+memcached \
+libmemcached \
+colordiff \
+imagemagick \
+icoutils \
+ack \
+mariadb \
+caskroom/cask/brew-cask
 ```
 
 ####Homebrew Cask Apps
 
 ```bash
-brew cask install coda sublime-text coderunner google-chrome firefox codekit iterm2 sequel-pro querious imageoptim imagealpha xquartz simpholders handbrake vagrant ksdiff
+brew cask install \
+coda \
+sublime-text \
+coderunner \
+google-chrome \
+firefox \
+codekit \
+iterm2 \
+sequel-pro \
+querious \
+imageoptim \
+imagealpha \
+xquartz \
+simpholders \
+handbrake \
+vagrant \
+ksdiff
 ```
 
 
