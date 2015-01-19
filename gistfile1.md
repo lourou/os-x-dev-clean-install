@@ -135,7 +135,8 @@ sudo scutil --set HostName Work
 ####Source Code Pro
 ```bash
 curl https://codeload.github.com/adobe-fonts/source-code-pro/tar.gz/1.017R | tar -xz && 
-cp ~/source-code-pro-1.017R/OTF/*.otf ~/Library/Fonts
+cp ~/source-code-pro-1.017R/OTF/*.otf ~/Library/Fonts &&
+rm -rf ~/source-code-pro-1.017R
 ```
 
 
