@@ -131,11 +131,15 @@ caskroom/cask/brew-cask
 ####Homebrew Cask Apps
 
 ```bash
+#add support for fonts
+brew tap caskroom/fonts
+
 #add dev/beta versions
 brew tap caskroom/versions
 
 #install mac apps
 brew cask install \
+font-source-code-pro \
 adobe-creative-cloud \
 blueharvest \
 cleanmymac \
@@ -178,14 +182,6 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
 ```bash
 sudo scutil --set HostName Work
 ```
-
-####Source Code Pro
-```bash
-curl https://codeload.github.com/adobe-fonts/source-code-pro/tar.gz/1.017R | tar -xz && \
-cp ~/source-code-pro-1.017R/OTF/*.otf ~/Library/Fonts && \
-rm -rf ~/source-code-pro-1.017R
-```
-
 
 ###Git
 
