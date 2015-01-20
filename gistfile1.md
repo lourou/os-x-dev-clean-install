@@ -131,6 +131,9 @@ caskroom/cask/brew-cask
 ####Homebrew Cask Apps
 
 ```bash
+#add dev/beta versions
+brew tap caskroom/versions
+
 #install mac apps
 brew cask install \
 adobe-creative-cloud \
@@ -145,7 +148,7 @@ coderunner \
 google-chrome \
 firefox \
 codekit \
-iterm2 \
+iterm2-beta \
 sequel-pro \
 querious \
 imageoptim \
