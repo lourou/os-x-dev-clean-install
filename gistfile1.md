@@ -158,7 +158,7 @@ querious \
 imageoptim \
 imagealpha \
 xquartz \
-simpholders \
+simpholders-2-alpha \
 handbrake \
 vagrant \
 ksdiff \
