@@ -153,7 +153,8 @@ xquartz \
 simpholders \
 handbrake \
 vagrant \
-ksdiff
+ksdiff \
+spotify
 ```
 
 
