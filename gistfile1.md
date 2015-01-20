@@ -128,7 +128,7 @@ ack \
 caskroom/cask/brew-cask
 ```
 
-####Homebrew Cask Apps
+####Homebrew Cask Apps & Fonts
 
 ```bash
 #add support for fonts
