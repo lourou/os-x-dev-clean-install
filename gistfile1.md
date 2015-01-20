@@ -137,7 +137,7 @@ brew tap caskroom/fonts
 #add dev/beta versions
 brew tap caskroom/versions
 
-#install mac apps
+#install mac apps & fonts
 brew cask install \
 font-source-code-pro \
 adobe-creative-cloud \
