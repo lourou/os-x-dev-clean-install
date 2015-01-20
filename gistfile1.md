@@ -133,6 +133,11 @@ caskroom/cask/brew-cask
 ```bash
 #install mac apps
 brew cask install \
+adobe-creative-cloud \
+blueharvest \
+cleanmymac \
+cocktail \
+ghostlab \
 coda \
 sublime-text \
 coderunner \
