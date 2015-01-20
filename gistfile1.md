@@ -139,7 +139,8 @@ cleanmymac \
 cocktail \
 ghostlab \
 coda \
-sublime-text \
+sublime-text-dev \
+virtualbox \
 coderunner \
 google-chrome \
 firefox \
