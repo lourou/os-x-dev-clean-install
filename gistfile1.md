@@ -2,12 +2,22 @@
 
 ---
 
+
 ```bash
+# Enable character repeat on keydown
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Set a shorter Delay until key repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0
+
 # Disable window animations ("new window" scale effect)
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
-# Enable character repeat on keydown
-defaults write -g ApplePressAndHoldEnabled -bool false
+# Turn on dashboard-as-space
+defaults write com.apple.dashboard enabled-state 2
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -29,12 +39,6 @@ defaults write com.apple.finder ShowStatusBar -bool true
 
 # Enable AirDrop over Ethernet and on unsupported Macs
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
-
-# Set a shorter Delay until key repeat
-defaults write NSGlobalDomain InitialKeyRepeat -int 12
-
-# Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
 
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true && \
