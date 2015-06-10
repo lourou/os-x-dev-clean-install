@@ -105,7 +105,6 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 
 ####Homebrew
 
-
 ```bash
 #install package manager
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -129,6 +128,16 @@ imagemagick \
 graphicsmagick \
 ack \
 caskroom/cask/brew-cask
+```
+
+#install homebrew web server packages
+brew install \
+dnsmasq \
+nginx \
+mariadb \
+redis \
+memcached \
+libmemcached \
 ```
 
 ####Homebrew Cask Apps & Fonts
