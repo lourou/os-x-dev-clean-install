@@ -48,9 +48,6 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Show Status bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# Enable AirDrop over Ethernet and on unsupported Macs
-defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
-
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true && \
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true && \
@@ -86,6 +83,9 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
 # Enable text copying from Quick Look
 defaults write com.apple.finder QLEnableTextSelection -bool YES
+
+# Enable AirDrop over Ethernet and on unsupported Macs
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Disable WebkitNightly.app's homepage
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
