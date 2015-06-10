@@ -3,7 +3,7 @@
 ---
 
 ```bash
-# Disable window animations (New window scale effect)
+# Disable window animations ("New window" scale effect)
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
 # Enable character repeat on keydown
