@@ -1,7 +1,7 @@
 ### OS X Preferences
-**note** most of these require at least a logout to take effect
 ---
 
+**note** most of these require at least a logout to take effect
 
 ```bash
 # Enable character repeat on keydown
