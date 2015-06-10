@@ -45,7 +45,6 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-
 # Disable disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true && \
@@ -71,7 +70,7 @@ chflags nohidden ~/Library
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
 # Enable text copying from Quick Look
-com.apple.finder QLEnableTextSelection -bool YES
+defaults write com.apple.finder QLEnableTextSelection -bool YES
 
 # Disable WebkitNightly.app's homepage
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
