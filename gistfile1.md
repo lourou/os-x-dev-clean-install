@@ -24,9 +24,6 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Show Path bar in Finder
 defaults write com.apple.finder ShowPathbar -bool true
 
-# Disable sound effect when changing volume 
-defaults write -g com.apple.sound.beep.feedback -integer 0
-
 # Show Status bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
