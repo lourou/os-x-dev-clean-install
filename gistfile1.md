@@ -50,10 +50,6 @@ defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true && \
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-# Disable Safari’s thumbnail cache for History and Top Sites
-defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
-
-
 # Trackpad: map bottom right corner to right-click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2 && \
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true && \
