@@ -189,6 +189,11 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
 sudo scutil --set HostName Work
 ```
 
+###Agree To Xcode
+```bash
+sudo xcrun cc
+```
+
 ###Git
 
 ---
