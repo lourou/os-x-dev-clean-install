@@ -6,7 +6,7 @@
 #Disable window animations (New window scale effect)
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
-#Enable repeat on keydown
+#Enable character repeat on keydown
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Expand save panel by default
