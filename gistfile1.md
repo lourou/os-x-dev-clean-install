@@ -30,6 +30,9 @@ defaults write com.apple.finder ShowStatusBar -bool true
 # Enable AirDrop over Ethernet and on unsupported Macs
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
+# Set a shorter Delay until key repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
+
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
 
@@ -42,8 +45,6 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Set a shorter Delay until key repeat
-defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 # Disable disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
