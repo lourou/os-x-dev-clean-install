@@ -1,5 +1,5 @@
 ### OS X Preferences
-
+**note** most of these require at least a logout to take effect
 ---
 
 
@@ -91,6 +91,8 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 
 ```
+
+
 
 ###Shell
 
