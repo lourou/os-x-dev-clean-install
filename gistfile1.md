@@ -127,7 +127,6 @@ libmemcached \
 colordiff \
 imagemagick \
 graphicsmagick \
-icoutils \
 ack \
 caskroom/cask/brew-cask
 ```
