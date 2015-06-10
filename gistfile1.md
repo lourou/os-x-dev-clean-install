@@ -15,7 +15,7 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 #Disable ext change warning
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-#Disable webkit homepage
+#Disable WebkitNightly.app's homepage
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 
 # Check for software updates daily, not just once per week
