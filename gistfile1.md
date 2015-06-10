@@ -3,37 +3,37 @@
 ---
 
 ```bash
-#Disable window animations (New window scale effect)
+# Disable window animations (New window scale effect)
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
-#Enable character repeat on keydown
+# Enable character repeat on keydown
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
-#Disable ext change warning
+# Disable ext change warning
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-#Use current directory as default search scope in Finder
+# Use current directory as default search scope in Finder
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-#Show Path bar in Finder
+# Show Path bar in Finder
 defaults write com.apple.finder ShowPathbar -bool true
 
-#Disable sound effect when changing volume 
+# Disable sound effect when changing volume 
 defaults write -g com.apple.sound.beep.feedback -integer 0
 
-#Show Status bar in Finder
+# Show Status bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
-#Enable AirDrop over Ethernet and on unsupported Macs
+# Enable AirDrop over Ethernet and on unsupported Macs
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
-#Set a blazingly fast keyboard repeat rate
+# Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
 
 # Show icons for hard drives, servers, and removable media on the desktop
@@ -45,18 +45,18 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 # Avoid creating .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-#Set a shorter Delay until key repeat
+# Set a shorter Delay until key repeat
 defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
-#Disable disk image verification
+# Disable disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true && \
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-#Disable Safari’s thumbnail cache for History and Top Sites
+# Disable Safari’s thumbnail cache for History and Top Sites
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
-#Enable Safari’s debug menu
+# Enable Safari’s debug menu
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 # Disable smart quotes as it’s annoying for messages that contain code
@@ -75,16 +75,16 @@ defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool 
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true && \
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
-#Show the ~/Library folder
+# Show the ~/Library folder
 chflags nohidden ~/Library
 
-#Show absolute path in finder's title bar. 
+# Show absolute path in finder's title bar. 
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
-#Enable text copying from Quick Look
+# Enable text copying from Quick Look
 com.apple.finder QLEnableTextSelection -bool YES
 
-#Disable WebkitNightly.app's homepage
+# Disable WebkitNightly.app's homepage
 defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
 
 ```
