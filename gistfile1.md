@@ -23,7 +23,7 @@ defaults write com.apple.dashboard enabled-state 2
 defaults write com.apple.TextEdit RichText -int 0
 
 # Make top-right hotspot start screensaver
-defaults write com.apple.dock wvous-tr-corner -int 4 && \
+defaults write com.apple.dock wvous-tr-corner -int 5 && \
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
 # Expand save panel by default
