@@ -113,16 +113,10 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew install \
 tree \
 node \
-dnsmasq \
-nginx \
-mariadb \
 ssh-copy-id \
 wget \
 jpegoptim \
 pngcrush \
-redis \
-memcached \
-libmemcached \
 colordiff \
 imagemagick \
 graphicsmagick \
