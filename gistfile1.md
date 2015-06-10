@@ -26,6 +26,10 @@ defaults write com.apple.TextEdit RichText -int 0
 defaults write com.apple.dock wvous-tr-corner -int 5 && \
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
+# Set default Finder location to home folder (~/)
+defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
