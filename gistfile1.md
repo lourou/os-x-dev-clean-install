@@ -177,7 +177,7 @@ spotify
 ####Update .zshrc
 
 ```bash
-wget https://gist.github.com/saetia/2764210/raw/ef18e4013ed7d11e400527268bfaff0b7b0e4a70/.zshrc -O \
+wget https://gist.githubusercontent.com/saetia/2764210/raw/505cb6815604d92fe019612847cf7c3a13f1ad71/.zshrc -O \
 ~/.zshrc
 
 #syntax highlighting
