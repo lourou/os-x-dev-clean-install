@@ -308,6 +308,11 @@ git clone git@github.com:co-b/sublime-snippets.git \
 ### iOS
 ---
 
+```bash
+sudo gem install cocoapods
+pod setup
+```
+
 ### Ruby
 ---
 
