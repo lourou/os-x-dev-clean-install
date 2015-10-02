@@ -360,16 +360,21 @@ vagrant plugin install vagrant-hostsupdater
 brew tap homebrew/dupes && \
 brew tap homebrew/versions && \
 brew tap homebrew/dupes && \
-brew install php56 \
+brew install php70 \
 --with-fpm \
 --without-apache \
 --with-mysql
 
 #setup daemon
-ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents && \
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
+ln -sfv /usr/local/opt/php70/*.plist ~/Library/LaunchAgents && \
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php70.plist
 ```
 
+####PHP-Redis
+```bash
+#brew install php70-redis
+brew install --HEAD homebrew/php/php70-redis
+```
 
 ####MariaDB
 
