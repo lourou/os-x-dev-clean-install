@@ -356,6 +356,9 @@ vagrant plugin install vagrant-hostsupdater
 ---
 
 ```bash
+#switch from SecureTransport
+brew reinstall --with-openssl curl
+
 #install php-fpm
 brew tap homebrew/dupes && \
 brew tap homebrew/versions && \
@@ -363,7 +366,10 @@ brew tap homebrew/dupes && \
 brew install php70 \
 --with-fpm \
 --without-apache \
---with-mysql
+--with-mysql \
+--with-homebrew-curl \
+--with-homebrew-openssl \ 
+--without-snmp
 
 #setup daemon
 ln -sfv /usr/local/opt/php70/*.plist ~/Library/LaunchAgents && \
