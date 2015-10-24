@@ -137,6 +137,7 @@ blueharvest \
 sublime-text-dev \
 google-chrome \
 firefox \
+opera \
 codekit \
 sequel-pro \
 querious \
@@ -144,7 +145,6 @@ imageoptim \
 imagealpha \
 bartender \
 appdelete \
-busycal \
 carbon-copy-cloner \
 charles \
 cloud \
@@ -159,18 +159,19 @@ kindle \
 subler \
 transmission \
 transmit \
-tripmode \
+moom \
 sourcetree \
 slack \
 skype \
-sitesucker \
 screenhero \
 pngyu \
+synology-assistant \
 omnifocus \
 omnidisksweeper \
 omnigraffle \
 spotify \
-scansnap-manager-ix100
+scansnap-manager-ix100 \
+vmware-fusion
 
 #install music apps
 brew cask install \
@@ -183,9 +184,6 @@ cycling74-max
 ####Update .zshrc
 
 ```bash
-wget https://gist.githubusercontent.com/saetia/2764210/raw/ab099b587689640eb32cbc1afdb6a19b62be7fb0/.zshrc -O \
-~/.zshrc
-
 #syntax highlighting
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
 ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
