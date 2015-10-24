@@ -130,6 +130,7 @@ brew tap caskroom/versions
 
 #install mac apps & fonts
 brew cask install \
+1password \
 font-source-code-pro \
 adobe-creative-cloud \
 blueharvest \
