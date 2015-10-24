@@ -133,27 +133,49 @@ brew cask install \
 font-source-code-pro \
 adobe-creative-cloud \
 blueharvest \
-cleanmymac \
-cocktail \
-ghostlab \
-coda \
 sublime-text-dev \
-virtualbox \
-coderunner \
 google-chrome \
 firefox \
 codekit \
-iterm2-beta \
 sequel-pro \
 querious \
 imageoptim \
 imagealpha \
-xquartz \
-simpholders-2-alpha \
+bartender \
+appdelete \
+busycal \
+carbon-copy-cloner \
+charles \
+cloud \
+colorpicker-developer \
+dropbox \
+evernote \
+fabric \
+flux \
+focus \
 handbrake \
-vagrant \
-ksdiff \
-spotify
+kindle \
+subler \
+transmission \
+transmit \
+tripmode \
+sourcetree \
+slack \
+skype \
+sitesucker \
+screenhero \
+pngyu \
+omnifocus \
+omnidisksweeper \
+omnigraffle \
+spotify \
+scansnap-manager-ix100
+
+#install music apps
+brew cask install \
+ableton-live-suite \
+vlc \
+cycling74-max
 ```
 
 
