@@ -1,3 +1,12 @@
+### Bypass OS X System Integrity Protection
+
+- Reboot the mac pressing CMD + R
+- Open Utilities/Terminal
+- Type: 
+```
+bashcsrutil disable; reboot
+```
+
 ### OS X Preferences
 ---
 
@@ -82,7 +91,7 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 ```
 
 
-####Homebrew
+####Homebrew Basics
 
 ```bash
 # install package manager
@@ -91,7 +100,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 # install homebrew packages
 brew install \
 tree \
-node \
 ssh-copy-id \
 wget \
 jpegoptim \
@@ -99,16 +107,14 @@ pngcrush \
 colordiff \
 imagemagick \
 graphicsmagick \
-ack \
 caskroom/cask/brew-cask
 ```
-####Homebrew Web Server Packages
+####Homebrew Web Server Packages for Local Development
+
 ```bash
 brew install \
-dnsmasq \
 nginx \
 mariadb \
-redis \
 memcached \
 libmemcached \
 ```
