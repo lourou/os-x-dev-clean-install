@@ -129,19 +129,65 @@ sudo nginx (or sudo nginx -s reload)
 
 #### PHP-FPM
 
-```bash
-brew install XXXX \
-memcached \
-libmemcached
-```
+Start with taping formulas repositories:
 
-#### MariaDB
+    brew tap homebrew/dupes
+    brew tap homebrew/versions
+    brew tap homebrew/homebrew-php
 
-```bash
-brew install mariadb
-```
+Remove all PHP dependencies (it's only safe way to compile PHP successfully)
 
-####Homebrew Cask Apps & Fonts
+    brew remove libtool
+    brew remove freetype
+    brew remove gettext
+    brew remove icu4c
+    brew remove jpeg
+    brew remove libpng
+    brew remove unixodbc
+    brew remove zlib
+
+Then install PHP
+
+    brew install -v --with-fpm --with-mysql --disable-opcache php56
+    
+Launch after login
+
+    ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents
+
+Install PHP extensions
+
+    brew install php56-http
+    brew install php56-mcrypt
+    brew install php56-memcache
+    brew install php56-memcached
+    brew install php56-mongo
+    brew install php56-opcache
+    brew install php56-propro
+    brew install php56-raphf
+    brew install php56-tidy
+    brew install php56-xdebug
+
+add launch agent for memcached
+
+    ln -sfv /usr/local/opt/memcached/*.plist ~/Library/LaunchAgents
+
+or get others
+
+    brew search php56
+
+What about APC? See [stackoverflow](http://stackoverflow.com/questions/9611676/is-apc-compatible-with-php-5-4-or-php-5-5) - APC have some problems but you can install emulated APC
+
+    brew install php56-apcu # APC
+
+### PHP-FPM
+
+Replace OS X PHP
+
+### MariaDB
+
+    brew install mariadb
+
+### Homebrew Cask Apps & Fonts
 
 ```bash
 # add support for fonts
