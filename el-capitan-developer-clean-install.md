@@ -109,14 +109,10 @@ imagemagick \
 graphicsmagick \
 caskroom/cask/brew-cask
 ```
-####Homebrew Web Server Packages for Local Development
+#### Installing nginx
 
 ```bash
-brew install \
-nginx \
-mariadb \
-memcached \
-libmemcached \
+brew install nginx
 ```
 
 - The default nginx port is set in /usr/local/etc/nginx/nginx.conf to 8080 so that nginx can run without sudo.
@@ -129,6 +125,20 @@ nano /usr/local/etc/nginx/nginx.conf
 error_log  /var/log/nginx/error.log;
 listen 80;
 sudo nginx (or sudo nginx -s reload)
+```
+
+#### PHP-FPM
+
+```bash
+brew install XXXX \
+memcached \
+libmemcached
+```
+
+#### MariaDB
+
+```bash
+brew install mariadb
 ```
 
 ####Homebrew Cask Apps & Fonts
