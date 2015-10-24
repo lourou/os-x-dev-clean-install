@@ -119,6 +119,18 @@ memcached \
 libmemcached \
 ```
 
+The default nginx port is set in /usr/local/etc/nginx/nginx.conf to 8080 so that
+nginx can run without sudo.
+
+nginx will load all files in /usr/local/etc/nginx/servers/.
+
+To have launchd start nginx at login:
+  ln -sfv /usr/local/opt/nginx/*.plist ~/Library/LaunchAgents
+Then to load nginx now:
+  launchctl load ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+Or, if you don't want/need launchctl, you can just run:
+  nginx
+
 ####Homebrew Cask Apps & Fonts
 
 ```bash
