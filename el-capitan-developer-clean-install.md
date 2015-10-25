@@ -1,5 +1,4 @@
 ## Bypass OS X System Integrity Protection
---
 
 - Reboot the mac pressing CMD + R
 - Open Utilities/Terminal
@@ -10,7 +9,6 @@
 ```
 
 ## OS X Preferences
---
 
 most of these require logout/restart to take effect
 
