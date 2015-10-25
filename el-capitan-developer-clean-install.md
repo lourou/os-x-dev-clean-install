@@ -86,6 +86,15 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 ```
 
+### Update .zshrc
+
+```bash
+#syntax highlighting
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
+~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+```
+
+
 ### Homebrew Basics
 
 ```bash
@@ -253,14 +262,6 @@ Then to load/unload mariadb:
 
     launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
     launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist 
-
-### Update .zshrc
-
-```bash
-#syntax highlighting
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
-~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-```
 
 ### Installing dandelion incremental deployment script
 
