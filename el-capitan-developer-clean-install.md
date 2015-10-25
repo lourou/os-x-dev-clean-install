@@ -153,9 +153,19 @@ Remove all PHP dependencies (it's only safe way to compile PHP successfully)
     brew remove unixodbc
     brew remove zlib
 
+Reinstall curl with openssl:
+
+    brew reinstall --with-openssl curl
+
 Then install PHP
 
-    brew install -v --with-fpm --with-mysql --disable-opcache php56
+    brew install -v --with-fpm \
+    --without-apache \
+    --with-mysql \
+    --with-homebrew-curl \
+    --with-homebrew-openssl \
+    --disable-opcache \
+    php56
 
 Install PHP extensions
 
@@ -347,21 +357,21 @@ brew install homebrew/fuse/encfs
 
 ## Git
 
-####Setup Github
+### Setup Github
 
 ```bash
-ssh-keygen -t rsa -C "saetia@gmail.com"
+ssh-keygen -t rsa -C "email@domain.com"
 
-#copy ssh key to clipboard for adding to github.com
+# Copy ssh key to clipboard for adding to github.com
 pbcopy < ~/.ssh/id_rsa.pub
 
-#test connection
+# Test connection
 ssh -T git@github.com
 
-#set git config values
-git config --global user.name "Joel Glovacki" && \
-git config --global user.email "saetia@gmail.com" && \
-git config --global github.user saetia && \
+# Set git config values
+git config --global user.name "Full Name" && \
+git config --global user.email "email@domain.com" && \
+git config --global github.user githubusername && \
 git config --global core.editor "subl -w" && \
 git config --global color.ui true && \
 git config --global push.default simple
@@ -371,35 +381,33 @@ git config --global github.token your_token_here
 ```
 
 
-###Sublime Text
+## Sublime Text
 
----
-
-####Install Soda Theme
+### Install Soda Theme
 
 ```bash
 git clone git://github.com/buymeasoda/soda-theme.git \
 ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Theme\ -\ Soda
 ```
 
-####Install Tomorrow Night Eighties Themes
+### Install Tomorrow Night Eighties Themes
 
 ```bash
 #Sublime Text
 git clone git://github.com/chriskempson/textmate-tomorrow-theme.git \
 ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Color\ Scheme\ -\ Tomorrow
 
-#iTerm2
+# iTerm2
 wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Tomorrow%20Night%20Eighties.itermcolors \
 -O ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors && open ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors
 
-#Xcode
+# Xcode
 mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes && \
 wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%204/Tomorrow%20Night%20Eighties.dvtcolortheme -O \
 ~/Library/Developer/Xcode/UserData/FontAndColorThemes/Tomorrow\ Night\ Eighties.dvtcolortheme
 ```
 
-####Settings
+### Settings
 
 ```json
 {
@@ -423,7 +431,7 @@ wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%
 
 ```
 
-####Key Bindings
+### Key Bindings
 
 
 ```json
@@ -435,7 +443,7 @@ wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%
 ```
 
 
-####Snippets
+### Snippets
 
 ```bash
 git clone git@github.com:co-b/sublime-snippets.git \
@@ -450,70 +458,16 @@ sudo gem install cocoapods
 pod setup
 ```
 
-### Ruby
----
+## Ruby Gems
 
-#### Ruby version manager
-
-```bash
-curl -L https://get.rvm.io | bash -s stable --rails
-```
-
-#### Gems
 ```bash
 gem install pygmentize growl guard guard-phpunit bropages
 ```
 
-
-
-### Node
----
-
-#### Packages
+## Node Packages
 
 ```bash
 npm install -g coffee-script bower
-```
-
-
-
-
-### Vagrant
----
-
-```bash
-vagrant plugin install vagrant-hostsupdater
-```
-
-
-### PHP
----
-
-```bash
-#switch from SecureTransport
-brew reinstall --with-openssl curl
-
-#install php-fpm
-brew tap homebrew/dupes && \
-brew tap homebrew/versions && \
-brew tap homebrew/dupes && \
-brew install php70 \
---with-fpm \
---without-apache \
---with-mysql \
---with-homebrew-curl \
---with-homebrew-openssl \ 
---without-snmp
-
-#setup daemon
-ln -sfv /usr/local/opt/php70/*.plist ~/Library/LaunchAgents && \
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php70.plist
-```
-
-####PHP-Redis
-```bash
-#brew install php70-redis
-brew install --HEAD homebrew/php/php70-redis
 ```
 
 ####MariaDB
