@@ -538,5 +538,6 @@ sudo mkdir -p /var/ && sudo ln -s ~/Sites /var/www
 ## Credits
 
 https://gist.github.com/saetia/1623487
+
 https://github.com/OzzyCzech/dotfiles/blob/master/how-to-install-mac.md
 
