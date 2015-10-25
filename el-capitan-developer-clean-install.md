@@ -125,7 +125,7 @@ youtube-dl
     sudo nginx (or sudo nginx -s reload)
 
 
-### PHP-FPM
+### Installing PHP-FPM
 
 Start with taping formulas repositories:
 
@@ -211,11 +211,34 @@ My configuration:
     xdebug.profiler_enable_trigger = 1;
     xdebug.profiler_output_dir = /Users/roman/.Trash
 
-### MariaDB
+### Installing MariaDB
 
     brew install mariadb
 
-### Homebrew Cask Apps & Fonts
+### Update .zshrc
+
+```bash
+#syntax highlighting
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
+~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+```
+
+### Installing dandelion incremental deployment script
+
+    sudo gem install dandelion
+
+### Set hostname
+
+```bash
+sudo scutil --set HostName 10u15.local
+```
+
+### Agree To Xcode
+```bash
+sudo xcrun cc
+```
+
+## Mac Apps and fonts with Homebrew Cask
 
 ```bash
 # add support for fonts
@@ -282,32 +305,7 @@ brew install homebrew/fuse/encfs
 ```
 
 
-####Update .zshrc
-
-```bash
-#syntax highlighting
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
-~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-```
-
-####Install dandelion incremental deployment script
-
-    sudo gem install dandelion
-
-####Set hostname
-
-```bash
-sudo scutil --set HostName 10u15.local
-```
-
-###Agree To Xcode
-```bash
-sudo xcrun cc
-```
-
-###Git
-
----
+## Git
 
 ####Setup Github
 
