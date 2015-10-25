@@ -1,4 +1,5 @@
-### Bypass OS X System Integrity Protection
+## Bypass OS X System Integrity Protection
+--
 
 - Reboot the mac pressing CMD + R
 - Open Utilities/Terminal
@@ -8,8 +9,8 @@
     bashcsrutil disable; reboot
 ```
 
-### OS X Preferences
----
+## OS X Preferences
+--
 
 most of these require logout/restart to take effect
 
