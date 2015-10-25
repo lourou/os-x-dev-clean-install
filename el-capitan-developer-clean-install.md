@@ -2,10 +2,11 @@
 
 - Reboot the mac pressing CMD + R
 - Open Utilities/Terminal
-- Type: 
-```
-bashcsrutil disable; reboot
-```
+- Type:
+
+
+    bashcsrutil disable; reboot
+
 
 ### OS X Preferences
 ---
@@ -78,54 +79,49 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
 ```
 
-
-
 ###Shell
 
 ---
 
 ####Switch to z-shell
 
-```bash
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-```
-
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
 ####Homebrew Basics
 
-```bash
-# install package manager
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    # install package manager
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# install homebrew packages
-brew install \
-tree \
-ssh-copy-id \
-wget \
-jpegoptim \
-pngcrush \
-colordiff \
-imagemagick \
-graphicsmagick \
-caskroom/cask/brew-cask
-```
+
+    # install homebrew packages
+    brew install \
+    tree \
+    ssh-copy-id \
+    wget \
+    jpegoptim \
+    pngcrush \
+    colordiff \
+    imagemagick \
+    graphicsmagick \
+    caskroom/cask/brew-cask \
+    youtube-dl
+
 #### Installing nginx
 
-```bash
-brew install nginx
-```
+    brew install nginx
 
 - The default nginx port is set in /usr/local/etc/nginx/nginx.conf to 8080 so that nginx can run without sudo.
 - nginx will load all files in /usr/local/etc/nginx/servers/.
-- switch nginx from port 8080 to 80 and write error logs in /var/log/nginx :
-```
-sudo mkdir /var/log/nginx
-sudo mkdir /var/log/php-fpm
-nano /usr/local/etc/nginx/nginx.conf
-error_log  /var/log/nginx/error.log;
-listen 80;
-sudo nginx (or sudo nginx -s reload)
-```
+- switch nginx from port 8080 to 80 and write error logs in /var/log/nginx:
+
+
+    sudo mkdir /var/log/nginx
+    sudo mkdir /var/log/php-fpm
+    nano /usr/local/etc/nginx/nginx.conf
+    error_log  /var/log/nginx/error.log;
+    listen 80;
+    sudo nginx (or sudo nginx -s reload)
+
 
 #### PHP-FPM
 
@@ -149,10 +145,6 @@ Remove all PHP dependencies (it's only safe way to compile PHP successfully)
 Then install PHP
 
     brew install -v --with-fpm --with-mysql --disable-opcache php56
-    
-Launch after login
-
-    ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents
 
 Install PHP extensions
 
@@ -167,21 +159,57 @@ Install PHP extensions
     brew install php56-tidy
     brew install php56-xdebug
 
-add launch agent for memcached
-
-    ln -sfv /usr/local/opt/memcached/*.plist ~/Library/LaunchAgents
-
-or get others
-
-    brew search php56
-
-What about APC? See [stackoverflow](http://stackoverflow.com/questions/9611676/is-apc-compatible-with-php-5-4-or-php-5-5) - APC have some problems but you can install emulated APC
-
-    brew install php56-apcu # APC
-
 ### PHP-FPM
 
-Replace OS X PHP
+We will now replace MacOS X PHP with the one we just installed.
+
+Update `~/.zshrc` in order to have the PATH begining with:
+
+    export PATH="/usr/local/bin:/usr/local/sbin:...
+
+Restart Terminal and check if `php -v` or `php-fpm -v` gives you PHP version 5.6
+
+### Configuration and php.ini
+
+You can found basic php-fpm config file here `subl /usr/local/etc/php/5.6/php-fpm.conf`. Check especially `listen = 127.0.0.1:9000` everything else can be leave as is.
+
+PHP config files can be found here `subl /usr/local/etc/php/5.6/conf.d/`. You can change `php.ini` but its more more easly keept change is spearate file:
+
+    subl /usr/local/etc/php/5.6/conf.d/zzzzzzzzzzzzzzzzzzzzzzzz.ini
+
+See my configuration:
+
+    short_open_tag = On
+    display_errors = On
+    display_startup_errors = On
+    upload_max_filesize = 1024M
+    post_max_size = 1024M
+    date.timezone = "Europe/Prague"
+    error_reporting = E_ALL
+    memory_limit = 256M
+
+    log_errors=On
+    error_log=/tmp/php-error.log
+
+    mysql.default_socket=/tmp/mysql.sock
+    pdo_mysql.default_socket=/tmp/mysql.sock
+
+    [opcache]
+    opcache.revalidate_freq=1
+
+    [xdebug]
+    xdebug.remote_enable=1
+    xdebug.remote_connect_back=On
+    ;xdebug.remote_host=127.0.0.1
+    ;xdebug.remote_port=9001
+    xdebug.remote_autostart=1
+    xdebug.idekey=PHPSTORM
+    xhprof.output_dir="/var/tmp/xhprof"
+
+    xdebug.profiler_enable = 0;
+    xdebug.profiler_output_name=cachegrind.out.%H.%t
+    xdebug.profiler_enable_trigger = 1;
+    xdebug.profiler_output_dir = /Users/roman/.Trash
 
 ### MariaDB
 
@@ -246,6 +274,11 @@ brew cask install \
 ableton-live-suite \
 vlc \
 cycling74-max
+
+#install encfs
+brew cask install osxfuse
+brew install homebrew/fuse/encfs
+
 ```
 
 
@@ -257,10 +290,14 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
 ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```
 
+####Install dandelion incremental deployment script
+
+    sudo gem install dandelion
+
 ####Set hostname
 
 ```bash
-sudo scutil --set HostName Work
+sudo scutil --set HostName 10u15.local
 ```
 
 ###Agree To Xcode
@@ -295,16 +332,6 @@ git config --global push.default simple
 git config --global github.token your_token_here
 ```
 
-###Coda
-
----
-
-####Install markdown support
-
-```bash
-git clone https://github.com/bobthecow/Markdown.mode.git \
-~/Library/Application\ Support/Coda\ 2/modes/Markdown.mode
-```
 
 ###Sublime Text
 
@@ -509,7 +536,3 @@ to access this site, visit http://example.com.build
 ```bash
 sudo mkdir -p /var/ && sudo ln -s ~/Sites /var/www
 ```
-
-
-
-![aww yeah](http://i.imgur.com/AmFax.gif)
