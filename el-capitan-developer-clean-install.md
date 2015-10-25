@@ -4,9 +4,9 @@
 - Open Utilities/Terminal
 - Type:
 
-
+```bash
     bashcsrutil disable; reboot
-
+```
 
 ### OS X Preferences
 ---
@@ -91,7 +91,6 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
     # install package manager
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
 
     # install homebrew packages
     brew install \
