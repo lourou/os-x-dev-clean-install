@@ -5,7 +5,7 @@
 - Type:
 
 ```bash
-    bashcsrutil disable; reboot
+bashcsrutil disable; reboot
 ```
 
 ## OS X Preferences
@@ -214,6 +214,47 @@ My configuration:
 ### Installing MariaDB
 
     brew install mariadb
+    mysql_install_db
+
+#### Running MariaDB
+
+To have launchd start mariadb at login:
+
+    ln -sfv /usr/local/opt/mariadb/*.plist ~/Library/LaunchAgents
+
+Then to load mariadb now:
+
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
+
+Unload mariadb:
+
+    launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist 
+
+Or, if you don't want to use launchctl, you can just run:
+
+    mysql.server start
+
+#### Configuring MariaDB
+
+    mysqladmin -u root password 'new-password'
+    mysql_secure_installation
+    
+Launch MariaDB:
+
+    mysql.server start
+
+Deactivate Binary Logs as we do not need replication:
+
+    mysql -uroot -p
+    SET sql_log_bin = 0;
+    exit
+
+Restart MariaDB and check if log_bin = OFF:
+
+    mysql.server restart
+    mysql -uroot -p
+    SHOW VARIABLES LIKE 'log_bin';
+    exit
 
 ### Update .zshrc
 
@@ -537,7 +578,5 @@ sudo mkdir -p /var/ && sudo ln -s ~/Sites /var/www
 
 ## Credits
 
-https://gist.github.com/saetia/1623487
-
-https://github.com/OzzyCzech/dotfiles/blob/master/how-to-install-mac.md
-
+- https://gist.github.com/saetia/1623487
+- https://github.com/OzzyCzech/dotfiles/blob/master/how-to-install-mac.md
