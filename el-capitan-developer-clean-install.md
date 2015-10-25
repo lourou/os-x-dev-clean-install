@@ -184,12 +184,12 @@ My configuration:
     display_startup_errors = On
     upload_max_filesize = 1024M
     post_max_size = 1024M
-    date.timezone = "Europe/Prague"
+    date.timezone = "Europe/Paris"
     error_reporting = E_ALL
-    memory_limit = 256M
+    memory_limit = 512M
 
     log_errors=On
-    error_log=/tmp/php-error.log
+    error_log=/var/log/php-fpm/error.log
 
     mysql.default_socket=/tmp/mysql.sock
     pdo_mysql.default_socket=/tmp/mysql.sock
@@ -209,39 +209,25 @@ My configuration:
     xdebug.profiler_enable = 0;
     xdebug.profiler_output_name=cachegrind.out.%H.%t
     xdebug.profiler_enable_trigger = 1;
-    xdebug.profiler_output_dir = /Users/roman/.Trash
+    xdebug.profiler_output_dir = /Users/louis/.Trash
 
-### Installing MariaDB
+### MariaDB
+
+#### Installing MariaDB
 
     brew install mariadb
     mysql_install_db
 
-#### Running MariaDB
+#### Configuring MariaDB
 
-To have launchd start mariadb at login:
-
-    ln -sfv /usr/local/opt/mariadb/*.plist ~/Library/LaunchAgents
-
-Then to load mariadb now:
-
-    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
-
-Unload mariadb:
-
-    launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist 
-
-Or, if you don't want to use launchctl, you can just run:
+You can start MariaDB now:
 
     mysql.server start
 
-#### Configuring MariaDB
+We will now set a root password and make the installation more secure:
 
     mysqladmin -u root password 'new-password'
     mysql_secure_installation
-    
-Launch MariaDB:
-
-    mysql.server start
 
 Deactivate Binary Logs as we do not need replication:
 
@@ -255,6 +241,18 @@ Restart MariaDB and check if log_bin = OFF:
     mysql -uroot -p
     SHOW VARIABLES LIKE 'log_bin';
     exit
+
+#### Launch MariaDB at login
+
+After everything is set up, you may want to use launchctl to start mariadb at login:
+
+    mysql.server stop
+    ln -sfv /usr/local/opt/mariadb/*.plist ~/Library/LaunchAgents
+
+Then to load/unload mariadb:
+
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
+    launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist 
 
 ### Update .zshrc
 
