@@ -10,7 +10,7 @@
 
 ## OS X Preferences
 
-most of these require logout/restart to take effect
+Most of these require logout/restart to take effect
 
 ```bash
 # Enable character repeat on keydown
@@ -78,33 +78,37 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
 ```
 
-###Shell
+##Shell
 
 ---
 
-####Switch to z-shell
+### Switch to zsh
 
-    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+```bash
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+```
 
-####Homebrew Basics
+### Homebrew Basics
 
-    # install package manager
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```bash
+# install package manager
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-    # install homebrew packages
-    brew install \
-    tree \
-    ssh-copy-id \
-    wget \
-    jpegoptim \
-    pngcrush \
-    colordiff \
-    imagemagick \
-    graphicsmagick \
-    caskroom/cask/brew-cask \
-    youtube-dl
+# install homebrew packages
+brew install \
+tree \
+ssh-copy-id \
+wget \
+jpegoptim \
+pngcrush \
+colordiff \
+imagemagick \
+graphicsmagick \
+caskroom/cask/brew-cask \
+youtube-dl
+```
 
-#### Installing nginx
+## Installing nginx
 
     brew install nginx
 
