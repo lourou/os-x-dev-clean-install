@@ -80,8 +80,6 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
 ##Shell
 
----
-
 ### Switch to zsh
 
 ```bash
@@ -108,7 +106,9 @@ caskroom/cask/brew-cask \
 youtube-dl
 ```
 
-## Installing nginx
+## Development Tools
+
+### Installing nginx
 
     brew install nginx
 
@@ -125,7 +125,7 @@ youtube-dl
     sudo nginx (or sudo nginx -s reload)
 
 
-#### PHP-FPM
+### PHP-FPM
 
 Start with taping formulas repositories:
 
@@ -161,8 +161,6 @@ Install PHP extensions
     brew install php56-tidy
     brew install php56-xdebug
 
-### PHP-FPM
-
 We will now replace MacOS X PHP with the one we just installed.
 
 Update `~/.zshrc` in order to have the PATH begining with:
@@ -171,15 +169,15 @@ Update `~/.zshrc` in order to have the PATH begining with:
 
 Restart Terminal and check if `php -v` or `php-fpm -v` gives you PHP version 5.6
 
-### Configuration and php.ini
+### php-fpm.conf and php.ini
 
 You can found basic php-fpm config file here `subl /usr/local/etc/php/5.6/php-fpm.conf`. Check especially `listen = 127.0.0.1:9000` everything else can be leave as is.
 
 PHP config files can be found here `subl /usr/local/etc/php/5.6/conf.d/`. You can change `php.ini` but its more more easly keept change is spearate file:
 
-    subl /usr/local/etc/php/5.6/conf.d/zzzzzzzzzzzzzzzzzzzzzzzz.ini
+    subl /usr/local/etc/php/5.6/conf.d/custom.ini
 
-See my configuration:
+My configuration:
 
     short_open_tag = On
     display_errors = On
