@@ -467,7 +467,13 @@ npm install -g coffee-script bower
 
 ## LaTeX
 
-Follow http://www.math.univ-toulouse.fr/~mleroy/LaTeX/Install_MacOSX_mactex.pdf
+- Download MacTeX.pkg (2.3 Go): http://www.tug.org/mactex/
+- 
+
+Add Lat to PATH variable:
+
+
+    export PATH="/usr/local/bin:/usr/local/sbin:/Library/TeX/texbin:/
 
 ####MariaDB // Remove
 
@@ -532,3 +538,5 @@ sudo mkdir -p /var/ && sudo ln -s ~/Sites /var/www
 
 - https://gist.github.com/saetia/1623487
 - https://github.com/OzzyCzech/dotfiles/blob/master/how-to-install-mac.md
+- http://www.tug.org/mactex/elcapitan.html
+- http://www.math.univ-toulouse.fr/~mleroy/LaTeX/Install_MacOSX_mactex.pdf
