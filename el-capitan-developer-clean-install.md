@@ -456,7 +456,7 @@ pod setup
 ## Ruby Gems
 
 ```bash
-gem install dandelion
+sudo gem install net-sftp dandelion
 ```
 
 ## Node Packages
