@@ -467,11 +467,9 @@ npm install -g coffee-script bower
 
 ## LaTeX
 
-- Download MacTeX.pkg (2.3 Go): http://www.tug.org/mactex/
-- 
+Download MacTeX.pkg (2.3 Go): http://www.tug.org/mactex/
 
-Add Lat to PATH variable:
-
+Add Latex binary to PATH variable:
 
     export PATH="/usr/local/bin:/usr/local/sbin:/Library/TeX/texbin:/
 
