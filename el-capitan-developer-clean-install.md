@@ -273,10 +273,6 @@ Then to load/unload mariadb:
     launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
     launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist 
 
-### Installing dandelion incremental deployment script
-
-    sudo gem install dandelion
-
 ### Set hostname
 
 ```bash
@@ -450,8 +446,7 @@ git clone git@github.com:co-b/sublime-snippets.git \
 ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/CoB
 ```
 
-### iOS
----
+## iOS
 
 ```bash
 sudo gem install cocoapods
@@ -461,7 +456,7 @@ pod setup
 ## Ruby Gems
 
 ```bash
-gem install pygmentize growl guard guard-phpunit bropages
+gem install dandelion
 ```
 
 ## Node Packages
@@ -470,7 +465,11 @@ gem install pygmentize growl guard guard-phpunit bropages
 npm install -g coffee-script bower
 ```
 
-####MariaDB
+## LaTeX
+
+Follow http://www.math.univ-toulouse.fr/~mleroy/LaTeX/Install_MacOSX_mactex.pdf
+
+####MariaDB // Remove
 
 ```bash
 
@@ -485,7 +484,7 @@ mysql_install_db
 mysql_secure_installation
 ```
 
-####NGINX
+####NGINX // Remove
 
 ```bash
 sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/ && 
