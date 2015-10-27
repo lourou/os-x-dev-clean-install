@@ -94,6 +94,11 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
 ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```
 
+### Autojump
+
+Autojup is a cd command that learns - easily navigate directories from the command line.
+
+    brew install autojump
 
 ### Homebrew Basics
 
