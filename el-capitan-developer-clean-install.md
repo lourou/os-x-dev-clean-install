@@ -235,14 +235,20 @@ My configuration:
     xdebug.profiler_enable_trigger = 1;
     xdebug.profiler_output_dir = /Users/louis/.Trash
 
-### MariaDB
+### Installing Drush
 
-#### Installing MariaDB
+Drush is a command line tool for Drupal
+
+    brew install drush
+
+## MariaDB
+
+### Installing MariaDB
 
     brew install mariadb
     mysql_install_db
 
-#### Configuring MariaDB
+### Configuring MariaDB
 
 You can start MariaDB now:
 
@@ -266,7 +272,7 @@ Restart MariaDB and check if log_bin = OFF:
     SHOW VARIABLES LIKE 'log_bin';
     exit
 
-#### Launch MariaDB at login
+### Launch MariaDB at login
 
 After everything is set up, you may want to use launchctl to start mariadb at login:
 
