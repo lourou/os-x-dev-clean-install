@@ -75,6 +75,9 @@ chflags nohidden ~/Library
 # Show absolute path in finder's title bar. 
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
+# Switch to dark menu bar
+defaults write NSGlobalDomain AppleInterfaceStyle Dark; killall Dock
+
 
 ```
 
@@ -309,14 +312,12 @@ brew cask install \
 1password \
 font-source-code-pro \
 adobe-creative-cloud \
-blueharvest \
 sublime-text-dev \
 google-chrome \
 firefox \
 opera \
 codekit \
 sequel-pro \
-querious \
 imageoptim \
 imagealpha \
 bartender \
