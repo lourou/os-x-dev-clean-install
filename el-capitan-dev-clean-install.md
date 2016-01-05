@@ -349,7 +349,8 @@ omnigraffle \
 spotify \
 scansnap-manager-ix100 \
 vmware-fusion \
-textexpander
+textexpander \
+androidtool
 
 #install music apps
 brew cask install \
