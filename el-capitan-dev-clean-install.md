@@ -362,6 +362,10 @@ cycling74-max
 brew cask install osxfuse
 brew install homebrew/fuse/encfs
 
+#install Speedtest command line interface
+sudo pip install speedtest-cli
+
+
 ```
 
 
