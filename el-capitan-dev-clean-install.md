@@ -143,12 +143,18 @@ youtube-dl
     sudo nginx (or sudo nginx -s reload)
 ```
 
-- Make nginx a deamon
+### Launch Nginx at login
 
-```bash
+```bash 
 sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/ && 
 sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist &&
 sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+```
+  
+Run the following to unload the service so it will not start again at login:
+
+```bash    
+sudo launchctl unload -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 ```
 
 ### Installing PHP-FPM
@@ -247,6 +253,34 @@ My configuration:
     xdebug.profiler_enable_trigger = 1;
     xdebug.profiler_output_dir = /Users/louis/.Trash
 
+### Launch PHP FPM at login
+
+- Use `nano ~/Library/LaunchAgents/org.php.php-fpm.plist` to save a PHP-FPM plist file:
+
+```bash
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>Label</key><string>php-fpm</string>
+<key>Program</key><string>/usr/local/sbin/php-fpm</string>
+<key>KeepAlive</key><true/>
+</dict>
+</plist>
+```
+
+Run the following commands to load the services for the first time:
+
+```bash 
+launchctl load -w ~/Library/LaunchAgents/org.php.php-fpm.plist
+```
+  
+Run the following to unload the service so it will not start again at login:
+
+```bash    
+launchctl unload -w ~/Library/LaunchAgents/org.php.php-fpm.plist
+```
+
 ### Installing Drush
 
 Drush is a command line tool for Drupal
@@ -290,11 +324,13 @@ After everything is set up, you may want to use launchctl to start mariadb at lo
 
     mysql.server stop
     ln -sfv /usr/local/opt/mariadb/*.plist ~/Library/LaunchAgents
-
-Then to load/unload mariadb:
-
     launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
+    
+Run the following to unload the service so it will not start again at login:
+
+```bash    
     launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist 
+```
 
 ### Set hostname
 
@@ -501,28 +537,6 @@ Add Latex binary to PATH variable:
 
     export PATH="/usr/local/bin:/usr/local/sbin:/Library/TeX/texbin:/
 
-####MariaDB // Remove
-
-```bash
-
-#setup daemon
-ln -sfv /usr/local/opt/mariadb/*.plist ~/Library/LaunchAgents && \
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
-
-#initial setup
-mysql_install_db
-
-#secure mariadb
-mysql_secure_installation
-```
-
-####NGINX // Remove
-
-```bash
-sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/ && 
-sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist &&
-sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
-```
 
 ### Local Web Server
 ---
@@ -543,7 +557,7 @@ sudo zsh -c 'echo "nameserver 127.0.0.1" > /etc/resolver/build'
 sudo discoveryutil mdnsflushcache && scutil --dns
 ```
 
-####Enable virtual hosts
+#### Enable virtual hosts
 
 This will allow you to serve folders under ~/Sites/ as websites. 
 
@@ -555,14 +569,16 @@ This will allow you to serve folders under ~/Sites/ as websites.
 to access this site, visit http://example.com.build
 
 
-####Match production server paths
+#### Match production server paths
+
 ```bash
 sudo mkdir -p /var/ && sudo ln -s ~/Sites /var/www
 ```
 
 ## Credits
 
-- https://gist.github.com/saetia/1623487
-- https://github.com/OzzyCzech/dotfiles/blob/master/how-to-install-mac.md
-- http://www.tug.org/mactex/elcapitan.html
-- http://www.math.univ-toulouse.fr/~mleroy/LaTeX/Install_MacOSX_mactex.pdf
+- <https://gist.github.com/saetia/1623487>
+- <https://github.com/OzzyCzech/dotfiles/blob/master/how-to-install-mac.md>
+- <http://www.tug.org/mactex/elcapitan.html>
+- <http://www.math.univ-toulouse.fr/~mleroy/LaTeX/Install_MacOSX_mactex.pdf>
+- <http://designsimply.com/2011/12/18/autostart-mysql-php-fpm-nginx-os-x-lion>
