@@ -285,7 +285,7 @@ After everything is set up, you may want to use launchctl to start mariadb at lo
 
 Then to load/unload mariadb:
 
-    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
+    launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
     launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist 
 
 ### Set hostname
