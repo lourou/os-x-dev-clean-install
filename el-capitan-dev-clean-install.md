@@ -134,14 +134,22 @@ youtube-dl
 - nginx will load all files in /usr/local/etc/nginx/servers/.
 - switch nginx from port 8080 to 80 and write error logs in /var/log/nginx:
 
-
+```bash
     sudo mkdir /var/log/nginx
     sudo mkdir /var/log/php-fpm
     nano /usr/local/etc/nginx/nginx.conf
     error_log  /var/log/nginx/error.log;
     listen 80;
     sudo nginx (or sudo nginx -s reload)
+```
 
+- Make nginx a deamon
+
+```bash
+sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/ && 
+sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist &&
+sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+```
 
 ### Installing PHP-FPM
 
