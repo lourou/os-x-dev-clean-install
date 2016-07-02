@@ -5,7 +5,7 @@
 - Type:
 
 ```bash
-bashcsrutil disable; reboot
+csrutil disable; reboot
 ```
 
 ## OS X Preferences
@@ -77,11 +77,9 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
 # Switch to dark menu bar
 defaults write NSGlobalDomain AppleInterfaceStyle Dark; killall Dock
-
-
 ```
 
-##Shell
+## Shell
 
 ### Switch to zsh
 
