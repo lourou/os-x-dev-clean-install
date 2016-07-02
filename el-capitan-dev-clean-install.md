@@ -198,6 +198,9 @@ sudo nvram SystemAudioVolume=" "
 # System Sound - Disable the system UI sound effects
 sudo defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
+# Terminal - Prevent beep
+echo "set bell-style none" >> ~/.inputrc
+
 ```
 
 ## OS X Preferences that need custom input
