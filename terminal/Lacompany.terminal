@@ -35,8 +35,10 @@
 	</data>
 	<key>FontAntialias</key>
 	<true/>
+	<key>FontHeightSpacing</key>
+	<integer>1</integer>
 	<key>FontWidthSpacing</key>
-	<real>0.99596774193548387</real>
+	<integer>1</integer>
 	<key>ProfileCurrentVersion</key>
 	<real>2.04</real>
 	<key>SelectionColor</key>
@@ -47,6 +49,22 @@
 	TlNPYmplY3RfEA9OU0tleWVkQXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSFBdZHBy
 	dHmEjZWYobO2uwAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAAC9
 	</data>
+	<key>ShowActiveProcessArgumentsInTabTitle</key>
+	<true/>
+	<key>ShowActiveProcessArgumentsInTitle</key>
+	<true/>
+	<key>ShowActiveProcessInTitle</key>
+	<true/>
+	<key>ShowDimensionsInTitle</key>
+	<false/>
+	<key>ShowRepresentedURLInTitle</key>
+	<true/>
+	<key>ShowRepresentedURLPathInTitle</key>
+	<true/>
+	<key>ShowShellCommandInTitle</key>
+	<false/>
+	<key>ShowTTYNameInTitle</key>
+	<false/>
 	<key>ShowWindowSettingsNameInTitle</key>
 	<false/>
 	<key>StrictVTKeypad</key>
@@ -72,7 +90,7 @@
 	<key>VisualBell</key>
 	<false/>
 	<key>name</key>
-	<string>Pro</string>
+	<string>Lacompany</string>
 	<key>shellExitAction</key>
 	<integer>2</integer>
 	<key>type</key>
