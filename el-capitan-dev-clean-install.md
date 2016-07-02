@@ -105,6 +105,10 @@ defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && \
 killall -9 NotificationCenter
 
+# Enable Guest Access and prevent user listing
+defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled 1
+defaults write /Library/Preferences/com.apple.loginwindow showInputMenu 0
+
 ```
 
 ## OS X Preferences that need custom input
