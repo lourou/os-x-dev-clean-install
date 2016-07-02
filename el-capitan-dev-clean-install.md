@@ -196,7 +196,7 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 sudo nvram SystemAudioVolume=" "
 
 # System Sound - Disable the system UI sound effects
-defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
+sudo defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
 ```
 
