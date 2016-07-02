@@ -54,8 +54,9 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Show Status bar in Finder
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# Avoid creating .DS_Store files on network volumes
+# Avoid creating .DS_Store files on network and USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Disable disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
@@ -77,6 +78,47 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
 # Switch to dark menu bar
 defaults write NSGlobalDomain AppleInterfaceStyle Dark; killall Dock
+
+# Enable Contacts Debug Mode
+defaults write com.apple.addressbook ABShowDebugMenu -bool true
+
+# Apple Mail Show Attachments as Icons
+defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes
+
+# Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+# Sets default save target to be a local disk, not iCloud.
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# Disable Sound Effects on Boot
+sudo nvram SystemAudioVolume=" "
+
+# Screensaver Lock with Password within 5 seconds
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 5
+
+# Disable AirDrop
+defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
+
+# Disable Notification Center Service
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && \
+killall -9 NotificationCenter
+
+```
+
+## OS X Preferences that need custom input
+
+```bash
+# Set Login Window Text
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "If you found this computer, please call +33 X XX XX XX XX"
+
+# List Available Timezones
+sudo systemsetup -listtimezones
+
+# Set Timezone and Set Clock Using Network Time
+sudo systemsetup -settimezone Europe/Paris
+sudo systemsetup setusingnetworktime on
 ```
 
 ## Shell
@@ -336,9 +378,11 @@ Run the following to unload the service so it will not start again at login:
 sudo scutil --set HostName 10u15.local
 ```
 
-### Agree To Xcode
+### Install Xcode
 ```bash
+xcode-select --install
 sudo xcrun cc
+xcrun simctl delete unavailable
 ```
 
 ## Mac Apps and fonts with Homebrew Cask
