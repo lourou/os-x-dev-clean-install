@@ -31,9 +31,9 @@ defaults write com.apple.dashboard enabled-state 2
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
 
-# Make top-left hotspot start screensaver
-defaults write com.apple.dock wvous-tl-corner -int 5 && \
-defaults write com.apple.dock wvous-tl-modifier -int 0
+# Make bottom-left hotspot start screensaver
+defaults write com.apple.dock wvous-bl-corner -int 5 && \
+defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # Set default Finder location to home folder (~/)
 defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
@@ -79,20 +79,11 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 # Switch to dark menu bar
 defaults write NSGlobalDomain AppleInterfaceStyle Dark; killall Dock
 
-# Enable Contacts Debug Mode
-defaults write com.apple.addressbook ABShowDebugMenu -bool true
-
-# Apple Mail Show Attachments as Icons
-defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes
-
 # Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Sets default save target to be a local disk, not iCloud.
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
-
-# Disable Sound Effects on Boot
-sudo nvram SystemAudioVolume=" "
 
 # Screensaver Lock with Password within 5 seconds
 defaults write com.apple.screensaver askForPassword -int 1
@@ -110,6 +101,102 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu 1
 
 # Prevent user list with picture to show up, display login and password field instead
 sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME 1
+
+# System - Reveal IP address, hostname, OS version, etc. when clicking the login window clock
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+
+# System - Disable software updates
+sudo softwareupdate --schedule off
+
+# Trackpad - Map bottom right corner to right-click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+
+# Trackpad - Enable tap to click for current user and the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Dock - Remove all default app icons
+defaults write com.apple.dock persistent-apps -array
+
+# Dock - Automatically hide and show
+defaults write com.apple.dock autohide -bool true
+
+# Dock - Remove the auto-hiding delay
+defaults write com.apple.Dock autohide-delay -float 0
+
+# Dock - Don’t show Dashboard as a Space
+defaults write com.apple.dock "dashboard-in-overlay" -bool true
+
+# Finder - Use list view in all Finder windows
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Finder - Allow text selection in Quick Look
+defaults write com.apple.finder QLEnableTextSelection -bool true
+
+# iOS Simulator - Symlink the iOS Simulator application
+sudo ln -sf "/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app" "/Applications/iOS Simulator.app"
+
+# Safari - Set home page to 'about:blank' for faster loading
+defaults write com.apple.Safari HomePage -string "about:blank"
+
+# Safari - Hide bookmarks bar
+defaults write com.apple.Safari ShowFavoritesBar -bool false
+
+# Safari - Use Contains instead of Starts With in search banners
+defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
+
+# Safari - Disable sending search queries to Apple.
+defaults write com.apple.Safari UniversalSearchEnabled -bool false
+
+# Chrome - Prevent native print dialog, use system dialog instead
+defaults write com.google.Chrome DisablePrintPreview -boolean true
+
+# Mail - Copy email addresses as 'foo@example.com' instead of 'Foo Bar <foo@example.com>'
+defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
+
+# Mail - Disable send animation
+defaults write com.apple.mail DisableSendAnimations -bool true
+
+# Mail - Disable reply animation
+defaults write com.apple.mail DisableReplyAnimations -bool true
+
+# Mail - Show Attachments as Icons
+defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes
+
+# Address Book - Enable debug menu
+defaults write com.apple.addressbook ABShowDebugMenu -bool true
+
+# iCal - Enable debug menu
+defaults write com.apple.iCal IncludeDebugMenu -bool true
+
+# Contacts - Enable Contacts Debug Mode
+defaults write com.apple.addressbook ABShowDebugMenu -bool true
+
+# Disk Utility - Enable debug menu
+defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+defaults write com.apple.DiskUtility advanced-image-options -bool true
+
+# Printer - Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+# Printer - Automatically quit printer app once the print jobs complete
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+# App Store - Enable the WebKit Developer Tools in the Mac App Store
+defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+
+# App Store - Enable Debug Menu in the Mac App Store
+defaults write com.apple.appstore ShowDebugMenu -bool true
+
+# System Sound - Disable Sound Effects on Boot
+sudo nvram SystemAudioVolume=" "
+
+# System Sound - Disable the system UI sound effects
+defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
 ```
 
