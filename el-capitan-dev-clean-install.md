@@ -101,13 +101,15 @@ defaults write com.apple.screensaver askForPasswordDelay -int 5
 # Disable AirDrop
 defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
 
-# Disable Notification Center Service
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && \
-killall -9 NotificationCenter
+# Login Window preferences
+# Enable secure guest access
+sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled 1
 
-# Enable Guest Access and prevent user listing
-defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled 1
-defaults write /Library/Preferences/com.apple.loginwindow showInputMenu 0
+# Show language input menu
+sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu 1
+
+# Prevent user list with picture to show up, display login and password field instead
+sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME 1
 
 ```
 
