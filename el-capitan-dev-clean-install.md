@@ -219,9 +219,18 @@ sudo systemsetup setusingnetworktime on
 
 ## Shell
 
-### Switch to zsh
-
 ```bash
+# Download Terminal profile with font
+curl -o /Library/Fonts/meslo.otf https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/terminal/meslo.otf && \
+curl -o /tmp/Lacompany.terminal https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/terminal/Lacompany.terminal && \
+open /tmp/Lacompany.terminal
+
+# Then, make the profile the default one
+defaults write com.apple.Terminal "Startup Window Settings" -string "Lacompany" && \
+defaults write com.apple.Terminal "Default Window Settings" -string "Lacompany" && \
+osascript -e 'tell application "Terminal" to close windows' & exit
+
+# Switch to zsh
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 ```
 
@@ -232,13 +241,6 @@ curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | 
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
 ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 ```
-
-### Autojump
-
-Autojup is a cd command that learns - easily navigate directories from the command line.
-
-    brew install autojump
-
 
 ### Homebrew Basics
 
@@ -256,8 +258,14 @@ pngcrush \
 colordiff \
 imagemagick \
 graphicsmagick \
-room//brew- \
-youtube-dl
+youtube-dl \
+autojump
+
+# Source Autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+# Install Cask
+brew tap caskroom/cask
 ```
 
 ## Development Tools
