@@ -295,7 +295,8 @@ graphicsmagick \
 youtube-dl \
 autojump
 
-# Source Autojump
+# Add the following line to your ~/.zshrc file
+# Remember to source the file to update your current session
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # Install Cask
@@ -306,19 +307,29 @@ brew tap caskroom/cask
 
 ### Installing nginx
 
-    brew install nginx
+```
+brew install nginx
 
+# To have launchd start nginx now and restart at login:
+brew services start nginx
+```
+
+- Default document root is: /usr/local/var/www
 - The default nginx port is set in /usr/local/etc/nginx/nginx.conf to 8080 so that nginx can run without sudo.
 - nginx will load all files in /usr/local/etc/nginx/servers/.
 - switch nginx from port 8080 to 80 and write error logs in /var/log/nginx:
 
 ```bash
-    sudo mkdir /var/log/nginx
-    sudo mkdir /var/log/php-fpm
-    nano /usr/local/etc/nginx/nginx.conf
-    error_log  /var/log/nginx/error.log;
-    listen 80;
-    sudo nginx (or sudo nginx -s reload)
+# Activate the logs
+sudo mkdir /var/log/nginx
+sudo mkdir /var/log/php-fpm
+nano /usr/local/etc/nginx/nginx.conf
+
+# At the top of the config file, add this:
+error_log  /var/log/nginx/error.log;
+
+# Reload config
+sudo nginx (or sudo nginx -s reload)
 ```
 
 ### Launch Nginx at login
