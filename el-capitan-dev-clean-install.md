@@ -25,7 +25,7 @@ defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleLocale -string "fr_US@currency=EUR"
 
 # System - Monday is the first day of the week
-defaults write ~/Library/Preferences/.GlobalPreferences.plist AppleFirstWeekday -dict gregorian 2
+defaults write NSGlobalDomain AppleFirstWeekday -dict gregorian 2
 
 # System - Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
