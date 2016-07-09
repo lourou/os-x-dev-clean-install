@@ -196,10 +196,9 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 sudo nvram SystemAudioVolume=" "
 
 # System Sound - Disable the system UI sound effects
-sudo defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
-sudo defaults write com.apple.systemsound "com.apple.sound.beep.flash" -int 0
-sudo defaults write com.apple.systemsound "com.apple.sound.beep.volume" -int 0
-sudo defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
+defaults write com.apple.systemsound "com.apple.sound.beep.flash" -int 0
+defaults write com.apple.systemsound "com.apple.sound.beep.volume" -int 0
+defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
 # Terminal - Prevent beep
 echo "set bell-style none" >> ~/.inputrc
