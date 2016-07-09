@@ -93,6 +93,12 @@ defaults write NSGlobalDomain AppleInterfaceStyle Dark; killall Dock
 # Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
+# Time Machine - Disable local Time Machine backups
+hash tmutil &> /dev/null && sudo tmutil disablelocal
+
+# Time Machine - Disable local Time Machine snapshots
+sudo tmutil disablelocal
+
 # Sets default save target to be a local disk, not iCloud.
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
