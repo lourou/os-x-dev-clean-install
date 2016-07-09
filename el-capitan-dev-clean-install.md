@@ -230,6 +230,9 @@ echo "set bell-style none" >> ~/.inputrc
 # Set Login Window Text
 sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "If you found this computer, please call +33 X XX XX XX XX"
 
+# Set HostName
+sudo scutil --set HostName yourhostname.local
+
 # List Available Timezones
 sudo systemsetup -listtimezones
 
@@ -520,43 +523,42 @@ After everything is set up, you may want to use launchctl to start mariadb at lo
     
 Run the following to unload the service so it will not start again at login:
 
-```bash    
     launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist 
-```
-
-### Set hostname
-
-```bash
-sudo scutil --set HostName 10u15.local
-```
+    
 
 ### Install Xcode
-```bash
-xcode-select --install
-sudo xcrun cc
-xcrun simctl delete unavailable
-```
+
+    xcode-select --install
+    sudo xcrun cc
+    xcrun simctl delete unavailable
 
 ## Mac Apps and fonts with Homebrew Cask
 
 ```bash
-# add support for fonts
+# Add support for fonts
 brew tap caskroom/fonts
 
-#add dev/beta versions
+# Add dev/beta versions
 brew tap caskroom/versions
 
 #install mac apps & fonts
 brew cask install \
 1password \
 font-source-code-pro \
-adobe-creative-cloud \
 sublime-text-dev \
 google-chrome \
 firefox \
 opera \
-codekit \
 sequel-pro \
+android-studio \
+mactracker \
+mpv \
+paw \
+whatsapp \
+shimo \
+sketch \
+tripmode \
+dupeguru \
 imageoptim \
 imagealpha \
 bartender \
@@ -567,13 +569,9 @@ cloud \
 colorpicker-developer \
 dropbox \
 evernote \
-fabric \
 flux \
 focus \
-handbrake \
 kindle \
-subler \
-transmission \
 transmit \
 moom \
 sourcetree \
@@ -588,26 +586,43 @@ omnigraffle \
 spotify \
 scansnap-manager-ix100 \
 vmware-fusion \
-textexpander \
 androidtool \
-macdown
-
-#install music apps
-brew cask install \
-ableton-live-suite \
+macdown \
 vlc \
-cycling74-max
+vox
 
-#install encfs
+# Encfs
 brew cask install osxfuse
 brew install homebrew/fuse/encfs
 
-#install Speedtest command line interface
+# Speedtest command line interface
+sudo easy_install pip
 sudo pip install speedtest-cli
 
-
+# Synology Apps
+brew cask install \
+synology-assistant \
+synology-cloud-station-drive \
+synology-photo-station-uploader
 ```
 
+Some apps require manuel of App Store install:
+
+- Adobe Creative Cloud
+- Pocket
+- Reeder
+- SiteSucker
+- ScanSnap OCR (Abbyy Fine Reader)
+
+Music and DJ apps:
+
+```bash
+brew cask install \
+ableton-live \
+cycling74-max \
+rekordbox \
+soulseek
+```
 
 ## Git
 
