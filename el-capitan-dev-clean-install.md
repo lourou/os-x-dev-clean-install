@@ -328,6 +328,9 @@ nano /usr/local/etc/nginx/nginx.conf
 # At the top of the config file, add this:
 error_log  /var/log/nginx/error.log;
 
+# Change port from 8080 to 80
+listen 80;
+
 # Reload config
 sudo nginx (or sudo nginx -s reload)
 ```
