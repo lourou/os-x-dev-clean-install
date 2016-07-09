@@ -13,17 +13,25 @@ csrutil disable; reboot
 Most of these require logout/restart to take effect
 
 ```bash
-# Enable character repeat on keydown
-defaults write -g ApplePressAndHoldEnabled -bool false
-
-# Set a shorter Delay until key repeat
-defaults write NSGlobalDomain InitialKeyRepeat -int 12
-
-# Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
-
 # Disable window animations ("new window" scale effect)
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+# System - Disable cursor magnification
+defaults write NSGlobalDomain CGDisableCursorLocationMagnification -bool YES
+
+# System - Locale
+defaults write NSGlobalDomain AppleMetricUnits -bool YES
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleLocale -string "fr_US@currency=EUR"
+
+# System - Monday is the first day of the week
+defaults write ~/Library/Preferences/.GlobalPreferences.plist AppleFirstWeekday -dict gregorian 2
+
+# System - Disable hibernation (speeds up entering sleep mode)
+sudo pmset -a hibernatemode 0;ok
+
+# System - Allow 'locate' command
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist > /dev/null 2>&1;ok
 
 # Turn on dashboard-as-space
 defaults write com.apple.dashboard enabled-state 2
@@ -224,6 +232,19 @@ sudo systemsetup -listtimezones
 # Set Timezone and Set Clock Using Network Time
 sudo systemsetup -settimezone Europe/Paris
 sudo systemsetup setusingnetworktime on
+```
+
+## OS X Preferences to make keyboard repeat very fast!
+
+```bash
+# Enable character repeat on keydown
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Set a shorter Delay until key repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0
 ```
 
 ## Shell
