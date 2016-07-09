@@ -28,10 +28,10 @@ defaults write NSGlobalDomain AppleLocale -string "fr_US@currency=EUR"
 defaults write ~/Library/Preferences/.GlobalPreferences.plist AppleFirstWeekday -dict gregorian 2
 
 # System - Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0;ok
+sudo pmset -a hibernatemode 0
 
 # System - Allow 'locate' command
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist > /dev/null 2>&1;ok
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist > /dev/null 2>&1
 
 # Turn on dashboard-as-space
 defaults write com.apple.dashboard enabled-state 2
