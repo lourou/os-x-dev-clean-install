@@ -196,9 +196,6 @@ defaults write com.apple.iCal "TimeZone support enabled" -bool TRUE
 defaults write com.apple.iCal "first day of week" -int 1
 defaults write com.apple.iCal "number of hours displayed" -int 14
 
-# Contacts - Enable Contacts Debug Mode
-defaults write com.apple.addressbook ABShowDebugMenu -bool true
-
 # Disk Utility - Enable debug menu
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
 defaults write com.apple.DiskUtility advanced-image-options -bool true
@@ -216,7 +213,7 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
 # System Sound - Disable Sound Effects on Boot
-sudo nvram SystemAudioVolume=" ";ok
+sudo nvram SystemAudioVolume=" "
 
 # System Sound - Disable the system UI sound effects
 defaults write com.apple.systemsound "com.apple.sound.beep.flash" -int 0
