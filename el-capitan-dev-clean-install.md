@@ -173,6 +173,14 @@ defaults write com.apple.addressbook ABShowDebugMenu -bool true
 # iCal - Enable debug menu
 defaults write com.apple.iCal IncludeDebugMenu -bool true
 
+# iCal -
+SharedCalendarNotificationsDisabled = 1;
+"Show Week Numbers" = 0;
+"TimeZone support enabled" = 1;
+"first day of week" = 1;
+"number of hours displayed" = 14;
+showDeclinedEvents = 1;
+
 # Contacts - Enable Contacts Debug Mode
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
@@ -193,7 +201,7 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
 # System Sound - Disable Sound Effects on Boot
-sudo nvram SystemAudioVolume=" "
+sudo nvram SystemAudioVolume=" ";ok
 
 # System Sound - Disable the system UI sound effects
 defaults write com.apple.systemsound "com.apple.sound.beep.flash" -int 0
@@ -202,7 +210,6 @@ defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
 # Terminal - Prevent beep
 echo "set bell-style none" >> ~/.inputrc
-
 ```
 
 ## OS X Preferences that need custom input
