@@ -24,8 +24,11 @@ defaults write NSGlobalDomain AppleMetricUnits -bool YES
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleLocale -string "fr_US@currency=EUR"
 
+# System - Set decimal delimiter as dot instead of comma
+defaults write NSGlobalDomain AppleICUNumberSymbols '{"0" = "."; "10" = "."; }'
+
 # System - Monday is the first day of the week
-defaults write NSGlobalDomain AppleFirstWeekday -dict gregorian 2
+defaults write NSGlobalDomain AppleFirstWeekday -dict 'gregorian' 2
 
 # System - Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
@@ -178,16 +181,14 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes
 # Address Book - Enable debug menu
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
-# iCal - Enable debug menu
-defaults write com.apple.iCal IncludeDebugMenu -bool true
-
-# iCal -
-SharedCalendarNotificationsDisabled = 1;
-"Show Week Numbers" = 0;
-"TimeZone support enabled" = 1;
-"first day of week" = 1;
-"number of hours displayed" = 14;
-showDeclinedEvents = 1;
+# iCal - Setup
+defaults write com.apple.iCal "IncludeDebugMenu" -bool TRUE
+defaults write com.apple.iCal "showDeclinedEvents" -bool TRUE
+defaults write com.apple.iCal "n days of week" -int 7
+defaults write com.apple.iCal "SharedCalendarNotificationsDisabled" -bool TRUE
+defaults write com.apple.iCal "TimeZone support enabled" -bool TRUE
+defaults write com.apple.iCal "first day of week" -int 1
+defaults write com.apple.iCal "number of hours displayed" -int 14
 
 # Contacts - Enable Contacts Debug Mode
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
