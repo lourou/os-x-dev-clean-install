@@ -488,6 +488,21 @@ Run the following to unload the service so it will not start again at login:
 launchctl unload -w ~/Library/LaunchAgents/org.php.php-fpm.plist
 ```
 
+### Installing PHP 7.0
+
+```
+brew install -v --with-fpm \
+--without-apache \
+--with-mysql \
+--with-homebrew-curl \
+--with-homebrew-openssl \
+--disable-opcache \
+php7O
+```
+
+More info here:
+<https://getgrav.org/blog/mac-os-x-apache-setup-multiple-php-versions>
+
 ### Installing Drush
 
 Drush is a command line tool for Drupal
