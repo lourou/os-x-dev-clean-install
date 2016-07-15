@@ -344,6 +344,9 @@ mkdir -p /usr/local/etc/nginx/sites-enabled
 mkdir -p /usr/local/etc/nginx/conf.d
 mkdir -p /usr/local/etc/nginx/ssl
 
+# Edit /usr/local/nginx/nginx.conf and add this line before the end of 'http' directive
+include /usr/local/etc/nginx/sites-enabled/*;
+```
 
 ### Launch Nginx at login
 
