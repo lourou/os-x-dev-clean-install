@@ -644,7 +644,7 @@ ssh -T git@github.com
 git config --global user.name "Full Name" && \
 git config --global user.email "email@domain.com" && \
 git config --global github.user githubusername && \
-git config --global core.editor "subl -w" && \
+git config --global core.editor "vim" && \
 git config --global color.ui true && \
 git config --global push.default simple
 
