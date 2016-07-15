@@ -337,7 +337,13 @@ listen 80;
 
 # Reload config
 sudo nginx (or sudo nginx -s reload)
-```
+
+# Create these bunch of folders which we're going to use for the upcoming configuration:
+mkdir -p /usr/local/etc/nginx/sites-available
+mkdir -p /usr/local/etc/nginx/sites-enabled
+mkdir -p /usr/local/etc/nginx/conf.d
+mkdir -p /usr/local/etc/nginx/ssl
+
 
 ### Launch Nginx at login
 
