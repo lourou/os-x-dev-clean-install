@@ -129,7 +129,7 @@ sudo softwareupdate --schedule off
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
+defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool trube
 
 # Trackpad - Enable tap to click for current user and the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -296,7 +296,8 @@ colordiff \
 imagemagick \
 graphicsmagick \
 youtube-dl \
-autojump
+autojump \
+npm
 
 # Add the following line to your ~/.zshrc file
 # Remember to source the file to update your current session
@@ -408,7 +409,9 @@ Restart Terminal and check if `php -v` or `php-fpm -v` gives you PHP version 5.6
 
 ### php-fpm.conf and php.ini
 
-You can found basic php-fpm config file here `subl /usr/local/etc/php/5.6/php-fpm.conf`. Check especially `listen = 127.0.0.1:9000` everything else can be leave as is.
+You can found basic php-fpm config file here `subl /usr/local/etc/php/5.6/php-fpm.conf`.
+Check especially `listen = 127.0.0.1:9000` and rename it to `listen = 127.0.0.1:9056`.
+Everything else can be leave as is.
 
 PHP config files can be found here `subl /usr/local/etc/php/5.6/conf.d/`. You can change `php.ini` but its more more easly keept change is spearate file:
 
