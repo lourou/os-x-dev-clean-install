@@ -753,10 +753,12 @@ sudo gem install cocoapods
 pod setup
 ```
 
-## Ruby Gems
+## Dandelion Deployment Tool
 
 ```bash
+brew install cmake
 sudo gem install net-sftp dandelion
+sudo gem install net-sftp
 ```
 
 ## Node Packages
