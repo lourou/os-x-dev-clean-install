@@ -651,6 +651,12 @@ rekordbox \
 soulseek
 ```
 
+## Restore Sequel Pro Favorites
+
+- Quit Sequel Pro if it’s running.
+- Replace ~/Library/Application Support/Sequel Pro/Data/Favourites.plist with your backed up copy.
+- Replace ~/Library/Preferences/com.sequelpro.SequelPro.plist with your backed up copy.
+
 ## Git
 
 ### Setup Github
