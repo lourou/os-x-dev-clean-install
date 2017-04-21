@@ -245,13 +245,12 @@ sudo systemsetup setusingnetworktime on
 
 ```bash
 # Enable character repeat on keydown
-defaults write -g ApplePressAndHoldEnabled -bool false
-
 # Set a shorter Delay until key repeat
-defaults write NSGlobalDomain InitialKeyRepeat -float 0.2
-
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -float 0.2
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false && \
+defaults write NSGlobalDomain KeyRepeat -int 1 && \
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
 ```
 
 ## Shell
