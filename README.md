@@ -32,6 +32,8 @@ speedtest-cli
 
 ## Mac App Store
 
+Note: the `mas` command line does not work yet on macOS 10.14.
+
 ```bash
 brew install mas
 
