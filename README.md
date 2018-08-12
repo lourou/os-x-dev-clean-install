@@ -1,3 +1,96 @@
+# macOS 10.4 Mojave Clean Install
+
+This is my collection of commands to perform a clean install of macOS 10.14 Mojave.
+
+Choose and execute the ones that fits your needs.
+
+##  Get started
+
+```bash
+
+# Install Xcode Tools
+xcode-select --install
+
+# Install Brew package manager
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Install homebrew packages
+brew install \
+tree \
+ssh-copy-id \
+wget \
+jpegoptim \
+pngcrush \
+colordiff \
+imagemagick \
+graphicsmagick \
+youtube-dl \
+autojump \
+npm \
+speedtest-cli
+```
+
+## OS X Preferences that need custom input
+
+```bash
+# Set Login Window Text
+sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "If you found this computer, please call +33 X XX XX XX XX"
+
+# Set HostName
+sudo scutil --set HostName yourhostname.local
+
+# List Available Timezones
+sudo systemsetup -listtimezones
+
+# Set Timezone and Set Clock Using Network Time
+sudo systemsetup -settimezone Europe/Paris
+sudo systemsetup setusingnetworktime on
+```
+
+## OS X Preferences to make keyboard repeat very fast!
+
+```bash
+# Enable character repeat on keydown
+# Set a shorter Delay until key repeat
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false && \
+defaults write NSGlobalDomain KeyRepeat -int 1 && \
+# defaults write NSGlobalDomain InitialKeyRepeat -int 10
+```
+
+## Shell
+
+```bash
+# Download Terminal profile with font
+curl -o /Library/Fonts/meslo.otf https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/terminal/meslo.otf && \
+curl -o /tmp/Lacompany.terminal https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/terminal/Lacompany.terminal && \
+open /tmp/Lacompany.terminal
+
+# Then, make the profile the default one
+defaults write com.apple.Terminal "Startup Window Settings" -string "Lacompany" && \
+defaults write com.apple.Terminal "Default Window Settings" -string "Lacompany" && \
+osascript -e 'tell application "Terminal" to close windows' & exit
+
+# Switch to zsh
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+# Autojump setup: add the following line to your ~/.zshrc file
+# Remember to source the file to update your current session
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+# Update .zshrc
+# syntax highlighting
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
+~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+```
+
+## Brew Cask for binary distributed software
+
+```bash
+# Install Cask
+brew tap caskroom/cask
+```
+    
 ## Bypass OS X System Integrity Protection
 
 - Reboot the mac pressing CMD + R
@@ -222,88 +315,6 @@ defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
 # Terminal - Prevent beep
 echo "set bell-style none" >> ~/.inputrc
-```
-
-## OS X Preferences that need custom input
-
-```bash
-# Set Login Window Text
-sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "If you found this computer, please call +33 X XX XX XX XX"
-
-# Set HostName
-sudo scutil --set HostName yourhostname.local
-
-# List Available Timezones
-sudo systemsetup -listtimezones
-
-# Set Timezone and Set Clock Using Network Time
-sudo systemsetup -settimezone Europe/Paris
-sudo systemsetup setusingnetworktime on
-```
-
-## OS X Preferences to make keyboard repeat very fast!
-
-```bash
-# Enable character repeat on keydown
-# Set a shorter Delay until key repeat
-# Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false && \
-defaults write NSGlobalDomain KeyRepeat -int 1 && \
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
-
-```
-
-## Shell
-
-```bash
-# Download Terminal profile with font
-curl -o /Library/Fonts/meslo.otf https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/terminal/meslo.otf && \
-curl -o /tmp/Lacompany.terminal https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/terminal/Lacompany.terminal && \
-open /tmp/Lacompany.terminal
-
-# Then, make the profile the default one
-defaults write com.apple.Terminal "Startup Window Settings" -string "Lacompany" && \
-defaults write com.apple.Terminal "Default Window Settings" -string "Lacompany" && \
-osascript -e 'tell application "Terminal" to close windows' & exit
-
-# Switch to zsh
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-```
-
-### Update .zshrc
-
-```bash
-#syntax highlighting
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
-~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-```
-
-### Homebrew Basics
-
-```bash
-# install package manager
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# install homebrew packages
-brew install \
-tree \
-ssh-copy-id \
-wget \
-jpegoptim \
-pngcrush \
-colordiff \
-imagemagick \
-graphicsmagick \
-youtube-dl \
-autojump \
-npm
-
-# Add the following line to your ~/.zshrc file
-# Remember to source the file to update your current session
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
-# Install Cask
-brew tap caskroom/cask
 ```
 
 ## Development Tools
@@ -552,11 +563,6 @@ Run the following to unload the service so it will not start again at login:
     launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist 
     
 
-### Install Xcode
-
-    xcode-select --install
-    sudo xcrun cc
-    xcrun simctl delete unavailable
 
 ## Mac Apps and fonts with Homebrew Cask
 
