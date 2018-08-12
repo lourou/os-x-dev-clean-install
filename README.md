@@ -30,6 +30,19 @@ npm \
 speedtest-cli
 ```
 
+## Mac App Store
+
+```bash
+brew install mas
+
+# Display all apps that can be installed or search for them
+mas list
+mas search Xcode
+
+# To install or update an application simply run mas install with an application identifier:
+mas install 497799835
+```
+
 ## OS X Preferences that need custom input
 
 ```bash
