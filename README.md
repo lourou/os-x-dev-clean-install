@@ -590,6 +590,7 @@ brew tap caskroom/versions
 
 #install mac apps & fonts
 brew cask install \
+visual-studio-code \
 1password \
 font-source-code-pro \
 sublime-text-dev \
