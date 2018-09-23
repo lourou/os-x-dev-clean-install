@@ -45,6 +45,15 @@ mas search Xcode
 mas install 497799835
 ```
 
+List of personal Mac App Store Apps:
+
+- 468990782 Music Converter Pro (1.5.3)
+- 931657367 Calcbot - The Smart Calculator (1.0.7)
+- 1091189122 Bear (1.6.1)
+- 506189836 Harvest (2.1.9)
+- 595191960 CopyClip - Clipboard History Manager (1.9)
+- 406825478 Telephone (1.3.1)
+
 ## OS X Preferences that need custom input
 
 ```bash
@@ -76,16 +85,6 @@ defaults write NSGlobalDomain KeyRepeat -int 1 && \
 ## Shell
 
 ```bash
-# Download Terminal profile with font
-curl -o /Library/Fonts/meslo.otf https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/terminal/meslo.otf && \
-curl -o /tmp/Lacompany.terminal https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/terminal/Lacompany.terminal && \
-open /tmp/Lacompany.terminal
-
-# Then, make the profile the default one
-defaults write com.apple.Terminal "Startup Window Settings" -string "Lacompany" && \
-defaults write com.apple.Terminal "Default Window Settings" -string "Lacompany" && \
-osascript -e 'tell application "Terminal" to close windows' & exit
-
 # Switch to zsh
 curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 
@@ -593,7 +592,6 @@ brew cask install \
 visual-studio-code \
 1password \
 font-source-code-pro \
-sublime-text-dev \
 google-chrome \
 firefox \
 opera \
@@ -612,12 +610,10 @@ imagealpha \
 bartender \
 appdelete \
 carbon-copy-cloner \
-charles \
-cloud \
+cloudapp \
 colorpicker-developer \
 dropbox \
 evernote \
-flux \
 focus \
 kindle \
 transmit \
@@ -625,31 +621,25 @@ moom \
 sourcetree \
 slack \
 skype \
-screenhero \
 pngyu \
-synology-assistant \
 omnifocus \
 omnidisksweeper \
-omnigraffle \
 spotify \
 scansnap-manager-ix100 \
-vmware-fusion \
 androidtool \
 macdown \
 vlc \
-vox
+vox \
+calibre \
+framer-x \
+adobe-creative-cloud
 
 # Encfs
 brew cask install osxfuse
-brew install homebrew/fuse/encfs
-
-# Speedtest command line interface
-sudo easy_install pip
-sudo pip install speedtest-cli
+brew install encfs
 
 # Synology Apps
 brew cask install \
-synology-assistant \
 synology-cloud-station-drive \
 synology-photo-station-uploader
 ```
