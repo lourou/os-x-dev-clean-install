@@ -317,6 +317,19 @@ defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 echo "set bell-style none" >> ~/.inputrc
 ```
 
+## Composer
+
+```bash
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+```
+
+### Global packages :
+
+```composer global require "laravel/installer"```
+
+# @todo Needs update below this point
+
 ## Development Tools
 
 ### Installing nginx
@@ -691,14 +704,18 @@ pod setup
 ```bash
 brew install cmake
 sudo gem install net-sftp dandelion
-sudo gem install net-sftp
 ```
 
 ## Node Packages
 
 ```bash
 npm install -g coffee-script bower
+npm install -g gitbook-cli
+npm install -g gulp
 ```
+
+If an error occurs like `Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (57)` after gulp, just run `npm rebuild node-sass`.
+
 
 ## LaTeX
 
