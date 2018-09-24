@@ -9,7 +9,8 @@ Choose and execute the ones that fits your needs.
 ```bash
 
 # Install Xcode Tools
-xcode-select --install
+# Automated install does not work anymore
+# Download the cli tools at https://developer.apple.com/download/more/
 
 # Install Brew package manager
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -120,9 +121,6 @@ csrutil disable; reboot
 Most of these require logout/restart to take effect
 
 ```bash
-# Disable window animations ("new window" scale effect)
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
-
 # System - Disable cursor magnification
 defaults write NSGlobalDomain CGDisableCursorLocationMagnification -bool YES
 
@@ -138,13 +136,13 @@ defaults write NSGlobalDomain AppleICUNumberSymbols '{"0" = "."; "10" = "."; }'
 defaults write NSGlobalDomain AppleFirstWeekday -dict 'gregorian' 2
 
 # System - Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0
+# sudo pmset -a hibernatemode 0
 
 # System - Allow 'locate' command
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist > /dev/null 2>&1
 
 # Turn on dashboard-as-space
-defaults write com.apple.dashboard enabled-state 2
+# defaults write com.apple.dashboard enabled-state 2
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
@@ -201,10 +199,10 @@ defaults write NSGlobalDomain AppleInterfaceStyle Dark; killall Dock
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Time Machine - Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+# hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 # Time Machine - Disable local Time Machine snapshots
-sudo tmutil disablelocal
+# sudo tmutil disablelocal
 
 # Sets default save target to be a local disk, not iCloud.
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -214,7 +212,7 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 5
 
 # Disable AirDrop
-defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
+# defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
 
 # Login Window preferences
 # Enable secure guest access
@@ -279,18 +277,6 @@ defaults write com.apple.Safari UniversalSearchEnabled -bool false
 # Chrome - Prevent native print dialog, use system dialog instead
 defaults write com.google.Chrome DisablePrintPreview -boolean true
 
-# Mail - Copy email addresses as 'foo@example.com' instead of 'Foo Bar <foo@example.com>'
-defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-
-# Mail - Disable send animation
-defaults write com.apple.mail DisableSendAnimations -bool true
-
-# Mail - Disable reply animation
-defaults write com.apple.mail DisableReplyAnimations -bool true
-
-# Mail - Show Attachments as Icons
-defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes
-
 # Address Book - Enable debug menu
 defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
@@ -320,7 +306,7 @@ defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 defaults write com.apple.appstore ShowDebugMenu -bool true
 
 # System Sound - Disable Sound Effects on Boot
-sudo nvram SystemAudioVolume=" "
+# sudo nvram SystemAudioVolume=" "
 
 # System Sound - Disable the system UI sound effects
 defaults write com.apple.systemsound "com.apple.sound.beep.flash" -int 0
@@ -691,76 +677,6 @@ git config --global push.default simple
 
 #token
 git config --global github.token your_token_here
-```
-
-
-## Sublime Text
-
-### Install Soda Theme
-
-```bash
-git clone git://github.com/buymeasoda/soda-theme.git \
-~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Theme\ -\ Soda
-```
-
-### Install Tomorrow Night Eighties Themes
-
-```bash
-#Sublime Text
-git clone git://github.com/chriskempson/textmate-tomorrow-theme.git \
-~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Color\ Scheme\ -\ Tomorrow
-
-# iTerm2
-wget https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Tomorrow%20Night%20Eighties.itermcolors \
--O ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors && open ~/Downloads/Tomorrow\ Night\ Eighties.itermcolors
-
-# Xcode
-mkdir -p ~/Library/Developer/Xcode/UserData/FontAndColorThemes && \
-wget https://raw.githubusercontent.com/chriskempson/tomorrow-theme/master/Xcode%204/Tomorrow%20Night%20Eighties.dvtcolortheme -O \
-~/Library/Developer/Xcode/UserData/FontAndColorThemes/Tomorrow\ Night\ Eighties.dvtcolortheme
-```
-
-### Settings
-
-```json
-{
-	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Color Scheme - Tomorrow/Tomorrow-Night-Eighties.tmTheme",
-	"draw_indent_guides": false,
-	"font_face": "Source Code Pro",
-	"font_size": 22.0,
-	"highlight_modified_tabs": true,
-	"ignored_packages":
-	[
-		"Vintage"
-	],
-	"show_full_path": true,
-	"show_tab_close_buttons": false,
-	"spell_check": false,
-	"tab_size": 2,
-	"theme": "Soda Light.sublime-theme",
-	"word_separators": "./\\()\"'-:,.;<>~!@#%^&*|+=[]{}`~?"
-}
-
-```
-
-### Key Bindings
-
-
-```json
-[
-	{ "keys": ["super+b"], "command": "expand_selection", "args": {"to": "brackets"} },
-	{ "keys": ["super+f"], "command": "show_panel", "args": {"panel": "replace"} },
-	{ "keys": ["super+alt+f"], "command": "show_panel", "args": {"panel": "find"} }
-]
-```
-
-
-### Snippets
-
-```bash
-git clone git@github.com:co-b/sublime-snippets.git \
-~/Library/Application\ Support/Sublime\ Text\ 3/Packages/CoB
 ```
 
 ## iOS
