@@ -631,7 +631,8 @@ vlc \
 vox \
 calibre \
 framer-x \
-adobe-creative-cloud
+adobe-creative-cloud \
+fontbase
 
 # Encfs
 brew cask install osxfuse
