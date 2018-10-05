@@ -703,7 +703,7 @@ pod setup
 ## Dandelion Deployment Tool
 
 ```bash
-brew install cmake
+brew install cmake ruby
 sudo gem install net-sftp dandelion
 ```
 
