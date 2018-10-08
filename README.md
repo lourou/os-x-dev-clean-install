@@ -632,7 +632,8 @@ vox \
 calibre \
 framer-x \
 adobe-creative-cloud \
-fontbase
+fontbase \
+icons8
 
 # Encfs
 brew cask install osxfuse
