@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+  echo "You need to provide your desired php version"
+  echo -e "\nUsage:\nphpswitcher 7.2\n"
+  exit 1
+else
+  currentversion="$(php --version | tail -r | tail -n 1 | cut -d " " -f 2 | cut -c 1-3)"
+  newversion=$1
+  if brew ls --versions php@$newversion > /dev/null; then
+     brew unlink php@$currentversion --force
+     brew link php@$newversion --force
+  else
+   echo -e "php@$newversion is not installed, please use\nbrew install php@$newversion"
+   exit 1
+  fi
+fi
