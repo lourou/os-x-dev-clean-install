@@ -317,7 +317,159 @@ defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 echo "set bell-style none" >> ~/.inputrc
 ```
 
-## Composer
+## Development Tools
+
+### Create a conf folder 
+
+- Used for all custom config files, it prevents them from being overriden by homebrew
+- If the file can't be located here (for nginx for instance) at least you'll know where to find all of them with symlink
+
+```bash
+sudo mkdir -p /usr/local/conf/nginx/{sites-enabled,sites-available,ssl}
+sudo mkdir -p /var/log/{nginx,php-fpm}
+sudo mkdir -p /usr/local/var/run/php-fpm
+```
+
+### Nginx
+
+```
+brew install nginx --verbose --with-debug
+```
+
+To have launchd start nginx now and restart at login:
+```
+brew services start nginx
+```
+
+If no nginx.conf file exists in /usr/local/conf/nginx, copy the original from /usr/local/etc/nginx/nginx.conf
+- `cp /usr/local/etc/nginx/nginx.conf /usr/local/conf/nginx/nginx.conf` (optional)
+
+Then create aliases:
+```bash
+ln -s /usr/local/conf/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf
+ln -s /usr/local/conf/nginx/sites-available /usr/local/etc/nginx/sites-available
+ln -s /usr/local/conf/nginx/sites-enabled /usr/local/etc/nginx/sites-enabled
+ln -s /usr/local/conf/nginx/ssl /usr/local/etc/nginx/ssl
+```
+
+- In `/usr/local/etc/nginx/nginx.conf`:
+  - Change the `user nobody;` by `user _www;`
+  - Add the following line to store errors : `error_log  /var/log/nginx/error.log;`
+  - The default nginx port is set to `listen 8080;` so that nginx can run without sudo. Replace it by `listen 80`.
+  - Change `server_name localhost;` by `server_name 127.0.0.1;`
+  - replace the default location nginx will load (`include /usr/local/etc/nginx/servers/`) by `include /usr/local/nginx/sites-enabled/*;`.
+  - in the http part, add `server_tokens off;` to prevent nginx version to show up in headers
+  
+- Default document root is: /usr/local/var/www
+
+
+Reload the config with :
+```bash sudo nginx -s reload
+```
+
+Launch Nginx at login
+```bash 
+sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/
+```
+
+Then edit `/Library/LaunchDaemons/homebrew.mxcl.nginx.plist` and change the `Label` string to `nginx` which will allow us to write:
+```bash
+launchctl start nginx```
+instead of 
+```bash
+launchctl start homebrew.mxcl.nginx
+```
+
+Load nginx now and automatically at reboot with :
+
+    sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+
+Run the following to unload the service so it will not start again at login:
+
+    sudo launchctl unload -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+
+### PHP-FPM
+
+We will run multiple versions of PHP: 5.6, 7.1 and 7.2.
+The following is available after the mid-2018 Homebrew update.
+
+Reinstall curl with openssl:
+
+    brew reinstall --with-openssl curl
+    
+Then install PHPs
+
+    brew install -v php@5.6
+
+    brew install -v php@7.1
+    
+    brew install -v php@7.2
+
+#### Configure php-fpm.conf and php.ini
+
+You can found basic php-fpm config file at:
+
+- `/usr/local/etc/php/5.6/php-fpm.conf`
+- `/usr/local/etc/php/7.1/php-fpm.d/www.conf`
+- `/usr/local/etc/php/7.2/php-fpm.d/www.conf`
+
+Check especially `listen = 127.0.0.1:9000` and rename it to `unix=/usr/local/var/run/php-fpm/php72-fpm.sock`. (In each file, replace 72 by the version you're editing)
+
+To ensure search permissions are ok, search for `;listen.mode = 0660` and change it to `listen.mode = 0666` (don't forget to remove the semi-colon).
+
+Everything else can be left as it is.
+
+#### Launch php now and automatically at login 
+
+    sudo cp /usr/local/opt/php@5.6/homebrew.mxcl.php@5.6.plist ~/Library/LaunchAgents
+    launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php@5.6.plist
+    
+    sudo cp /usr/local/opt/php@7.1/homebrew.mxcl.php@7.1.plist ~/Library/LaunchAgents
+    launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php@7.1.plist
+    
+    sudo cp /usr/local/opt/php@7.2/homebrew.mxcl.php.plist ~/Library/LaunchAgents
+    launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php.plist
+
+Note: just remove -w option if you don't want it to start automatically.
+You can also restart PHP with those commands without the -w option
+
+Update your shell profile (`~/.zshrc`, `~/.bashrc` or so) file so that this branch new php is called before the system's one
+
+    export PATH="/usr/local/bin:/usr/local/sbin:...
+
+Source it :
+
+    source ~/.zshrc
+
+To solo start / stop php you can use:
+
+    brew services start homebrew/php/php@5.6
+    brew services stop homebrew/php/php@5.6
+
+#### Switching PHP cli
+
+You can use the custom script [phpswitcher](https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/tools/phpswitcher)
+
+    mkdir ~/bin
+    curl -L https://raw.githubusercontent.com/gwenth/os-x-dev-clean-install/master/phpswitcher ~/bin/
+    chmod u+x ~/bin/phpswitcher
+    
+Add ~/bin to your `$PATH` variable in you `~/.zshrc` or `~/.bashrc`
+
+    export PATH="~/bin:..."
+
+Source it :
+
+    source ~/.zshrc
+
+This script is really simple, it unlinks the current php formula and links the new one.
+
+Usage : 
+```phpswitcher 7.2``` 
+will enable php7.2 cli
+
+
+### Composer
 
 ```bash
 curl -sS https://getcomposer.org/installer | php
@@ -772,3 +924,4 @@ sudo mkdir -p /var/ && sudo ln -s ~/Sites /var/www
 - <http://www.tug.org/mactex/elcapitan.html>
 - <http://www.math.univ-toulouse.fr/~mleroy/LaTeX/Install_MacOSX_mactex.pdf>
 - <http://designsimply.com/2011/12/18/autostart-mysql-php-fpm-nginx-os-x-lion>
+- <https://github.com/gwenth/os-x-dev-clean-install/>
