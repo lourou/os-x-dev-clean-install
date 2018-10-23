@@ -6,105 +6,89 @@ Choose and execute the ones that fits your needs.
 
 ##  Get started
 
-```bash
+    # Install Xcode Tools
+    # Automated install does not work anymore
+    # Download the cli tools at https://developer.apple.com/download/more/
 
-# Install Xcode Tools
-# Automated install does not work anymore
-# Download the cli tools at https://developer.apple.com/download/more/
+    # Install Brew package manager
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# Install Brew package manager
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# Install homebrew packages
-brew install \
-tree \
-ssh-copy-id \
-wget \
-jpegoptim \
-pngcrush \
-colordiff \
-imagemagick \
-graphicsmagick \
-youtube-dl \
-autojump \
-npm \
-speedtest-cli
-```
-
-## Mac App Store
-
-Note: the `mas` command line does not work yet on macOS 10.14.
-
-```bash
-brew install mas
-
-# Display all apps that can be installed or search for them
-mas list
-mas search Xcode
-
-# To install or update an application simply run mas install with an application identifier:
-mas install 497799835
-```
-
-List of personal Mac App Store Apps:
-
-- 468990782 Music Converter Pro (1.5.3)
-- 931657367 Calcbot - The Smart Calculator (1.0.7)
-- 1091189122 Bear (1.6.1)
-- 506189836 Harvest (2.1.9)
-- 595191960 CopyClip - Clipboard History Manager (1.9)
-- 406825478 Telephone (1.3.1)
+    # Install homebrew packages
+    brew install \
+    tree \
+    ssh-copy-id \
+    wget \
+    jpegoptim \
+    pngcrush \
+    colordiff \
+    imagemagick \
+    graphicsmagick \
+    youtube-dl \
+    autojump \
+    npm \
+    speedtest-cli
 
 ## OS X Preferences that need custom input
 
-```bash
-# Set Login Window Text
-sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "If you found this computer, please call +33 X XX XX XX XX"
+    # Set Login Window Text
+    sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "If you found this computer, please call +33 X XX XX XX XX"
 
-# Set HostName
-sudo scutil --set HostName yourhostname.local
+    # Set HostName
+    sudo scutil --set HostName yourhostname.local
 
-# List Available Timezones
-sudo systemsetup -listtimezones
+    # List Available Timezones
+    sudo systemsetup -listtimezones
 
-# Set Timezone and Set Clock Using Network Time
-sudo systemsetup -settimezone Europe/Paris
-sudo systemsetup setusingnetworktime on
-```
+    # Set Timezone and Set Clock Using Network Time
+    sudo systemsetup -settimezone Europe/Paris
+    sudo systemsetup setusingnetworktime on
 
 ## OS X Preferences to make keyboard repeat very fast!
 
-```bash
-# Enable character repeat on keydown
-# Set a shorter Delay until key repeat
-# Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false && \
-defaults write NSGlobalDomain KeyRepeat -int 1 && \
-# defaults write NSGlobalDomain InitialKeyRepeat -int 10
-```
+    # Enable character repeat on keydown
+    # Set a shorter Delay until key repeat
+    # Set a blazingly fast keyboard repeat rate
+    defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false && \
+    defaults write NSGlobalDomain KeyRepeat -int 1 && \
+    # defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 ## Shell
 
-```bash
-# Switch to zsh
-curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+    # install hyper terminal
+    brew cask install hyper
 
-# Autojump setup: add the following line to your ~/.zshrc file
-# Remember to source the file to update your current session
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+    # enable touchID on shell
+    sudo nano /etc/pam.d/sudo
 
-# Update .zshrc
-# syntax highlighting
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
-~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-```
+    # on top of the file, add the following line :
+    auth       sufficient     pam_tid.so
+
+Zsh and autojump:
+
+    # Switch to zsh
+    curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+
+    # Autojump setup: add the following line to your ~/.zshrc file
+    # Remember to source the file to update your current session
+    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
+    # Update .zshrc
+    # syntax highlighting
+    git clone git://github.com/zsh-users/zsh-syntax-highlighting.git \
+    ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    
+    # Make zsh the default shell 
+    nano ~/.hyper.js
+    # Fill the shell value with 
+    `shell: '/usr/local/bin/zsh',`
+
+    # Don't forget to source it :)
+    source ~/.zshrc
 
 ## Brew Cask for binary distributed software
 
-```bash
-# Install Cask
-brew tap caskroom/cask
-```
+    # Install Cask
+    brew tap caskroom/cask
     
 ## Bypass OS X System Integrity Protection
 
@@ -118,204 +102,202 @@ csrutil disable; reboot
 
 ## OS X Preferences
 
-Most of these require logout/restart to take effect
+Most of these require logout/restart to take effect.
 
-```bash
-# System - Disable cursor magnification
-defaults write NSGlobalDomain CGDisableCursorLocationMagnification -bool YES
+    # System - Disable cursor magnification
+    defaults write NSGlobalDomain CGDisableCursorLocationMagnification -bool YES
 
-# System - Locale
-defaults write NSGlobalDomain AppleMetricUnits -bool YES
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-defaults write NSGlobalDomain AppleLocale -string "fr_US@currency=EUR"
+    # System - Locale
+    defaults write NSGlobalDomain AppleMetricUnits -bool YES
+    defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+    defaults write NSGlobalDomain AppleLocale -string "fr_US@currency=EUR"
 
-# System - Set decimal delimiter as dot instead of comma
-defaults write NSGlobalDomain AppleICUNumberSymbols '{"0" = "."; "10" = "."; }'
+    # System - Set decimal delimiter as dot instead of comma
+    defaults write NSGlobalDomain AppleICUNumberSymbols '{"0" = "."; "10" = "."; }'
 
-# System - Monday is the first day of the week
-defaults write NSGlobalDomain AppleFirstWeekday -dict 'gregorian' 2
+    # System - Monday is the first day of the week
+    defaults write NSGlobalDomain AppleFirstWeekday -dict 'gregorian' 2
 
-# System - Disable hibernation (speeds up entering sleep mode)
-# sudo pmset -a hibernatemode 0
+    # System - Disable hibernation (speeds up entering sleep mode)
+    # sudo pmset -a hibernatemode 0
 
-# System - Allow 'locate' command
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist > /dev/null 2>&1
+    # System - Allow 'locate' command
+    sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist > /dev/null 2>&1
 
-# Turn on dashboard-as-space
-# defaults write com.apple.dashboard enabled-state 2
+    # Turn on dashboard-as-space
+    # defaults write com.apple.dashboard enabled-state 2
 
-# Use plain text mode for new TextEdit documents
-defaults write com.apple.TextEdit RichText -int 0
+    # Use plain text mode for new TextEdit documents
+    defaults write com.apple.TextEdit RichText -int 0
 
-# Make bottom-left hotspot start screensaver
-defaults write com.apple.dock wvous-bl-corner -int 5 && \
-defaults write com.apple.dock wvous-bl-modifier -int 0
+    # Make bottom-left hotspot start screensaver
+    defaults write com.apple.dock wvous-bl-corner -int 5 && \
+    defaults write com.apple.dock wvous-bl-modifier -int 0
 
-# Set default Finder location to home folder (~/)
-defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
+    # Set default Finder location to home folder (~/)
+    defaults write com.apple.finder NewWindowTarget -string "PfLo" && \
+    defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
-# Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+    # Expand save panel by default
+    defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
-# Disable file extension change warning
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+    # Disable file extension change warning
+    defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-# Use current directory as default search scope in Finder
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+    # Use current directory as default search scope in Finder
+    defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-# Show Path bar in Finder
-defaults write com.apple.finder ShowPathbar -bool true
+    # Show Path bar in Finder
+    defaults write com.apple.finder ShowPathbar -bool true
 
-# Show Status bar in Finder
-defaults write com.apple.finder ShowStatusBar -bool true
+    # Show Status bar in Finder
+    defaults write com.apple.finder ShowStatusBar -bool true
 
-# Avoid creating .DS_Store files on network and USB volumes
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+    # Avoid creating .DS_Store files on network and USB volumes
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+    defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-# Disable disk image verification
-defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true && \
-defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+    # Disable disk image verification
+    defaults write com.apple.frameworks.diskimages skip-verify -bool true && \
+    defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true && \
+    defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-# Enable the Develop menu and the Web Inspector in Safari
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true && \
-defaults write com.apple.Safari IncludeDevelopMenu -bool true && \
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true && \
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true && \
-defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+    # Enable the Develop menu and the Web Inspector in Safari
+    defaults write com.apple.Safari IncludeInternalDebugMenu -bool true && \
+    defaults write com.apple.Safari IncludeDevelopMenu -bool true && \
+    defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true && \
+    defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true && \
+    defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
-# Show the ~/Library folder
-chflags nohidden ~/Library
+    # Show the ~/Library folder
+    chflags nohidden ~/Library
 
-# Show absolute path in finder's title bar. 
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+    # Show absolute path in finder's title bar. 
+    defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
-# Switch to dark menu bar
-defaults write NSGlobalDomain AppleInterfaceStyle Dark; killall Dock
+    # Switch to dark menu bar
+    defaults write NSGlobalDomain AppleInterfaceStyle Dark; killall Dock
 
-# Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
-defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+    # Prevent Time Machine from Prompting to Use New Hard Drives as Backup Volume
+    defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
-# Time Machine - Disable local Time Machine backups
-# hash tmutil &> /dev/null && sudo tmutil disablelocal
+    # Time Machine - Disable local Time Machine backups
+    # hash tmutil &> /dev/null && sudo tmutil disablelocal
 
-# Time Machine - Disable local Time Machine snapshots
-# sudo tmutil disablelocal
+    # Time Machine - Disable local Time Machine snapshots
+    # sudo tmutil disablelocal
 
-# Sets default save target to be a local disk, not iCloud.
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+    # Sets default save target to be a local disk, not iCloud.
+    defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Screensaver Lock with Password within 5 seconds
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 5
+    # Screensaver Lock with Password within 5 seconds
+    defaults write com.apple.screensaver askForPassword -int 1
+    defaults write com.apple.screensaver askForPasswordDelay -int 5
 
-# Disable AirDrop
-# defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
+    # Disable AirDrop
+    # defaults write com.apple.NetworkBrowser DisableAirDrop -bool YES
 
-# Login Window preferences
-# Enable secure guest access
-sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled 1
+    # Login Window preferences
+    # Enable secure guest access
+    sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled 1
 
-# Show language input menu
-sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu 1
+    # Show language input menu
+    sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu 1
 
-# Prevent user list with picture to show up, display login and password field instead
-sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME 1
+    # Prevent user list with picture to show up, display login and password field instead
+    sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWFULLNAME 1
 
-# System - Reveal IP address, hostname, OS version, etc. when clicking the login window clock
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+    # System - Reveal IP address, hostname, OS version, etc. when clicking the login window clock
+    sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
-# System - Disable software updates
-sudo softwareupdate --schedule off
+    # System - Disable software updates
+    sudo softwareupdate --schedule off
 
-# Trackpad - Map bottom right corner to right-click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool trube
+    # Trackpad - Map bottom right corner to right-click
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+    defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
+    defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool trube
 
-# Trackpad - Enable tap to click for current user and the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+    # Trackpad - Enable tap to click for current user and the login screen
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+    defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+    defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-# Dock - Remove all default app icons
-defaults write com.apple.dock persistent-apps -array
+    # Dock - Remove all default app icons
+    defaults write com.apple.dock persistent-apps -array
 
-# Dock - Automatically hide and show
-defaults write com.apple.dock autohide -bool true
+    # Dock - Automatically hide and show
+    defaults write com.apple.dock autohide -bool true
 
-# Dock - Remove the auto-hiding delay
-defaults write com.apple.Dock autohide-delay -float 0
+    # Dock - Remove the auto-hiding delay
+    defaults write com.apple.Dock autohide-delay -float 0
 
-# Dock - Don’t show Dashboard as a Space
-defaults write com.apple.dock "dashboard-in-overlay" -bool true
+    # Dock - Don’t show Dashboard as a Space
+    defaults write com.apple.dock "dashboard-in-overlay" -bool true
 
-# Finder - Use list view in all Finder windows
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+    # Finder - Use list view in all Finder windows
+    defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-# Finder - Allow text selection in Quick Look
-defaults write com.apple.finder QLEnableTextSelection -bool true
+    # Finder - Allow text selection in Quick Look
+    defaults write com.apple.finder QLEnableTextSelection -bool true
 
-# iOS Simulator - Symlink the iOS Simulator application
-sudo ln -sf "/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app" "/Applications/iOS Simulator.app"
+    # iOS Simulator - Symlink the iOS Simulator application
+    sudo ln -sf "/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app" "/Applications/iOS Simulator.app"
 
-# Safari - Set home page to 'about:blank' for faster loading
-defaults write com.apple.Safari HomePage -string "about:blank"
+    # Safari - Set home page to 'about:blank' for faster loading
+    defaults write com.apple.Safari HomePage -string "about:blank"
 
-# Safari - Hide bookmarks bar
-defaults write com.apple.Safari ShowFavoritesBar -bool false
+    # Safari - Hide bookmarks bar
+    defaults write com.apple.Safari ShowFavoritesBar -bool false
 
-# Safari - Use Contains instead of Starts With in search banners
-defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
+    # Safari - Use Contains instead of Starts With in search banners
+    defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
-# Safari - Disable sending search queries to Apple.
-defaults write com.apple.Safari UniversalSearchEnabled -bool false
+    # Safari - Disable sending search queries to Apple.
+    defaults write com.apple.Safari UniversalSearchEnabled -bool false
 
-# Chrome - Prevent native print dialog, use system dialog instead
-defaults write com.google.Chrome DisablePrintPreview -boolean true
+    # Chrome - Prevent native print dialog, use system dialog instead
+    defaults write com.google.Chrome DisablePrintPreview -boolean true
 
-# Address Book - Enable debug menu
-defaults write com.apple.addressbook ABShowDebugMenu -bool true
+    # Address Book - Enable debug menu
+    defaults write com.apple.addressbook ABShowDebugMenu -bool true
 
-# iCal - Setup
-defaults write com.apple.iCal "IncludeDebugMenu" -bool TRUE
-defaults write com.apple.iCal "showDeclinedEvents" -bool TRUE
-defaults write com.apple.iCal "n days of week" -int 7
-defaults write com.apple.iCal "SharedCalendarNotificationsDisabled" -bool TRUE
-defaults write com.apple.iCal "TimeZone support enabled" -bool TRUE
-defaults write com.apple.iCal "first day of week" -int 1
-defaults write com.apple.iCal "number of hours displayed" -int 14
+    # iCal - Setup
+    defaults write com.apple.iCal "IncludeDebugMenu" -bool TRUE
+    defaults write com.apple.iCal "showDeclinedEvents" -bool TRUE
+    defaults write com.apple.iCal "n days of week" -int 7
+    defaults write com.apple.iCal "SharedCalendarNotificationsDisabled" -bool TRUE
+    defaults write com.apple.iCal "TimeZone support enabled" -bool TRUE
+    defaults write com.apple.iCal "first day of week" -int 1
+    defaults write com.apple.iCal "number of hours displayed" -int 14
 
-# Disk Utility - Enable debug menu
-defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
-defaults write com.apple.DiskUtility advanced-image-options -bool true
+    # Disk Utility - Enable debug menu
+    defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+    defaults write com.apple.DiskUtility advanced-image-options -bool true
 
-# Printer - Expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+    # Printer - Expand print panel by default
+    defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
-# Printer - Automatically quit printer app once the print jobs complete
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+    # Printer - Automatically quit printer app once the print jobs complete
+    defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-# App Store - Enable the WebKit Developer Tools in the Mac App Store
-defaults write com.apple.appstore WebKitDeveloperExtras -bool true
+    # App Store - Enable the WebKit Developer Tools in the Mac App Store
+    defaults write com.apple.appstore WebKitDeveloperExtras -bool true
 
-# App Store - Enable Debug Menu in the Mac App Store
-defaults write com.apple.appstore ShowDebugMenu -bool true
+    # App Store - Enable Debug Menu in the Mac App Store
+    defaults write com.apple.appstore ShowDebugMenu -bool true
 
-# System Sound - Disable Sound Effects on Boot
-# sudo nvram SystemAudioVolume=" "
+    # System Sound - Disable Sound Effects on Boot
+    # sudo nvram SystemAudioVolume=" "
 
-# System Sound - Disable the system UI sound effects
-defaults write com.apple.systemsound "com.apple.sound.beep.flash" -int 0
-defaults write com.apple.systemsound "com.apple.sound.beep.volume" -int 0
-defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
+    # System Sound - Disable the system UI sound effects
+    defaults write com.apple.systemsound "com.apple.sound.beep.flash" -int 0
+    defaults write com.apple.systemsound "com.apple.sound.beep.volume" -int 0
+    defaults write com.apple.systemsound "com.apple.sound.uiaudio.enabled" -int 0
 
-# Terminal - Prevent beep
-echo "set bell-style none" >> ~/.inputrc
-```
+    # Terminal - Prevent beep
+    echo "set bell-style none" >> ~/.inputrc
 
 ## Development Tools
 
@@ -324,33 +306,27 @@ echo "set bell-style none" >> ~/.inputrc
 - Used for all custom config files, it prevents them from being overriden by homebrew
 - If the file can't be located here (for nginx for instance) at least you'll know where to find all of them with symlink
 
-```bash
-sudo mkdir -p /usr/local/conf/nginx/{sites-enabled,sites-available,ssl}
-sudo mkdir -p /var/log/{nginx,php-fpm}
-sudo mkdir -p /usr/local/var/run/php-fpm
-```
+    sudo mkdir -p /usr/local/conf/nginx/{sites-enabled,sites-available,ssl}
+    sudo mkdir -p /var/log/{nginx,php-fpm}
+    sudo mkdir -p /usr/local/var/run/php-fpm
 
 ### Nginx
 
-```
-brew install nginx --verbose --with-debug
-```
+    brew install nginx --verbose --with-debug
 
 To have launchd start nginx now and restart at login:
-```
-brew services start nginx
-```
+
+    brew services start nginx
 
 If no nginx.conf file exists in /usr/local/conf/nginx, copy the original from /usr/local/etc/nginx/nginx.conf
 - `cp /usr/local/etc/nginx/nginx.conf /usr/local/conf/nginx/nginx.conf` (optional)
 
 Then create aliases:
-```bash
-ln -s /usr/local/conf/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf
-ln -s /usr/local/conf/nginx/sites-available /usr/local/etc/nginx/sites-available
-ln -s /usr/local/conf/nginx/sites-enabled /usr/local/etc/nginx/sites-enabled
-ln -s /usr/local/conf/nginx/ssl /usr/local/etc/nginx/ssl
-```
+
+    ln -s /usr/local/conf/nginx/nginx.conf /usr/local/etc/nginx/nginx.conf
+    ln -s /usr/local/conf/nginx/sites-available /usr/local/etc/nginx/sites-available
+    ln -s /usr/local/conf/nginx/sites-enabled /usr/local/etc/nginx/sites-enabled
+    ln -s /usr/local/conf/nginx/ssl /usr/local/etc/nginx/ssl
 
 - In `/usr/local/etc/nginx/nginx.conf`:
   - Change the `user nobody;` by `user _www;`
@@ -364,21 +340,20 @@ ln -s /usr/local/conf/nginx/ssl /usr/local/etc/nginx/ssl
 
 
 Reload the config with :
-```bash sudo nginx -s reload
-```
+
+    bash sudo nginx -s reload
 
 Launch Nginx at login
-```bash 
-sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/
-```
+
+    sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/
 
 Then edit `/Library/LaunchDaemons/homebrew.mxcl.nginx.plist` and change the `Label` string to `nginx` which will allow us to write:
-```bash
-launchctl start nginx```
+
+    launchctl start nginx```
+
 instead of 
-```bash
-launchctl start homebrew.mxcl.nginx
-```
+
+    launchctl start homebrew.mxcl.nginx
 
 Load nginx now and automatically at reboot with :
 
@@ -451,7 +426,7 @@ To solo start / stop php you can use:
 You can use the custom script [phpswitcher](https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/tools/phpswitcher)
 
     mkdir ~/bin
-    curl -L https://raw.githubusercontent.com/gwenth/os-x-dev-clean-install/master/phpswitcher ~/bin/
+    curl -o ~/bin/phpswitcher -L https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/tools/phpswitcher
     chmod u+x ~/bin/phpswitcher
     
 Add ~/bin to your `$PATH` variable in you `~/.zshrc` or `~/.bashrc`
@@ -465,141 +440,16 @@ Source it :
 This script is really simple, it unlinks the current php formula and links the new one.
 
 Usage : 
-```phpswitcher 7.2``` 
+
+    phpswitcher 7.2
+    
 will enable php7.2 cli
 
+#### Installing xdebug for php
 
-### Composer
+As of April 2018, `php` was migrated to homebrew core and xdebug is not available anylonger. Please install it through `PECL`
 
-```bash
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-```
-
-### Global packages :
-
-```composer global require "laravel/installer"```
-
-# @todo Needs update below this point
-
-## Development Tools
-
-### Installing nginx
-
-```
-brew install nginx
-
-# To have launchd start nginx now and restart at login:
-brew services start nginx
-```
-
-- Default document root is: /usr/local/var/www
-- The default nginx port is set in /usr/local/etc/nginx/nginx.conf to 8080 so that nginx can run without sudo.
-- nginx will load all files in /usr/local/etc/nginx/servers/.
-- switch nginx from port 8080 to 80 and write error logs in /var/log/nginx:
-
-```bash
-# Activate the logs
-sudo mkdir /var/log/nginx
-sudo mkdir /var/log/php-fpm
-nano /usr/local/etc/nginx/nginx.conf
-
-# At the top of the config file, add this:
-error_log  /var/log/nginx/error.log;
-
-# Change port from 8080 to 80
-listen 80;
-
-# Reload config
-sudo nginx (or sudo nginx -s reload)
-
-# Create these bunch of folders which we're going to use for the upcoming configuration:
-mkdir -p /usr/local/etc/nginx/sites-available
-mkdir -p /usr/local/etc/nginx/sites-enabled
-mkdir -p /usr/local/etc/nginx/conf.d
-mkdir -p /usr/local/etc/nginx/ssl
-
-# Edit /usr/local/nginx/nginx.conf and add this line before the end of 'http' directive
-include /usr/local/etc/nginx/sites-enabled/*;
-```
-
-### Launch Nginx at login
-
-```bash 
-sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/ && 
-sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist &&
-sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
-```
-  
-Run the following to unload the service so it will not start again at login:
-
-```bash    
-sudo launchctl unload -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
-```
-
-### Installing PHP-FPM
-
-Start with taping formulas repositories:
-
-    brew tap homebrew/dupes
-    brew tap homebrew/versions
-    brew tap homebrew/homebrew-php
-
-Remove all PHP dependencies (it's only safe way to compile PHP successfully)
-
-    brew remove libtool
-    brew remove freetype
-    brew remove gettext
-    brew remove icu4c
-    brew remove jpeg
-    brew remove libpng
-    brew remove unixodbc
-    brew remove zlib
-
-Reinstall curl with openssl:
-
-    brew reinstall --with-openssl curl
-
-Then install PHP
-
-    brew install -v --with-fpm \
-    --without-apache \
-    --with-mysql \
-    --with-homebrew-curl \
-    --with-homebrew-openssl \
-    --disable-opcache \
-    php56
-
-Install PHP extensions
-
-    brew install php56-http
-    brew install php56-mcrypt
-    brew install php56-memcache
-    brew install php56-memcached
-    brew install php56-mongo
-    brew install php56-opcache
-    brew install php56-propro
-    brew install php56-raphf
-    brew install php56-tidy
-    brew install php56-xdebug
-
-We will now replace MacOS X PHP with the one we just installed.
-
-Update `~/.zshrc` in order to have the PATH begining with:
-
-    export PATH="/usr/local/bin:/usr/local/sbin:...
-
-Restart Terminal and check if `php -v` or `php-fpm -v` gives you PHP version 5.6
-
-### php-fpm.conf and php.ini
-
-You can found basic php-fpm config file here `subl /usr/local/etc/php/5.6/php-fpm.conf`.
-Check especially `listen = 127.0.0.1:9000` and rename it to `listen = 127.0.0.1:9056`.
-Everything else can be leave as is.
-
-PHP config files can be found here `subl /usr/local/etc/php/5.6/conf.d/`. You can change `php.ini` but its more more easly keept change is spearate file:
-
-    subl /usr/local/etc/php/5.6/conf.d/custom.ini
+#### php.ini
 
 My configuration:
 
@@ -621,73 +471,23 @@ My configuration:
     [opcache]
     opcache.revalidate_freq=1
 
-    [xdebug]
-    xdebug.remote_enable=1
-    xdebug.remote_connect_back=On
-    ;xdebug.remote_host=127.0.0.1
-    ;xdebug.remote_port=9001
-    xdebug.remote_autostart=1
-    xdebug.idekey=PHPSTORM
-    xhprof.output_dir="/var/tmp/xhprof"
 
-    xdebug.profiler_enable = 0;
-    xdebug.profiler_output_name=cachegrind.out.%H.%t
-    xdebug.profiler_enable_trigger = 1;
-    xdebug.profiler_output_dir = /Users/louis/.Trash
+#### Composer
 
-### Launch PHP FPM at login
+    curl -sS https://getcomposer.org/installer | php
+    mv composer.phar /usr/local/bin/composer
 
-- Use `nano ~/Library/LaunchAgents/org.php.php-fpm.plist` to save a PHP-FPM plist file:
+#### Global packages :
 
-```bash
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-<key>Label</key><string>php-fpm</string>
-<key>Program</key><string>/usr/local/sbin/php-fpm</string>
-<key>KeepAlive</key><true/>
-</dict>
-</plist>
-```
-
-Run the following commands to load the services for the first time:
-
-```bash 
-launchctl load -w ~/Library/LaunchAgents/org.php.php-fpm.plist
-```
-  
-Run the following to unload the service so it will not start again at login:
-
-```bash    
-launchctl unload -w ~/Library/LaunchAgents/org.php.php-fpm.plist
-```
-
-### Installing PHP 7.0
-
-```
-brew install -v --with-fpm \
---without-apache \
---with-mysql \
---with-homebrew-curl \
---with-homebrew-openssl \
---disable-opcache \
-php7O
-```
-
-More info here:
-<https://getgrav.org/blog/mac-os-x-apache-setup-multiple-php-versions>
-
-### Installing Drush
-
-Drush is a command line tool for Drupal
-
+    composer global require "laravel/installer"
     brew install drush
+
 
 ## MariaDB
 
-### Installing MariaDB
+### Installing MariaDB & Sequel Pro
 
+    brew cask install sequel-pro
     brew install mariadb
     mysql_install_db
 
@@ -726,7 +526,12 @@ After everything is set up, you may want to use launchctl to start mariadb at lo
 Run the following to unload the service so it will not start again at login:
 
     launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist 
-    
+
+### Restore Sequel Pro Favorites
+
+- Quit Sequel Pro if it’s running.
+- Replace ~/Library/Application Support/Sequel Pro/Data/Favourites.plist with your backed up copy.
+- Replace ~/Library/Preferences/com.sequelpro.SequelPro.plist with your backed up copy.
 
 
 ## Mac Apps and fonts with Homebrew Cask
@@ -746,7 +551,6 @@ font-source-code-pro \
 google-chrome \
 firefox \
 opera \
-sequel-pro \
 android-studio \
 mactracker \
 mpv \
@@ -797,14 +601,6 @@ synology-cloud-station-drive \
 synology-photo-station-uploader
 ```
 
-Some apps require manuel of App Store install:
-
-- Adobe Creative Cloud
-- Pocket
-- Reeder
-- SiteSucker
-- ScanSnap OCR (Abbyy Fine Reader)
-
 Music and DJ apps:
 
 ```bash
@@ -815,11 +611,31 @@ rekordbox \
 soulseek
 ```
 
-## Restore Sequel Pro Favorites
+## Mac App Store
 
-- Quit Sequel Pro if it’s running.
-- Replace ~/Library/Application Support/Sequel Pro/Data/Favourites.plist with your backed up copy.
-- Replace ~/Library/Preferences/com.sequelpro.SequelPro.plist with your backed up copy.
+Note: the `mas` command line does not work yet on macOS 10.14.
+
+    brew install mas
+
+    # Display all apps that can be installed or search for them
+    mas list
+    mas search Xcode
+
+    # To install or update an application simply run mas install with an application identifier:
+    mas install 497799835
+
+List of personal Mac App Store Apps:
+
+- 468990782 Music Converter Pro (1.5.3)
+- 931657367 Calcbot - The Smart Calculator (1.0.7)
+- 1091189122 Bear (1.6.1)
+- 506189836 Harvest (2.1.9)
+- 595191960 CopyClip - Clipboard History Manager (1.9)
+- 406825478 Telephone (1.3.1)
+
+Some apps require manual install:
+
+- ScanSnap OCR (Abbyy Fine Reader)
 
 ## Git
 
@@ -855,21 +671,13 @@ pod setup
 
 ## Dandelion Deployment Tool
 
+MacOS Mojave ruby version will not work out of the box for this install.
+We need the ruby version available with brew in order to install dandelion.
+
 ```bash
 brew install cmake ruby
 sudo gem install net-sftp dandelion
 ```
-
-## Node Packages
-
-```bash
-npm install -g coffee-script bower
-npm install -g gitbook-cli
-npm install -g gulp
-```
-
-If an error occurs like `Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (57)` after gulp, just run `npm rebuild node-sass`.
-
 
 ## LaTeX
 
@@ -879,43 +687,6 @@ Add Latex binary to PATH variable:
 
     export PATH="/usr/local/bin:/usr/local/sbin:/Library/TeX/texbin:/
 
-
-### Local Web Server
----
-
-#### Add DNS Domains, Enable dnsmasq daemon
-
-This will route requests to any url ending in **.build** back to your own computer. The goal is to use urls like http://example.com.build for development while you work on http://example.com
-
-```bash
-mkdir -pv $(brew --prefix)/etc/ && \
-echo 'address=/.build/127.0.0.1' > $(brew --prefix)/etc/dnsmasq.conf && \
-sudo cp -v $(brew --prefix dnsmasq)/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons && \
-sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist && \
-sudo mkdir -v /etc/resolver && \
-sudo zsh -c 'echo "nameserver 127.0.0.1" > /etc/resolver/build'
-
-#flush cache
-sudo discoveryutil mdnsflushcache && scutil --dns
-```
-
-#### Enable virtual hosts
-
-This will allow you to serve folders under ~/Sites/ as websites. 
-
-* ~/Sites
-  * example.com
-    * htdocs
-      * index.html
-  
-to access this site, visit http://example.com.build
-
-
-#### Match production server paths
-
-```bash
-sudo mkdir -p /var/ && sudo ln -s ~/Sites /var/www
-```
 
 ## Credits
 
