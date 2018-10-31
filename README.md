@@ -418,8 +418,9 @@ Source it :
 
 To solo start / stop php you can use:
 
-    brew services start homebrew/php/php@5.6
-    brew services stop homebrew/php/php@5.6
+    brew services start/stop php@5.6
+    brew services start/stop php@7.1
+    brew services start/stop php # for PHP 7.2
 
 #### Switching PHP cli
 
