@@ -421,7 +421,16 @@ To solo start / stop php you can use:
     brew services start/stop php@5.6
     brew services start/stop php@7.1
     brew services start/stop php # for PHP 7.2
+    
+#### OPCache
 
+OPCache shipped with PHP-FPM from brew is broken.
+
+Comment out the following config line in `/usr/local/etc/php/5.6/conf.d/ext-opcache.ini`:
+
+    [opcache]
+    ;zend_extension=/usr/local/opt/php@5.6/lib/php/20131226/opcache.so
+    
 #### Switching PHP cli
 
 You can use the custom script [phpswitcher](https://raw.githubusercontent.com/lourou/os-x-dev-clean-install/master/tools/phpswitcher)
@@ -468,9 +477,6 @@ My configuration:
 
     mysql.default_socket=/tmp/mysql.sock
     pdo_mysql.default_socket=/tmp/mysql.sock
-
-    [opcache]
-    opcache.revalidate_freq=1
 
 
 #### Composer
@@ -709,3 +715,4 @@ Add Latex binary to PATH variable:
 - <http://www.math.univ-toulouse.fr/~mleroy/LaTeX/Install_MacOSX_mactex.pdf>
 - <http://designsimply.com/2011/12/18/autostart-mysql-php-fpm-nginx-os-x-lion>
 - <https://github.com/gwenth/os-x-dev-clean-install/>
+- <https://github.com/Homebrew/homebrew-core/issues/32497>
