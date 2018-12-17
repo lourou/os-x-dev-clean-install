@@ -298,6 +298,10 @@ Most of these require logout/restart to take effect.
 
     # Terminal - Prevent beep
     echo "set bell-style none" >> ~/.inputrc
+    
+    # Turning Power Chime Off
+    defaults write com.apple.PowerChime ChimeOnNoHardware -bool true
+    killall PowerChime
 
 ## Development Tools
 
