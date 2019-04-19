@@ -392,7 +392,7 @@ You can found basic php-fpm config file at:
 - `/usr/local/etc/php/7.1/php-fpm.d/www.conf`
 - `/usr/local/etc/php/7.2/php-fpm.d/www.conf`
 
-Check especially `listen = 127.0.0.1:9000` and rename it to `unix=/usr/local/var/run/php-fpm/php72-fpm.sock`. (In each file, replace 72 by the version you're editing)
+Check especially `listen = 127.0.0.1:9000` and rename it to `listen=/usr/local/var/run/php-fpm/php72-fpm.sock`. (In each file, replace 72 by the version you're editing)
 
 To ensure search permissions are ok, search for `;listen.mode = 0660` and change it to `listen.mode = 0666` (don't forget to remove the semi-colon).
 
