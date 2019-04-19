@@ -337,7 +337,7 @@ Then create aliases:
   - Add the following line to store errors : `error_log  /var/log/nginx/error.log;`
   - The default nginx port is set to `listen 8080;` so that nginx can run without sudo. Replace it by `listen 80`.
   - Change `server_name localhost;` by `server_name 127.0.0.1;`
-  - replace the default location nginx will load (`include /usr/local/etc/nginx/servers/`) by `include /usr/local/nginx/sites-enabled/*;`.
+  - replace the default location nginx will load (`include /usr/local/etc/nginx/servers/`) by `include /usr/local/etc/nginx/sites-enabled/*;`.
   - in the http part, add `server_tokens off;` to prevent nginx version to show up in headers
   
 - Default document root is: /usr/local/var/www
