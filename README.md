@@ -369,16 +369,25 @@ Run the following to unload the service so it will not start again at login:
 
 ### PHP-FPM
 
-We will run multiple versions of PHP: 5.6, 7.1 and 7.2.
-The following is available after the mid-2018 Homebrew update.
+We will run multiple versions of PHP: 5.6 (with Valet), 7.1 and 7.2.
+
+#### Install 5.6 version
+
+Unfortunately php 5.6 install no longer work wirh brew.
+
+We will use https://github.com/weprovide/valet-plus
+
+    brew tap henkrehorst/homebrew-php
+    brew install valet-php@5.6
+    brew services start php@5.6 # php-fpm will run on port 9000 by default
+
+#### Install 7.x versions
 
 Reinstall curl with openssl:
 
     brew reinstall --with-openssl curl
     
 Then install PHPs
-
-    brew install -v php@5.6
 
     brew install -v php@7.1
     
